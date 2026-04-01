@@ -1,0 +1,3 @@
+[submodule "vlmapsSrc"]
+	path = vlmapsSrc
+	url = https://github.com/yoruStarfish/vlmaps.git
