@@ -7,7 +7,7 @@ source ~/vlmaps_ws/install/setup.bash
 
 we need colcon build in vlmaps_ws!
 
-## data_collector_node
+## 2. data_collector_node
 - collect data, include: rgb, depth, pose(robot or camera)
 ```bash=
 	ros2 launch slam.launch.py # can process it in virtural environment or not
@@ -15,7 +15,7 @@ we need colcon build in vlmaps_ws!
 ```
 - then, turn off the data controller
 
-## contruct vlmaps
+## 3. contruct vlmaps
 - another terminal
 ```bash
 ros2 run vlmaps_ros map_builder
