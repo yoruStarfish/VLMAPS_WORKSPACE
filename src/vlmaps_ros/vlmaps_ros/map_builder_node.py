@@ -3,7 +3,6 @@ import rclpy
 from rclpy.node import Node
 from std_srvs.srv import Trigger
 import subprocess
-from pathlib import Path
 
 
 class VLMapsBuilder(Node):
@@ -17,12 +16,11 @@ class VLMapsBuilder(Node):
         self.get_logger().info("🚀 收到指令！開始進行 VLMaps 3D 語意建圖...")
         
         # 你收集資料的資料夾路徑 (剛好對應 data_collector 存的地方)
-        current_file = Path(__file__).resolve()
-        base_dir = '/home;/robotic/vlmaps_ws' # 以使用者主目錄為基底
+        base_dir = os.path.expanduser('~/vlmaps_ws') # 以使用者主目錄為基底
         data_dir = os.path.join(base_dir, 'dataset') # 你可以改成你想要的資料夾
         
         # 你剛剛存檔的獨立建圖腳本路徑
-        script_path = '/home/robotic/vlmaps/run_map_builder.py' # 請替換成你實際的路徑
+        script_path =  os.path.join(base_dir, '/vlmapsSrc/run_map_builder.py') # 請替換成你實際的路徑
 
         try:
             self.get_logger().info("🧠 正在啟動 PyTorch 與 LSeg 模型，這可能需要幾分鐘...")

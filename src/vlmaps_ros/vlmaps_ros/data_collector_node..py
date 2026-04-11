@@ -18,8 +18,7 @@ class VLMapsDataCollector(Node):
         self.bridge = CvBridge()
         
         # --- 1. 設定存檔資料夾 ---
-        current_file = Path(__file__).resolve()
-        self.base_dir = '/home;/robotic/vlmaps_ws' # 以使用者主目錄為基底
+        self.base_dir = os.path.expanduser('~/vlmaps_ws') # 以使用者主目錄為基底
         self.save_dir = os.path.join(self.base_dir, 'dataset') # 你可以改成你想要的資料夾
         self.rgb_dir = os.path.join(self.save_dir, 'rgb')
         self.depth_dir = os.path.join(self.save_dir, 'depth')
