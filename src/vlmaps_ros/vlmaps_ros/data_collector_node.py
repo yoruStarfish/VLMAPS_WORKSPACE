@@ -56,68 +56,57 @@ class VLMapsDataCollector(Node):
         self.get_logger().info("✅ VLMaps 資料收集節點已啟動！正在等待影像...")
 
     def sync_callback(self, rgb_msg, depth_msg):
-        # 當收到一組對齊的彩色與深度影像時，就會觸發這個函數
-        
-        # 1. 取得當下的時間戳記
         timestamp = rgb_msg.header.stamp
         
         try:
-            # 2. 查詢此時此刻，攝影機在 map 座標系中的位置 (Pose)
             trans = self.tf_buffer.lookup_transform(
                 self.map_frame, 
                 self.camera_frame, 
-                timestamp, 
+                rclpy.time.Time(), # 改成 Time()，代表「給我最新的，不要管時間差」
                 timeout=rclpy.duration.Duration(seconds=0.1)
             )
         except (LookupException, ConnectivityException, ExtrapolationException) as e:
             self.get_logger().warn(f"找不到 TF 座標轉換，跳過這張影像: {e}")
             return
         
-        # 取得目前的 x, y, z 和四元數
-        t = trans.transform.translation
-        current_pos = np.array([t.x, t.y, t.z])
-
-        # --keyframe 選擇邏輯--
-        if self.last_saved_pose is not None:
-            last_pos = self.last_saved_pose[:3, 3]
-            # 計算歐式距離 (Euclidean distance)
-            dist = np.linalg.norm(current_pos - last_pos)
-            
-            # (進階) 這裡也可以加入旋轉角度的計算
-            
-            # 如果移動距離太短，就直接 return 跳過，不存檔！
-            if dist < self.min_dist_threshold:
-                return
-        
-        # --- 如果通過檢查，就往下執行存檔，並更新 last_saved_pose ---
-        self.last_saved_pose = pose_matrix
-        self.get_logger().info(f"💾 偵測到足夠位移 (Keyframe)，成功儲存 Frame: {filename}")
-
-        # 3. 將 ROS 影像轉換為 OpenCV 格式
-        cv_rgb = self.bridge.imgmsg_to_cv2(rgb_msg, desired_encoding='bgr8')
-        # 深度圖通常是 16-bit 或是 32-bit float，這裡假設是常見的 16-bit 毫米單位
-        cv_depth = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding='passthrough')
-
-        # 4. 把座標轉換成 4x4 的數學矩陣 (VLMaps 喜歡這種格式)
+        # --- 1. 先把 4x4 Pose 矩陣和目前位置算出來 ---
         t = trans.transform.translation
         q = trans.transform.rotation
         
-        # 將四元數 (Quaternion) 轉成 3x3 旋轉矩陣
         rot_matrix = R.from_quat([q.x, q.y, q.z, q.w]).as_matrix()
-        
-        # 組合出 4x4 的齊次變換矩陣 (Homogeneous Transformation Matrix)
         pose_matrix = np.eye(4)
         pose_matrix[:3, :3] = rot_matrix
         pose_matrix[:3, 3] = [t.x, t.y, t.z]
-
-        # 5. 存檔！
-        filename = f"{self.frame_count:05d}" # 產出 00000, 00001 的字串
         
+        current_pos = np.array([t.x, t.y, t.z])
+
+        # --- 2. 進行 Keyframe 距離判斷 ---
+        if self.last_saved_pose is not None:
+            last_pos = self.last_saved_pose[:3, 3]
+            dist = np.linalg.norm(current_pos - last_pos)
+            
+            # 如果移動距離太短，直接跳出不存檔
+            if dist < self.min_dist_threshold:
+                return
+        
+        # --- 3. 通過檢查！更新記憶體並準備存檔 ---
+        self.last_saved_pose = pose_matrix
+
+        # 將 ROS 影像轉換為 OpenCV 格式
+        cv_rgb = self.bridge.imgmsg_to_cv2(rgb_msg, desired_encoding='bgr8')
+        cv_depth = self.bridge.imgmsg_to_cv2(depth_msg, desired_encoding='passthrough')
+
+        # 產生檔名
+        filename = f"{self.frame_count:05d}"
+        
+        # 執行實體存檔
         cv2.imwrite(os.path.join(self.rgb_dir, f"{filename}.png"), cv_rgb)
-        cv2.imwrite(os.path.join(self.depth_dir, f"{filename}.png"), cv_depth)
+        depth_array_meters = cv_depth.astype(np.float32) / 1000.0
+        cv2.imwrite(os.path.join(self.depth_dir, f"{filename}.png"), (depth_array_meters * 1000).astype(np.uint16))
+        np.save(os.path.join(self.depth_dir, f"{filename}.npy"), depth_array_meters)
         np.savetxt(os.path.join(self.pose_dir, f"{filename}.txt"), pose_matrix)
 
-        self.get_logger().info(f"💾 成功儲存 Frame: {filename}")
+        self.get_logger().info(f"💾 偵測到足夠位移 (Keyframe)，成功儲存 Frame: {filename}")
         self.frame_count += 1
 
 def main(args=None):

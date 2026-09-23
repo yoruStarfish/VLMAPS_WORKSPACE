@@ -1,0 +1,8 @@
+image: debug_obstacle_map.png        # 換成你這張圖片的檔名
+resolution: 0.05               # 解析度：代表每個像素 = 0.05 公尺 (5公分)
+# origin: [-3.70, -1.550, 0.0]        # 地圖左下角在真實世界中的起始座標 (x, y, yaw)
+origin: [-4.80, -1.450, 0.0]        # 地圖左下角在真實世界中的起始座標 (x, y, yaw)
+negate: 0                      # 通常為 0
+occupied_thresh: 0.65          # 黑色大於這個比例就視為障礙物
+free_thresh: 0.19              # 白色小於這個比例就視為自由空間
+mode: trinary

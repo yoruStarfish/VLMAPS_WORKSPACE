@@ -42,7 +42,7 @@ def generate_launch_description():
             'rtabmap_args': '-d', # 每次啟動刪除舊地圖，重新建圖
             
             # ================= 核心演算法調校 (Jessica's work) =================
-            'Rtabmap/DetectionRate': '0', # Rate (Hz) at which new nodes are added to ma
+            'Rtabmap/DetectionRate': '0', # Rate (Hz) at which new nodes are added to map
             'Rtabmap/LoopThr': '0.1',
             
             # 視覺特徵設定 (ORB, SURF 等)
@@ -50,7 +50,7 @@ def generate_launch_description():
             'Vis/FeatureType': '2',
             'Kp/DetectorStrategy': '2', # 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE
             'Kp/MaxFeatures': '500', # Maximum number of features to detect (for ORB, this is the number of keypoints) 0:代表無限大
-            'SURF/HessianThreshold': '100', # SURF 特徵檢測的敏感度，數值越低越容易檢測到特徵點，但可能會增加誤匹配。一般建議從 100 開始調整。 Ued to extract more or less SURF features
+            'SURF/HessianThreshold': '100', # SURF 特徵檢測的敏感度，數值越低越容易檢測到特徵點，但可能會增加誤匹配。一般建議從 100 開始調整。 Used to extract more or less SURF features
             
             # ICP (雷達點雲配準) 設定
             'Icp/VoxelSize': '0.05',

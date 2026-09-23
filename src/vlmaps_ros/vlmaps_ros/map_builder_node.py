@@ -4,38 +4,37 @@ from rclpy.node import Node
 from std_srvs.srv import Trigger
 import subprocess
 
-
 class VLMapsBuilder(Node):
     def __init__(self):
         super().__init__('vlmaps_builder_node')
-        # 建立一個名為 /build_vlmap 的服務 (Service)
         self.srv = self.create_service(Trigger, '/build_vlmap', self.build_map_callback)
-        self.get_logger().info("✅ VLMaps 建圖大腦已啟動！隨時等待您的『建圖指令』...")
+        self.get_logger().info("VLMaps 建圖啟動！隨時等待您的『建圖指令』...")
 
     def build_map_callback(self, request, response):
-        self.get_logger().info("🚀 收到指令！開始進行 VLMaps 3D 語意建圖...")
+        self.get_logger().info("收到指令！開始進行 VLMaps 3D 語意建圖...")
         
-        # 你收集資料的資料夾路徑 (剛好對應 data_collector 存的地方)
-        base_dir = os.path.expanduser('~/vlmaps_ws') # 以使用者主目錄為基底
-        data_dir = os.path.join(base_dir, 'dataset') # 你可以改成你想要的資料夾
+        base_dir = os.path.expanduser('~/vlmaps_ws') 
+        data_dir = os.path.join(base_dir, 'dataset') 
         
-        # 你剛剛存檔的獨立建圖腳本路徑
-        script_path =  os.path.join(base_dir, '/vlmapsSrc/run_map_builder.py') # 請替換成你實際的路徑
+        # 修正：移除了字串開頭的斜線，確保路徑正確拼接
+        script_path = os.path.join(base_dir, 'vlmapsSrc/run_map_builder.py') 
 
         try:
             self.get_logger().info("🧠 正在啟動 PyTorch 與 LSeg 模型，這可能需要幾分鐘...")
             
-            # 使用 subprocess 呼叫外部程式，這樣跑完後系統會自動把珍貴的 GPU 記憶體釋放掉！
             process = subprocess.Popen(
                 ['python3', script_path, '--data_dir', data_dir],
                 stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
+                stderr=subprocess.STDOUT, # 把錯誤訊息也導向 stdout 一起印出
                 universal_newlines=True
             )
             
-            # 即時印出 AI 模型的下載進度或處理進度條
+            # 修正：使用 ROS 2 專用的 Logger 來逐行印出子程式的進度
             for line in process.stdout:
-                print(line, end='') 
+                # 使用 strip() 移除換行符號，避免輸出多餘的空白行
+                clean_line = line.strip()
+                if clean_line:
+                    self.get_logger().info(f"[vlmaps_builder] {clean_line}")
             
             process.wait()
 

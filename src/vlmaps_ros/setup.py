@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'data_collector = vlmaps_ros.data_collector_node:main',
+            'map_builder = vlmaps_ros.map_builder_node:main',
         ],
     },
 )

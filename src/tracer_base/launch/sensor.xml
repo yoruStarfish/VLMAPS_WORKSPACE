@@ -1,0 +1,51 @@
+<launch>
+  <include file="$(find-pkg-share tracer_base)/launch/tracer_base.launch.py"/>
+  <!-- <include file="$(find-pkg-share rplidar_ros)/launch/rplidar_a3_launch.py"/> -->
+  <!-- <include file="$(find-pkg-share velodyne)/launch/velodyne-all-nodes-VLP16-launch.py"/> -->
+  <include file="$(find-pkg-share tracer_base)/launch/velodyne-all-nodes-VLP16-launch.py"/>
+  <include file="$(find-pkg-share realsense2_camera)/launch/rs_launch.py">
+  	<arg name="initial_reset" value="true"/>
+  	<arg name="align_depth.enable" value="true"/>
+    <arg name="rgb_camera.color_profile" value="1920,1080,30"/>
+    <arg name="depth_module.depth_profile" value="1280,720,30"/>
+    <arg name="queue_size" value="10"/>
+    <arg name="enable_gyro" value="true"/>
+    <arg name="enable_accel" value="true"/>
+    <arg name="unite_imu_method" value="2"/>
+    <arg name="pointcloud.enable" value="true"/>
+  </include>
+  <!--啟動了 Intel RealSense 深度相機（如 D435i 或 D455），並設定了詳細參數：
+
+      initial_reset (true): 啟動時強制重啟相機。這對於防止相機連線不穩或 USB 錯誤非常有用。
+
+      align_depth.enable (true): 開啟深度圖與彩色圖的對齊。這對於生成彩色的點雲 (RGB-D Pointcloud) 是必須的。
+
+      rgb_camera.color_profile (1920,1080,30): 彩色鏡頭解析度設為 1080p，幀率 30 FPS。
+
+      depth_module.depth_profile (1280,720,30): 深度鏡頭解析度設為 720p，幀率 30 FPS。
+
+      enable_gyro & enable_accel (true): 開啟陀螺儀和加速規（即開啟 IMU 功能）。
+
+      unite_imu_method (2): 設定如何合併陀螺儀和加速規的數據。數值 2 通常代表使用線性插值 (Linear interpolation) 來將兩者合併為一個 imu topic。
+
+      pointcloud.enable (true): 關鍵設定。這會讓相機節點計算並發布 3D 點雲資料（通常 topic 是 /camera/depth/color/points），這對於 3D 建圖 (如 RTAB-Map) 至關重要。 -->
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="baselink_to_camera" args="0.25 0 0.69 0 0 0 base_link camera_link"/>
+  <!-- 相機安裝在機器人中心 (base_link) 的：
+
+        前方 0.25 公尺 (X = 0.25)
+
+        高度 0.69 公尺 (Z = 0.69)
+
+        沒有旋轉 (Yaw/Pitch/Roll 都是 0)。-->
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="baselink_to_velodyne" args="0.0 0.0 0.76 6.28 0.0 0.0 base_link velodyne"/>
+  <!-- 雷達安裝在機器人中心 (base_link) 的：
+
+        正中央 (X = 0.0, Y = 0.0)
+
+        高度 0.76 公尺 (Z = 0.76)
+
+        沒有旋轉 (Yaw/Pitch/Roll 都是 0)。-->
+  <!-- <node pkg="tf2_ros" exec="static_transform_publisher" name="baselink_to_laser" args="0.0 0 0.04 3.14 0 0 base_link laser"/> -->
+  <!-- <node pkg="tf2_ros" exec="static_transform_publisher" name="baselink_to_velodyne" args="0.0 0.0 0.08 6.28 0.0 0.0 base_link velodyne"/> -->
+  <!-- static_transform_publisher x y z yaw pitch roll frame_id child_frame_id -->
+</launch>

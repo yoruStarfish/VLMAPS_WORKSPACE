@@ -1,0 +1,13 @@
+<launch>
+  <node
+    pkg="ros2_aruco"
+    exec="aruco_node"
+    name="aruco_detector"
+    output="screen">
+    <!-- Set the image topic parameter -->
+    <param name="image_topic" type="str" value="/camera/camera/color/image_raw"/>
+    <!-- Add other parameters as needed -->
+    <param name="camera_info_topic" type="str" value="/camera/camera/color/camera_info"/>
+    <param name="marker_size" type="float" value="0.05"/>
+  </node>
+</launch>

@@ -1,0 +1,58 @@
+<launch>
+  <include file="$(find-pkg-share rtabmap_launch)/launch/rtabmap.launch.py">
+    <arg name="odom_frame_id" value="odom"/>
+    <arg name="approx_sync" value="true"/>
+    <arg name="topic_queue_size" value="30"/>
+    <arg name="sync_queue_size" value="20"/>
+    <arg name="rgb_topic" value="/camera/camera/color/image_raw"/>
+    <arg name="depth_topic" value="/camera/camera/aligned_depth_to_color/image_raw"/>
+    <arg name="camera_info_topic" value="/camera/camera/color/camera_info"/>
+    <arg name="subscribe_scan" value="true"/>
+    <arg name="subscribe_depth" value="true"/>
+    <arg name="subscribe_rgb" value="true"/>
+        
+    <!-- <arg name="subscribe_scan_cloud" value="true"/> -->
+    
+    <arg name="visual_odometry" value="false"/>
+    <arg name="odom_topic" value="/odom"/>
+    <arg name="rtabmap_args" value="-d"/>
+    <arg name="rtabmap_viz" value="false"/>
+    <arg name="rviz" value="true"/>
+    <arg name="scan_topic" value="/velodyne_scan"/>
+    <arg name="scan_cloud_topic" value="/velodyne_points"/>
+    <arg name="queue_size" value="10"/>
+
+    <arg name="Rtabmap/DetectionRate" value="0"/> <!-- Rate (Hz) at which new nodes are added to map -->   
+    <arg name="Rtabmap/LoopThr" value="0.1" /> <!-- default: 0.11-->
+    <!-- Loop Closure Detection -->
+    <arg name="Vis/MinInliers"   value="15"/> <!-- Minimum visual inliers to accept loop closure -->
+    <arg name="Vis/FeatureType"   value="2"/>
+    <arg name="Kp/DetectorStrategy"   value="2"/> <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE -->
+    <arg name="Kp/MaxFeatures"   value="500"/> <!-- Maximum visual words per image (bag-of-words) 0:代表無限大-->
+    <!-- <arg name="Kp/MaxDepth"   value="0"/> -->
+    <arg name="SURF/HessianThreshold"   value="100"/> <!-- Used to extract more or less SURF features -->
+    <!-- ICP argeters -->
+    <arg name="Icp/VoxelSize"                   value="0.05"/>
+    <arg name="Icp/MaxCorrespondenceDistance"   value="0.1"/>
+    <!-- Jessica's work -->
+    <arg name="Grid/MaxGroundHeight"   value="-0.3"/>       <!-- all points below -70 cm are ground -->
+    <arg name="Grid/MaxObstacleHeight"   value="1.0"/>       <!-- all points above -70 cm and below 50 m are obstacles -->
+    <arg name="Grid/NormalsSegmentation"   value="true"/> <!-- Use simple passthrough to filter the ground instead of normals segmentation -->
+    <arg name="Mem/NotLinkedNodesKept"   value="false"/> <!-- Set to false to avoid saving data when robot is not moving -->
+    <arg name="Mem/IncrementalMemory"   value="true"/>
+    <arg name="Mem/InitWMWithAllNodes"   value="false"/>
+    <!-- Loop Closure Constraint --> 
+    <arg name="Reg/Strategy"                value="2"/> <!-- 0=Visual, 1=ICP (1 requires scan), 2=Visual+ICP-->
+    <arg name="Reg/Force3DoF"               value="false"/> <!-- True : 2D SLAM, False: 3D SLAM -->
+    <arg name="RGBD/NeighborLinkRefining"   value="true"/>
+    <arg name="RGBD/ProximityBySpace"       value="true"/>
+    <arg name="RGBD/AngularUpdate"          value="0.5"/> <!-- in degrees 1.0-->
+    <arg name="RGBD/LinearUpdate"           value="0.5"/> <!-- in meters 5.0-->
+    <arg name="RGBD/OptimizeFromGraphEnd"   value="true"/>
+    <arg name="RGBD/ProximityPathMaxNeighbors"   value="10"/>
+    <arg name="RGBD/ProximityBySpace" value="true"/>
+    <!-- <arg name="RGBD/ProximityMaxGraphDepth" value="50"/> -->
+    <arg name="RGBD/LoopClosureReextractFeatures" value="true"/>  
+    <arg name="Grid/Sensor"                 value="0"/> <!-- false: occupancy grid from lidar (map source: 0-laser scan. 1-depth, 2:3D PC) -->
+  </include>
+</launch>
