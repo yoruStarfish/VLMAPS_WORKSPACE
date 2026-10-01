@@ -28,6 +28,7 @@ setup(
             'navigatethroughposes = navigatethroughposes.navigatethroughposes:main',
             'my_navigatethroughposes = navigatethroughposes.my_navigatethroughposes:main',
             'navi_vlmaps = navigatethroughposes.navi_vlmaps:main',
+            'navi_using_api_vlmap = navigatethroughposes.navi_using_api_vlmap:main',
             'llm_cmd = navigatethroughposes.llm_cmd:main',
             'my_navigatethroughposes_11F = navigatethroughposes.my_navigatethroughposes_11F:main',
             'debug_goTo_dock = navigatethroughposes.debug_goTo_dock:main',

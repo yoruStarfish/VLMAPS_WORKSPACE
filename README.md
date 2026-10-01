@@ -16,11 +16,16 @@ we need colcon build in vlmaps_ws!
 ```
 - then, turn off the data controller
 
-## 3. contruct vlmaps
+## 3. construct vlmaps
 - another terminal
 ```bash
 ros2 run vlmaps_ros map_builder
 ros2 service call /build_vlmap std_srvs/srv/Trigger
+```
+
+# LLM 串進來
+```bash
+ros2 run navigatethroughposes llm_cmd
 ```
 
 # VLMAPS INTORODUCTION

@@ -36,8 +36,8 @@ def generate_launch_description():
             executable='map_server',
             name='map_server',
             output='screen',
-            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
-            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
+            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
+            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
             #/home/robotics/rtab_ws/rtabmap_15_50_M10_single_edited/rtabmap_15_50_M10_single_edited.yaml
         ),
 
