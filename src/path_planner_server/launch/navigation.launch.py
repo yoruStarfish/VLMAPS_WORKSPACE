@@ -36,8 +36,8 @@ def generate_launch_description():
             executable='map_server',
             name='map_server',
             output='screen',
-            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
-            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
+            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
+            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
             #/home/robotics/rtab_ws/rtabmap_15_50_M10_single_edited/rtabmap_15_50_M10_single_edited.yaml
         ),
 
@@ -48,13 +48,23 @@ def generate_launch_description():
             output='screen',
             parameters=[nav2_yaml]
         ),
+        # Node(
+        #     package='nav2_controller',
+        #     executable='controller_server',
+        #     name='controller_server',
+        #     output='screen',
+        #     parameters=[controller_yaml]),
+
         Node(
             package='nav2_controller',
             executable='controller_server',
             name='controller_server',
             output='screen',
-            parameters=[controller_yaml]),
-
+            parameters=[controller_yaml],
+            remappings=remappings + [
+                ('cmd_vel', 'cmd_vel_nav')
+            ]
+        ),
         Node(
             package='nav2_planner',
             executable='planner_server',
@@ -62,12 +72,22 @@ def generate_launch_description():
             output='screen',
             parameters=[planner_yaml]),
 
+        # Node(
+        #     package='nav2_behaviors',
+        #     executable='behavior_server',
+        #     name='behavior_server',
+        #     output='screen',
+        #     parameters=[recovery_yaml]),
         Node(
             package='nav2_behaviors',
             executable='behavior_server',
             name='behavior_server',
             output='screen',
-            parameters=[recovery_yaml]),
+            parameters=[recovery_yaml],
+            remappings=remappings + [
+                ('cmd_vel', 'cmd_vel_nav')
+            ]
+        ),
 
         Node(
             package='nav2_bt_navigator',
@@ -88,13 +108,39 @@ def generate_launch_description():
             name='waypoint_follower',
             output='screen',
             parameters=[waypoint_follower_yaml]),
+        # Node(
+        #     package='nav2_velocity_smoother',
+        #     executable='velocity_smoother',
+        #     name='velocity_smoother',
+        #     output='screen',
+        #     parameters=[velocity_smoother_yaml],
+        #     remappings=remappings +[('cmd_vel', 'cmd_vel_nav'), ('cmd_vel_smoothed', 'cmd_vel')]),
         Node(
             package='nav2_velocity_smoother',
             executable='velocity_smoother',
             name='velocity_smoother',
             output='screen',
             parameters=[velocity_smoother_yaml],
-            remappings=remappings +[('cmd_vel', 'cmd_vel_nav'), ('cmd_vel_smoothed', 'cmd_vel')]),
+            remappings=remappings + [
+                ('cmd_vel', 'cmd_vel_nav'),
+                ('cmd_vel_smoothed', 'cmd_vel_smoothed')
+            ]
+        ),
+        Node(
+            package='path_planner_server',
+            executable='min_wz_filter',
+            name='min_wz_filter',
+            output='screen',
+            parameters=[{
+                'min_wz': 0.8,
+                'trigger_wz': 0.001,
+                'low_vx_threshold': 0.03
+            }],
+            remappings=[
+                ('cmd_vel_in', 'cmd_vel_smoothed'),
+                ('cmd_vel_out', 'cmd_vel_filtered')
+            ]
+        ),
         Node(
             package='nav2_smoother',
             executable='smoother_server',

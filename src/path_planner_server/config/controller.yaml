@@ -124,7 +124,7 @@ controller_server:
         max_angle_to_furthest: 1.0
         mode: 0
       TwirlingCritic:
-        enabled: true
+        enabled: false
         twirling_cost_power: 1
         twirling_cost_weight: 10.0
 

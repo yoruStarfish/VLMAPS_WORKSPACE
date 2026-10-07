@@ -69,7 +69,7 @@ class PosePublisher(Node):
 #     return navigator.getResult()
 
 
-def wait_for_task(navigator, timeout_s=40.0):
+def wait_for_task(navigator, timeout_s=80.0):
     start = navigator.get_clock().now()
     i = 0
     
@@ -463,7 +463,7 @@ def main():
     # ========================================
     # 實驗設定
     # ========================================
-    EXPERIMENT = "A_B_A"
+    EXPERIMENT = "A_C_A"
 
     # A、B、C 座標
     # A = create_pose(navigator, 0.0, 0.0, 0.0, 1.0)
@@ -505,16 +505,16 @@ def main():
 
     C = create_pose(
         navigator,
-        -3.6804,
-        -3.3215,
-        -0.8599,
-        0.5104
+        -3.430,
+        -3.4419,
+        -0.87,
+        0.49
     )
     B_turn_to_C = create_pose(navigator, -1.98351, -1.01548, -0.9006843216947186,0.4344741104523083)
     C_turn_to_B = create_pose(
         navigator,
-        -3.6804,
-        -3.3215,
+        -3.430,
+        -3.4419,
         0.515,
         0.857
     )
@@ -623,8 +623,19 @@ def main():
 
         if result == TaskResult.SUCCEEDED:
             print(f"{name} succeeded")
+            input(
+            f"\nRobot reached {name}.\n"
+            "Measure x/y/yaw error now.\n"
+            "Press ENTER to continue..."
+        )
         else:
             print(f"{name} failed")
+            input(
+                f"\nRobot reached {name}.\n"
+                "Measure x/y/yaw error now.\n"
+                "Press ENTER to continue..."
+            )
+            
 
         time.sleep(2)
     print("\n========== Experiment Finished ==========")

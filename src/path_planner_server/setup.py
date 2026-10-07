@@ -26,6 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'min_wz_filter = path_planner_server.min_wz_filter:main',
         ],
     },
 )
