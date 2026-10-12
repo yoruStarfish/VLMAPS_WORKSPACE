@@ -244,7 +244,13 @@ def main():
         config=None,
         navigator=_navigator,
         localization_node=_localization_node,
-        wait_fn=wait_for_task
+        wait_fn=wait_for_task,
+        robot_footprint_m=[
+        [0.25, 0.25],
+        [0.25, -0.25],
+        [-0.25, -0.25],
+        [-0.25, 0.25],
+    ],
     ) 
     map_config = OmegaConf.load("vlmapsSrc/config/map_config/vlmaps_tracer.yaml")
     data_dir = os.path.join(base_dir, "dataset")

@@ -1,119 +1,163 @@
-# # llm_brain.py
-# import re
-# from openai import OpenAI
-
-# client = OpenAI(
-#     base_url='http://localhost:11434/v1',
-#     api_key='ollama', 
-# )
-
-# def get_code_from_llm(user_instruction):
-#     """接收人類語言，回傳過濾後的 Python 程式碼字串"""
-#     system_prompt = """
-#     You are a robot navigation assistant. 
-#     You have access to the following Python API:
-    
-#     - go_to_object(object_name: str): move to the nearest object.
-    
-#     Task: Translate the user's natural language instruction into Python code using ONLY the function provided. 
-#     Rule 1: Output ONLY valid Python code.
-#     Rule 2: Do not add any explanations or markdown formatting.
-#     """
-    
-#     print("🧠 LLM 思考中...")
-#     response = client.chat.completions.create(
-#         model="phi3", 
-#         messages=[
-#             {"role": "system", "content": system_prompt},
-#             {"role": "user", "content": user_instruction}
-#         ],
-#         temperature=0.0
-#     )
-    
-#     raw_code = response.choices[0].message.content
-#     match = re.search(r'```(?:python)?\s*(.*?)\s*```', raw_code, re.DOTALL)
-#     if match:
-#         return match.group(1).strip()
-#     return raw_code.strip()
-
-
-# llm_brain.py
+"""Translate navigation instructions into validated robot API calls."""
+import ast
+import math
 import re
 from openai import OpenAI
 
-client = OpenAI(
-    base_url='http://localhost:11434/v1',
-    api_key='ollama', 
-)
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
-def get_code_from_llm(user_instruction):
-    """接收人類語言，回傳過濾後的 Python 程式碼字串"""
-    system_prompt = """You are a robot navigation assistant.
-Translate the user's natural language instruction into Python code using ONLY the `robot` API provided below.
+OBJECT_NAMES = {
+    "chair", "table", "wall", "cardboard box", "sandwich", "laptop",
+    "paper cup", "kettle", "bottle", "floor",
+}
 
-Available Python API:
-- robot.move_to_object(name: str): Move to the nearest specified object.
-- robot.move_to_left(name: str): Move to the left of the specified object.
-- robot.move_to_right(name: str): Move to the right of the specified object.
-- robot.move_in_between(name_a: str, name_b: str): Move to the middle between two objects.
-- robot.move_north(name: str): Move to the north of the object.
-- robot.move_south(name: str): Move to the south of the object.
-- robot.move_east(name: str): Move to the east of the object.
-- robot.move_west(name: str): Move to the west of the object.
-- robot.face(name: str): Turn in place to face the specified object.
-- robot.with_object_on_left(name: str): Turn so the object is on the robot's left side.
-- robot.with_object_on_right(name: str): Turn so the object is on the robot's right side.
-- robot.move_forward(meters: float): Move forward by the given meters.
-- robot.turn(angle_deg: float): Turn in place by the given degrees (positive for right, negative for left).
+API_PARAMETERS = {
+    "move_to_object": ("name", "safe_distance_m"),
+    "move_in_between": ("name_a", "name_b"),
+    "turn": ("angle_deg",),
+    "move_forward": ("meters",),
+    **{name: ("name",) for name in (
+        "move_to_left", "move_to_right", "move_north", "move_south",
+        "move_east", "move_west", "face", "with_object_on_left",
+        "with_object_on_right",
+    )},
+}
 
-Valid object names (you MUST map user terms to these exact strings):
-"chair", "table", "wall", "cardboard box", "sandwich", "laptop", "paper cup", "kettle", "bottle", "floor"
+SYSTEM_PROMPT = """You are a robot navigation assistant.
+Translate the instruction into Python calls using ONLY the robot API below.
+
+Available API:
+- robot.move_to_object(name: str, safe_distance_m: float = 0.5)
+- robot.move_to_left(name: str)
+- robot.move_to_right(name: str)
+- robot.move_in_between(name_a: str, name_b: str)
+- robot.move_north(name: str)
+- robot.move_south(name: str)
+- robot.move_east(name: str)
+- robot.move_west(name: str)
+- robot.face(name: str)
+- robot.with_object_on_left(name: str)
+- robot.with_object_on_right(name: str)
+- robot.move_forward(meters: float)
+- robot.turn(angle_deg: float): Positive is LEFT/counterclockwise; negative is RIGHT/clockwise.
+
+Valid object names:
+chair, table, wall, cardboard box, sandwich, laptop, paper cup, kettle, bottle, floor
 
 Rules:
-1. Output ONLY valid executable Python code.
-2. Do NOT include any explanations, comments, or markdown formatting.
-3. Map synonyms to valid object names (e.g., "cup" -> "paper cup", "desk" -> "table", "box" -> "cardboard box", "computer" -> "laptop").
+1. Output ONLY Python calls, one per line. No comments, markdown, or explanations.
+2. Use literal strings and numbers only. No variables or loops.
+3. Preserve every action in order, and preserve all specified distances.
+4. Convert distances to meters and angles to degrees (e.g., 50 cm = 0.5).
+5. Map synonyms or cross-language terms to exact valid object names (e.g., "computer"/筆電 -> "laptop", "box"/箱子 -> "cardboard box", "desk"/桌子 -> "table").
+6. If the user specifies stopping X meters in front of an object, use `robot.move_to_object(name, safe_distance_m=X)`.
+7. If no turn angle is given, assume a right turn is -90 and a left turn is 90.
+8. Do not invent extra movements. Nav2 plans the route to each object; a preceding turn does not require the next route to be a straight line.
+9. If an instruction cannot be expressed using these APIs and object names, output UNSUPPORTED only.
 
 Examples:
-User: go to the laptop
-robot.move_to_object("laptop")
+User: Go to 1 meter in front of the laptop, turn right, and stop 0.5 meters in front of the kettle.
+robot.move_to_object("laptop", safe_distance_m=1.0)
+robot.turn(-90)
+robot.move_to_object("kettle", safe_distance_m=0.5)
 
-User: move between the chair and the table, then look at the cup
+User: Move 50 cm in front of the kettle, then turn left 45 degrees.
+robot.move_to_object("kettle", safe_distance_m=0.5)
+robot.turn(45)
+
+User: Move between the chair and the table, then look at the cup.
 robot.move_in_between("chair", "table")
 robot.face("paper cup")
 
-User: go to the right of the box and move forward 1 meter
+User: Go to the right of the box and move forward 1 meter.
 robot.move_to_right("cardboard box")
 robot.move_forward(1.0)
 """
+
+def validate_robot_code(raw_code: str) -> str:
+    """Reject the entire response if any call is invalid; never drop steps."""
+    if not isinstance(raw_code, str) or not raw_code.strip():
+        raise ValueError("No navigation command returned by the LLM.")
     
-    print("LLM 思考中...", flush=True)
+    code = raw_code.strip()
+    match = re.fullmatch(r"```(?:python)?\s*\n?(.*?)\n?```", code, re.DOTALL)
+    if match:
+        code = match.group(1).strip()
+        
+    if code == "UNSUPPORTED":
+        raise ValueError("This command is unsupported by the current robot API or object list.")
+        
+    try:
+        tree = ast.parse(code)
+    except SyntaxError as exc:
+        raise ValueError("Invalid Python syntax returned by the LLM.") from exc
+        
+    if not tree.body:
+        raise ValueError("Navigation command is empty.")
+        
+    for statement in tree.body:
+        if not isinstance(statement, ast.Expr) or not isinstance(statement.value, ast.Call):
+            raise ValueError("Only robot API calls are allowed.")
+            
+        call = statement.value
+        func = call.func
+        
+        if not (isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name)
+                and func.value.id == "robot" and func.attr in API_PARAMETERS):
+            raise ValueError("Contains unsupported API calls.")
+            
+        parameters = API_PARAMETERS[func.attr]
+        
+        if len(call.args) > len(parameters):
+            raise ValueError("Too many API parameters.")
+            
+        bound = dict(zip(parameters, call.args))
+        
+        for keyword in call.keywords:
+            if keyword.arg not in parameters or keyword.arg in bound:
+                raise ValueError("Unknown or duplicate API parameter.")
+            bound[keyword.arg] = keyword.value
+            
+        required = parameters[:1] if func.attr == "move_to_object" else parameters
+        if any(name not in bound for name in required):
+            raise ValueError("Missing required API parameters.")
+            
+        for name, node in bound.items():
+            if name in ("name", "name_a", "name_b"):
+                if not (isinstance(node, ast.Constant) and isinstance(node.value, str)
+                        and node.value in OBJECT_NAMES):
+                    raise ValueError(f"Object name '{node.value if hasattr(node, 'value') else node}' is not in the supported list.")
+            else:
+                number_node = node
+                sign = 1
+                if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.USub, ast.UAdd)):
+                    number_node = node.operand
+                    sign = -1 if isinstance(node.op, ast.USub) else 1
+                    
+                if not (isinstance(number_node, ast.Constant) and type(number_node.value) in (int, float)):
+                    raise ValueError("Distances and angles must be numeric constants.")
+                    
+                value = sign * number_node.value
+                if not math.isfinite(value) or (name != "angle_deg" and value <= 0):
+                    raise ValueError("Distances must be greater than zero; angles and distances must be finite numbers.")
+                    
+    return ast.unparse(tree)
+
+
+def get_code_from_llm(user_instruction):
+    """Return validated calls; raise ValueError instead of returning partial code."""
+    if not isinstance(user_instruction, str) or not user_instruction.strip():
+        raise ValueError("Please provide a non-empty navigation instruction.")
+        
+    print("LLM is thinking...", flush=True)
+    
     response = client.chat.completions.create(
-        model="phi3", 
+        model="phi3",
         messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_instruction}
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_instruction},
         ],
-        temperature=0.0
+        temperature=0.0,
     )
     
-    raw_code = response.choices[0].message.content
-    
-    # 若模型仍附帶了 markdown 標籤，將其剝除
-    match = re.search(r'```(?:python)?\s*(.*?)\s*```', raw_code, re.DOTALL)
-    if match:
-        code_lines = match.group(1).strip().splitlines()
-    else:
-        code_lines = raw_code.strip().splitlines()
-        
-    # 過濾掉模型可能不小心吐出的非程式碼文字（只保留以 robot. 或 go_to_object 開頭的有效行）
-    valid_lines = [
-        line.strip() for line in code_lines 
-        if line.strip().startswith("robot.") or line.strip().startswith("go_to_object")
-    ]
-    
-    if valid_lines:
-        return "\n".join(valid_lines)
-    return raw_code.strip()
-
-
+    return validate_robot_code(response.choices[0].message.content)

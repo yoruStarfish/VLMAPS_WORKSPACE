@@ -36,8 +36,8 @@ def generate_launch_description():
             executable='map_server',
             name='map_server',
             output='screen',
-            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
-            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
+            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
+            # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
             #/home/robotics/rtab_ws/rtabmap_15_50_M10_single_edited/rtabmap_15_50_M10_single_edited.yaml
         ),
 
@@ -132,9 +132,12 @@ def generate_launch_description():
             name='min_wz_filter',
             output='screen',
             parameters=[{
-                'min_wz': 0.8,
+                'min_wz': 0.8, # 0.8
                 'trigger_wz': 0.001,
-                'low_vx_threshold': 0.03
+                'low_vx_threshold': 0.08,
+                'turn_in_place_threshold': 0.2,
+                'turn_in_place_release': 0.1,
+                'command_timeout': 0.5
             }],
             remappings=[
                 ('cmd_vel_in', 'cmd_vel_smoothed'),
