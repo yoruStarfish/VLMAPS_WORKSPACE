@@ -23,56 +23,64 @@ API_PARAMETERS = {
     )},
 }
 
-SYSTEM_PROMPT = """You are a robot navigation assistant.
-Translate the instruction into Python calls using ONLY the robot API below.
+SYSTEM_PROMPT = """Translate the user's navigation instruction into robot API calls.
+Your entire response must be executable Python calls, one call per line.
+Start directly with robot. and end immediately after the last required call.
+No markdown, prose, comments, headings, examples, or additional conversation.
+Use only literal strings and numbers. No imports, variables, loops, or definitions.
 
-Available API:
-- robot.move_to_object(name: str, safe_distance_m: float = 0.5)
-- robot.move_to_left(name: str)
-- robot.move_to_right(name: str)
-- robot.move_in_between(name_a: str, name_b: str)
-- robot.move_north(name: str)
-- robot.move_south(name: str)
-- robot.move_east(name: str)
-- robot.move_west(name: str)
-- robot.face(name: str)
-- robot.with_object_on_left(name: str)
-- robot.with_object_on_right(name: str)
-- robot.move_forward(meters: float)
-- robot.turn(angle_deg: float): Positive is LEFT/counterclockwise; negative is RIGHT/clockwise.
+Allowed calls (name arguments must use the object names below):
+robot.move_to_object(name, safe_distance_m=0.5)
+robot.move_in_between(name_a, name_b)
+robot.move_to_left(name)
+robot.move_to_right(name)
+robot.move_north(name)
+robot.move_south(name)
+robot.move_east(name)
+robot.move_west(name)
+robot.face(name)
+robot.with_object_on_left(name)
+robot.with_object_on_right(name)
+robot.move_forward(meters)
+robot.turn(angle_deg)
 
-Valid object names:
-chair, table, wall, cardboard box, sandwich, laptop, paper cup, kettle, bottle, floor
-
-Rules:
-1. Output ONLY Python calls, one per line. No comments, markdown, or explanations.
-2. Use literal strings and numbers only. No variables or loops.
-3. Preserve every action in order, and preserve all specified distances.
-4. Convert distances to meters and angles to degrees (e.g., 50 cm = 0.5).
-5. Map synonyms or cross-language terms to exact valid object names (e.g., "computer"/筆電 -> "laptop", "box"/箱子 -> "cardboard box", "desk"/桌子 -> "table").
-6. If the user specifies stopping X meters in front of an object, use `robot.move_to_object(name, safe_distance_m=X)`.
-7. If no turn angle is given, assume a right turn is -90 and a left turn is 90.
-8. Do not invent extra movements. Nav2 plans the route to each object; a preceding turn does not require the next route to be a straight line.
-9. If an instruction cannot be expressed using these APIs and object names, output UNSUPPORTED only.
-
-Examples:
-User: Go to 1 meter in front of the laptop, turn right, and stop 0.5 meters in front of the kettle.
-robot.move_to_object("laptop", safe_distance_m=1.0)
-robot.turn(-90)
-robot.move_to_object("kettle", safe_distance_m=0.5)
-
-User: Move 50 cm in front of the kettle, then turn left 45 degrees.
-robot.move_to_object("kettle", safe_distance_m=0.5)
-robot.turn(45)
-
-User: Move between the chair and the table, then look at the cup.
-robot.move_in_between("chair", "table")
-robot.face("paper cup")
-
-User: Go to the right of the box and move forward 1 meter.
-robot.move_to_right("cardboard box")
-robot.move_forward(1.0)
+Object names: chair, table, wall, cardboard box, sandwich, laptop, paper cup, kettle, bottle, floor.
+Map computer/筆電 to laptop, box/箱子 to cardboard box, desk/桌子 to table, cup to paper cup.
+Use exact object names in calls: "box" must become "cardboard box".
+"Go to the right/left of X" means move_to_right/ move_to_left(X).
+"Keep X on your right/left" means with_object_on_right/with_object_on_left(X).
+Preserve ALL requested actions in order; add no actions.
+Distances are in meters (50 cm = 0.5), angles in degrees.
+Stopping X meters in front of an object means move_to_object(name, safe_distance_m=X).
+Turn right = robot.turn(-90). Turn left = robot.turn(90).
+For a specified angle A: right = robot.turn(-A), left = robot.turn(A).
+Nav2 handles routes; do not add forward movements after turns unless requested.
+If ANY part cannot be represented by these calls and objects, return only UNSUPPORTED.
+After the final call, end your response. Do not create another instruction or task.
 """
+
+EXAMPLE_MESSAGES = [
+    {"role": "user", "content": "Go to the right of the box and move forward 1 meter."},
+    {
+        "role": "assistant",
+        "content": 'robot.move_to_right("cardboard box")\nrobot.move_forward(1.0)',
+    },
+    {"role": "user", "content": "Move between the chair and the table."},
+    {"role": "assistant", "content": 'robot.move_in_between("chair", "table")'},
+    {
+        "role": "user",
+        "content": "Stop 50 cm in front of the laptop, then turn right and move forward 1 meter.",
+    },
+    {
+        "role": "assistant",
+        "content": (
+            'robot.move_to_object("laptop", safe_distance_m=0.5)\n'
+            'robot.turn(-90)\n'
+            'robot.move_forward(1.0)'
+        ),
+    },
+]
+
 
 def validate_robot_code(raw_code: str) -> str:
     """Reject the entire response if any call is invalid; never drop steps."""
@@ -149,15 +157,38 @@ def get_code_from_llm(user_instruction):
     if not isinstance(user_instruction, str) or not user_instruction.strip():
         raise ValueError("Please provide a non-empty navigation instruction.")
         
-    print("LLM is thinking...", flush=True)
-    
-    response = client.chat.completions.create(
-        model="phi3",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_instruction},
-        ],
-        temperature=0.0,
-    )
-    
-    return validate_robot_code(response.choices[0].message.content)
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        *EXAMPLE_MESSAGES,
+        {"role": "user", "content": user_instruction.strip()},
+    ]
+
+    for attempt in range(2):
+        print(f"LLM is thinking... ({attempt + 1}/2)", flush=True)
+        response = client.chat.completions.create(
+            model="phi3",
+            messages=messages,
+            temperature=0.0,
+        )
+        raw_code = response.choices[0].message.content if response.choices else None
+
+        try:
+            return validate_robot_code(raw_code)
+        except ValueError as exc:
+            print(f"LLM 回覆驗證失敗: {exc}", flush=True)
+            print(f"原始回覆: {raw_code!r}", flush=True)
+            if attempt == 1 or (isinstance(raw_code, str) and raw_code.strip() == "UNSUPPORTED"):
+                raise
+            messages.extend([
+                {"role": "assistant", "content": raw_code or ""},
+                {
+                    "role": "user",
+                    "content": (
+                        f"Your previous response failed validation: {exc}\n"
+                        f"Original instruction: {user_instruction.strip()}\n"
+                        "Return only valid robot API calls for that instruction. "
+                        "Do not include User:, Assistant:, examples, markdown, or explanations. "
+                        "If unsupported, return UNSUPPORTED."
+                    ),
+                },
+            ])

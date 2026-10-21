@@ -1,443 +1,443 @@
-[INFO] [launch]: All log files can be found below /home/robotic/.ros/log/2026-10-08-17-41-31-215932-robotic-66948
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-10-20-15-54-41-005668-vlmap_dev_gpu-202523
 [INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [map_server-1]: process started with pid [66950]
-[INFO] [amcl-2]: process started with pid [66952]
-[INFO] [controller_server-3]: process started with pid [66954]
-[INFO] [planner_server-4]: process started with pid [66956]
-[INFO] [behavior_server-5]: process started with pid [66958]
-[INFO] [bt_navigator-6]: process started with pid [66960]
-[INFO] [rviz2-7]: process started with pid [66962]
-[INFO] [waypoint_follower-8]: process started with pid [66964]
-[INFO] [velocity_smoother-9]: process started with pid [66966]
-[INFO] [min_wz_filter-10]: process started with pid [66968]
-[INFO] [smoother_server-11]: process started with pid [66970]
-[INFO] [collision_monitor-12]: process started with pid [66972]
-[INFO] [lifecycle_manager-13]: process started with pid [66974]
-[collision_monitor-12] [INFO] [1791452491.340756658] [collision_monitor]: 
-[collision_monitor-12] 	collision_monitor lifecycle node launched. 
-[collision_monitor-12] 	Waiting on external lifecycle transitions to activate
-[collision_monitor-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[lifecycle_manager-13] [INFO] [1791452491.345917766] [lifecycle_manager_navigation]: Creating
-[controller_server-3] [INFO] [1791452491.347249884] [controller_server]: 
-[controller_server-3] 	controller_server lifecycle node launched. 
-[controller_server-3] 	Waiting on external lifecycle transitions to activate
-[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[lifecycle_manager-13] [INFO] [1791452491.352045582] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
-[controller_server-3] [INFO] [1791452491.353602604] [controller_server]: Creating controller server
-[waypoint_follower-8] [INFO] [1791452491.354385454] [waypoint_follower]: 
-[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
-[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
-[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[waypoint_follower-8] [INFO] [1791452491.356004610] [waypoint_follower]: Creating
-[amcl-2] [INFO] [1791452491.358305594] [amcl]: 
-[amcl-2] 	amcl lifecycle node launched. 
-[amcl-2] 	Waiting on external lifecycle transitions to activate
-[amcl-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[amcl-2] [INFO] [1791452491.358800400] [amcl]: Creating
-[bt_navigator-6] [INFO] [1791452491.366360298] [bt_navigator]: 
-[bt_navigator-6] 	bt_navigator lifecycle node launched. 
-[bt_navigator-6] 	Waiting on external lifecycle transitions to activate
-[bt_navigator-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[bt_navigator-6] [INFO] [1791452491.366506516] [bt_navigator]: Creating
-[velocity_smoother-9] [INFO] [1791452491.369291890] [velocity_smoother]: 
+[INFO] [map_server-1]: process started with pid [202535]
+[INFO] [amcl-2]: process started with pid [202537]
+[INFO] [controller_server-3]: process started with pid [202539]
+[INFO] [planner_server-4]: process started with pid [202541]
+[INFO] [behavior_server-5]: process started with pid [202543]
+[INFO] [bt_navigator-6]: process started with pid [202545]
+[INFO] [rviz2-7]: process started with pid [202547]
+[INFO] [waypoint_follower-8]: process started with pid [202549]
+[INFO] [velocity_smoother-9]: process started with pid [202551]
+[INFO] [min_wz_filter-10]: process started with pid [202553]
+[INFO] [smoother_server-11]: process started with pid [202555]
+[INFO] [collision_monitor-12]: process started with pid [202557]
+[INFO] [lifecycle_manager-13]: process started with pid [202559]
+[velocity_smoother-9] [INFO] [1792511681.108191111] [velocity_smoother]: 
 [velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
 [velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
 [velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[controller_server-3] [INFO] [1791452491.393348797] [local_costmap.local_costmap]: 
-[controller_server-3] 	local_costmap lifecycle node launched. 
-[controller_server-3] 	Waiting on external lifecycle transitions to activate
-[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[controller_server-3] [INFO] [1791452491.394427929] [local_costmap.local_costmap]: Creating Costmap
-[map_server-1] [INFO] [1791452491.400008249] [map_server]: 
-[map_server-1] 	map_server lifecycle node launched. 
-[map_server-1] 	Waiting on external lifecycle transitions to activate
-[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[map_server-1] [INFO] [1791452491.400348557] [map_server]: Creating
-[planner_server-4] [INFO] [1791452491.405530895] [planner_server]: 
-[planner_server-4] 	planner_server lifecycle node launched. 
-[planner_server-4] 	Waiting on external lifecycle transitions to activate
-[planner_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[planner_server-4] [INFO] [1791452491.407504313] [planner_server]: Creating
-[behavior_server-5] [INFO] [1791452491.413349734] [behavior_server]: 
-[behavior_server-5] 	behavior_server lifecycle node launched. 
-[behavior_server-5] 	Waiting on external lifecycle transitions to activate
-[behavior_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[smoother_server-11] [INFO] [1791452491.430347161] [smoother_server]: 
+[smoother_server-11] [INFO] [1792511681.124464047] [smoother_server]: 
 [smoother_server-11] 	smoother_server lifecycle node launched. 
 [smoother_server-11] 	Waiting on external lifecycle transitions to activate
 [smoother_server-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[smoother_server-11] [INFO] [1791452491.432337073] [smoother_server]: Creating smoother server
-[planner_server-4] [INFO] [1791452491.440504302] [global_costmap.global_costmap]: 
+[smoother_server-11] [INFO] [1792511681.126011197] [smoother_server]: Creating smoother server
+[waypoint_follower-8] [INFO] [1792511681.130823936] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1792511681.131300769] [waypoint_follower]: Creating
+[behavior_server-5] [INFO] [1792511681.143209980] [behavior_server]: 
+[behavior_server-5] 	behavior_server lifecycle node launched. 
+[behavior_server-5] 	Waiting on external lifecycle transitions to activate
+[behavior_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-13] [INFO] [1792511681.146364391] [lifecycle_manager_navigation]: Creating
+[amcl-2] [INFO] [1792511681.149044546] [amcl]: 
+[amcl-2] 	amcl lifecycle node launched. 
+[amcl-2] 	Waiting on external lifecycle transitions to activate
+[amcl-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-2] [INFO] [1792511681.149884535] [amcl]: Creating
+[controller_server-3] [INFO] [1792511681.149319529] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[rviz2-7] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+[lifecycle_manager-13] [INFO] [1792511681.149597728] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[controller_server-3] [INFO] [1792511681.153884083] [controller_server]: Creating controller server
+[collision_monitor-12] [INFO] [1792511681.164036309] [collision_monitor]: 
+[collision_monitor-12] 	collision_monitor lifecycle node launched. 
+[collision_monitor-12] 	Waiting on external lifecycle transitions to activate
+[collision_monitor-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-4] [INFO] [1792511681.166924966] [planner_server]: 
+[planner_server-4] 	planner_server lifecycle node launched. 
+[planner_server-4] 	Waiting on external lifecycle transitions to activate
+[planner_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-4] [INFO] [1792511681.169284660] [planner_server]: Creating
+[map_server-1] [INFO] [1792511681.181317630] [map_server]: 
+[map_server-1] 	map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1792511681.181657538] [map_server]: Creating
+[bt_navigator-6] [INFO] [1792511681.186474556] [bt_navigator]: 
+[bt_navigator-6] 	bt_navigator lifecycle node launched. 
+[bt_navigator-6] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-6] [INFO] [1792511681.186652556] [bt_navigator]: Creating
+[controller_server-3] [INFO] [1792511681.202088983] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1792511681.202623007] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-4] [INFO] [1792511681.218751768] [global_costmap.global_costmap]: 
 [planner_server-4] 	global_costmap lifecycle node launched. 
 [planner_server-4] 	Waiting on external lifecycle transitions to activate
 [planner_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
-[planner_server-4] [INFO] [1791452491.441051417] [global_costmap.global_costmap]: Creating Costmap
-[rviz2-7] [INFO] [1791452491.656716979] [rviz2]: Stereo is NOT SUPPORTED
-[rviz2-7] [INFO] [1791452491.656808923] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
-[lifecycle_manager-13] [INFO] [1791452491.669364405] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
-[lifecycle_manager-13] [INFO] [1791452491.669412360] [lifecycle_manager_navigation]: [34m[1mConfiguring map_server[0m[0m
-[map_server-1] [INFO] [1791452491.670394936] [map_server]: Configuring
-[map_server-1] [INFO] [1791452491.670468446] [map_io]: Loading yaml file: /home/robotic/vlmaps_ws/debug_obstacle_map.yaml
-[map_server-1] [INFO] [1791452491.670782952] [map_io]: resolution: 0.05
-[map_server-1] [INFO] [1791452491.670796334] [map_io]: origin[0]: -4.8
-[map_server-1] [INFO] [1791452491.670802177] [map_io]: origin[1]: -1.45
-[map_server-1] [INFO] [1791452491.670807132] [map_io]: origin[2]: 0
-[map_server-1] [INFO] [1791452491.670812075] [map_io]: free_thresh: 0.19
-[map_server-1] [INFO] [1791452491.670817260] [map_io]: occupied_thresh: 0.65
-[map_server-1] [INFO] [1791452491.670823811] [map_io]: mode: trinary
-[map_server-1] [INFO] [1791452491.670830530] [map_io]: negate: 0
-[map_server-1] [INFO] [1791452491.671005014] [map_io]: Loading image_file: /home/robotic/vlmaps_ws/debug_obstacle_map.png
-[rviz2-7] [INFO] [1791452491.685826441] [rviz2]: Stereo is NOT SUPPORTED
-[map_server-1] [INFO] [1791452491.706285312] [map_io]: Read map /home/robotic/vlmaps_ws/debug_obstacle_map.png: 191 X 229 map @ 0.05 m/cell
-[lifecycle_manager-13] [INFO] [1791452491.714529927] [lifecycle_manager_navigation]: [34m[1mConfiguring amcl[0m[0m
-[amcl-2] [INFO] [1791452491.714711647] [amcl]: Configuring
-[amcl-2] [INFO] [1791452491.714774189] [amcl]: initTransforms
-[amcl-2] [INFO] [1791452491.724802291] [amcl]: initPubSub
-[min_wz_filter-10] [INFO] [1791452491.727745486] [min_wz_filter]: MinWzFilter fixed compensation: min_wz=0.8, trigger_wz=0.001, low_vx_threshold=0.08
-[min_wz_filter-10] [INFO] [1791452491.728118390] [min_wz_filter]: Turn in place: enter=0.2, release=0.1
-[amcl-2] [INFO] [1791452491.732263457] [amcl]: Subscribed to map topic.
-[lifecycle_manager-13] [INFO] [1791452491.735332795] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
-[controller_server-3] [INFO] [1791452491.736608734] [controller_server]: Configuring controller interface
-[controller_server-3] [INFO] [1791452491.736826937] [controller_server]: getting goal checker plugins..
-[controller_server-3] [INFO] [1791452491.736919150] [controller_server]: Controller frequency set to 20.0000Hz
-[controller_server-3] [INFO] [1791452491.736949300] [local_costmap.local_costmap]: Configuring
-[controller_server-3] [INFO] [1791452491.744208389] [local_costmap.local_costmap]: Using plugin "voxel_layer"
-[controller_server-3] [INFO] [1791452491.748233783] [local_costmap.local_costmap]: Subscribed to Topics: scan
-[controller_server-3] [INFO] [1791452491.754734172] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
-[controller_server-3] [INFO] [1791452491.754761744] [local_costmap.local_costmap]: Using plugin "inflation_layer"
-[controller_server-3] [INFO] [1791452491.755333955] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
-[controller_server-3] [INFO] [1791452491.765917860] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
-[controller_server-3] [INFO] [1791452491.767824107] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
-[controller_server-3] [INFO] [1791452491.769087742] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
-[controller_server-3] [INFO] [1791452491.770958481] [controller_server]: Created controller : FollowPath of type nav2_mppi_controller::MPPIController
-[controller_server-3] [INFO] [1791452491.773698460] [controller_server]: Controller period is equal to model dt. Control sequence shifting is ON
-[controller_server-3] [INFO] [1791452491.775954706] [controller_server]: ConstraintCritic instantiated with 1 power and 5.500000 weight.
-[controller_server-3] [INFO] [1791452491.776102564] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
-[controller_server-3] [INFO] [1791452491.777402935] [controller_server]: InflationCostCritic instantiated with 1 power and 300.000000 / 0.062992 weights. Critic will collision check based on footprint cost.
-[controller_server-3] [INFO] [1791452491.777440222] [controller_server]: Critic loaded : mppi::critics::CostCritic
-[controller_server-3] [INFO] [1791452491.777817596] [controller_server]: GoalCritic instantiated with 1 power and 6.000000 weight.
-[controller_server-3] [INFO] [1791452491.777839082] [controller_server]: Critic loaded : mppi::critics::GoalCritic
-[controller_server-3] [INFO] [1791452491.778322932] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.300000 angular threshold.
-[controller_server-3] [INFO] [1791452491.778347801] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
-[controller_server-3] [INFO] [1791452491.779158298] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 5.000000 weight
-[controller_server-3] [INFO] [1791452491.779182498] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
-[controller_server-3] [INFO] [1791452491.779583654] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
-[controller_server-3] [INFO] [1791452491.780092142] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Reversing allowed.
-[controller_server-3] [INFO] [1791452491.780114320] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
-[controller_server-3] [INFO] [1791452491.780668767] [controller_server]: TwirlingCritic instantiated with 1 power and 10.000000 weight.
-[controller_server-3] [INFO] [1791452491.780696852] [controller_server]: Critic loaded : mppi::critics::TwirlingCritic
-[controller_server-3] [INFO] [1791452491.784718855] [controller_server]: Optimizer reset
-[controller_server-3] [INFO] [1791452491.794268408] [MPPIController]: Configured MPPI Controller: FollowPath
-[controller_server-3] [INFO] [1791452491.794507140] [controller_server]: Controller Server has FollowPath  controllers available.
-[lifecycle_manager-13] [INFO] [1791452491.812934527] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
-[planner_server-4] [INFO] [1791452491.813458266] [planner_server]: Configuring
-[planner_server-4] [INFO] [1791452491.813521033] [global_costmap.global_costmap]: Configuring
-[planner_server-4] [INFO] [1791452491.821644017] [global_costmap.global_costmap]: Using plugin "static_layer"
-[planner_server-4] [INFO] [1791452491.828041877] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
-[planner_server-4] [INFO] [1791452491.830220330] [global_costmap.global_costmap]: Initialized plugin "static_layer"
-[planner_server-4] [INFO] [1791452491.830357010] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
-[planner_server-4] [INFO] [1791452491.830881021] [global_costmap.global_costmap]: Subscribed to Topics: scan
-[planner_server-4] [INFO] [1791452491.835109824] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
-[planner_server-4] [INFO] [1791452491.835149302] [global_costmap.global_costmap]: Using plugin "inflation_layer"
-[planner_server-4] [INFO] [1791452491.835747480] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
-[planner_server-4] [ERROR] [1791452491.844677797] [global_costmap.global_costmap]: The configured inflation radius (0.250) is smaller than the computed inscribed radius (0.270) of your footprint, it is highly recommended to set inflation radius to be at least as big as the inscribed radius to avoid collisions
-[planner_server-4] [INFO] [1791452491.857737114] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner/SmacPlannerHybrid
-[planner_server-4] [INFO] [1791452491.857845231] [planner_server]: Configuring GridBased of type SmacPlannerHybrid
-[planner_server-4] [INFO] [1791452491.861092296] [planner_server]: Even sized heuristic lookup table size set 400.000000, increasing size by 1 to make odd
-[rviz2-7] [ERROR] [1791452491.875916672] [rviz2]: PluginlibFactory: The plugin for class 'nav2_rviz_plugins/Path' failed to load. Error: According to the loaded plugin descriptions the class nav2_rviz_plugins/Path with base class type rviz_common::Tool does not exist. Declared types are  nav2_rviz_plugins/GoalTool rviz_default_plugins/FocusCamera rviz_default_plugins/Interact rviz_default_plugins/Measure rviz_default_plugins/MoveCamera rviz_default_plugins/PublishPoint rviz_default_plugins/Select rviz_default_plugins/SetGoal rviz_default_plugins/SetInitialPose
-[rviz2-7] [INFO] [1791452492.003461920] [rviz2]: Stereo is NOT SUPPORTED
-[rviz2-7] [INFO] [1791452492.259848890] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452491.776 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452492.992810040] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452491.970 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452494.786137102] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452494.378 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452495.521014035] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452494.492 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452497.314089727] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452496.914 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452498.049225173] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452497.013 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452499.842179539] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452499.449 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452500.673533435] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452499.635 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452502.369686109] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452501.951 for reason 'discarding message because the queue is full'
-[rviz2-7] [INFO] [1791452503.201634751] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452502.157 for reason 'discarding message because the queue is full'
-[planner_server-4] [INFO] [1791452504.178137457] [planner_server]: Configured plugin GridBased of type SmacPlannerHybrid with maximum iterations 1000000, max on approach iterations 1000, and allowing unknown traversal. Tolerance 0.50.Using motion model: Reeds-Shepp.
-[planner_server-4] [INFO] [1791452504.178204898] [planner_server]: Planner Server has GridBased  planners available.
-[lifecycle_manager-13] [INFO] [1791452504.185253408] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
-[behavior_server-5] [INFO] [1791452504.185505460] [behavior_server]: Configuring
-[behavior_server-5] [INFO] [1791452504.194992513] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
-[behavior_server-5] [INFO] [1791452504.196398335] [behavior_server]: Configuring spin
-[behavior_server-5] [INFO] [1791452504.208178484] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
-[behavior_server-5] [INFO] [1791452504.209192934] [behavior_server]: Configuring backup
-[behavior_server-5] [INFO] [1791452504.216003048] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
-[behavior_server-5] [INFO] [1791452504.216781207] [behavior_server]: Configuring drive_on_heading
-[behavior_server-5] [INFO] [1791452504.221322929] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
-[behavior_server-5] [INFO] [1791452504.223391716] [behavior_server]: Configuring assisted_teleop
-[behavior_server-5] [INFO] [1791452504.234674273] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
-[behavior_server-5] [INFO] [1791452504.236411877] [behavior_server]: Configuring wait
-[lifecycle_manager-13] [INFO] [1791452504.245883852] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
-[bt_navigator-6] [INFO] [1791452504.246161698] [bt_navigator]: Configuring
-[lifecycle_manager-13] [INFO] [1791452504.309747320] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
-[waypoint_follower-8] [INFO] [1791452504.309915038] [waypoint_follower]: Configuring
-[waypoint_follower-8] [INFO] [1791452504.318371017] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
-[lifecycle_manager-13] [INFO] [1791452504.319097559] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
-[smoother_server-11] [INFO] [1791452504.319263681] [smoother_server]: Configuring smoother server
-[smoother_server-11] [INFO] [1791452504.333174364] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
-[smoother_server-11] [INFO] [1791452504.333798923] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
-[lifecycle_manager-13] [INFO] [1791452504.342812384] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
-[velocity_smoother-9] [INFO] [1791452504.343023583] [velocity_smoother]: Configuring velocity smoother
-[lifecycle_manager-13] [INFO] [1791452504.346952687] [lifecycle_manager_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
-[collision_monitor-12] [INFO] [1791452504.347281576] [collision_monitor]: Configuring
-[collision_monitor-12] [INFO] [1791452504.354769181] [collision_monitor]: [FootprintApproach]: Creating Polygon
-[collision_monitor-12] [INFO] [1791452504.359395014] [collision_monitor]: [scan]: Creating Scan
-[lifecycle_manager-13] [INFO] [1791452504.366065016] [lifecycle_manager_navigation]: [34m[1mActivating map_server[0m[0m
-[map_server-1] [INFO] [1791452504.366540131] [map_server]: Activating
-[map_server-1] [INFO] [1791452504.367024530] [map_server]: Creating bond (map_server) to lifecycle manager.
-[amcl-2] [INFO] [1791452504.367420687] [amcl]: Received a 191 X 229 map @ 0.050 m/pix
-[planner_server-4] [INFO] [1791452504.367466970] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 191 X 229 at 0.050000 m/pix
-[rviz2-7] [INFO] [1791452504.388745654] [rviz2]: Trying to create a map of size 191 x 229 using 1 swatches
-[rviz2-7] [ERROR] [1791452504.419094600] [rviz2]: Vertex Program:rviz/glsl120/indexed_8bit_image.vert Fragment Program:rviz/glsl120/indexed_8bit_image.frag GLSL link result : 
-[rviz2-7] active samplers with a different type refer to the same texture image unit
-[lifecycle_manager-13] [INFO] [1791452504.476240470] [lifecycle_manager_navigation]: Server map_server connected with bond.
-[lifecycle_manager-13] [INFO] [1791452504.476296239] [lifecycle_manager_navigation]: [34m[1mActivating amcl[0m[0m
-[amcl-2] [INFO] [1791452504.476551693] [amcl]: Activating
-[amcl-2] [INFO] [1791452504.476598407] [amcl]: initialPoseReceived
-[amcl-2] [INFO] [1791452504.476697535] [amcl]: Setting pose (1791452504.476697): -3.750 -0.318 -0.541
-[amcl-2] [INFO] [1791452504.478414783] [amcl]: Creating bond (amcl) to lifecycle manager.
-[amcl-2] [INFO] [1791452504.488376150] [amcl]: createLaserObject
-[lifecycle_manager-13] [INFO] [1791452504.581473660] [lifecycle_manager_navigation]: Server amcl connected with bond.
-[lifecycle_manager-13] [INFO] [1791452504.581510088] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
-[controller_server-3] [INFO] [1791452504.581849123] [controller_server]: Activating
-[controller_server-3] [INFO] [1791452504.581912855] [local_costmap.local_costmap]: Activating
-[controller_server-3] [INFO] [1791452504.581926159] [local_costmap.local_costmap]: Checking transform
-[controller_server-3] [INFO] [1791452504.582070450] [local_costmap.local_costmap]: start
-[controller_server-3] [WARN] [1791452504.783126031] [controller_server]: Parameter controller_server.verbose not found
-[controller_server-3] [INFO] [1791452504.784737919] [controller_server]: Optimizer reset
-[controller_server-3] [INFO] [1791452504.784949538] [MPPIController]: Activated MPPI Controller: FollowPath
-[controller_server-3] [INFO] [1791452504.784972136] [controller_server]: Creating bond (controller_server) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452504.888494500] [lifecycle_manager_navigation]: Server controller_server connected with bond.
-[lifecycle_manager-13] [INFO] [1791452504.888526782] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
-[planner_server-4] [INFO] [1791452504.888729057] [planner_server]: Activating
-[planner_server-4] [INFO] [1791452504.888766701] [global_costmap.global_costmap]: Activating
-[planner_server-4] [INFO] [1791452504.888780401] [global_costmap.global_costmap]: Checking transform
-[planner_server-4] [INFO] [1791452504.888838175] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1791452504.887915 but the earliest data is at time 1791452505.476736, when looking up transform from frame [base_link] to frame [map]
-[rviz2-7] [INFO] [1791452504.899533514] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452504.452 for reason 'discarding message because the queue is full'
-[planner_server-4] [INFO] [1791452505.388867344] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1791452505.387918 but the earliest data is at time 1791452505.476736, when looking up transform from frame [base_link] to frame [map]
-[planner_server-4] [INFO] [1791452505.888949878] [global_costmap.global_costmap]: start
-[rviz2-7] [INFO] [1791452505.993922419] [rviz2]: Trying to create a map of size 100 x 100 using 1 swatches
-[rviz2-7] [INFO] [1791452506.914370492] [rviz2]: Trying to create a map of size 191 x 229 using 1 swatches
-[planner_server-4] [INFO] [1791452506.939929416] [planner_server]: Activating plugin GridBased of type SmacPlannerHybrid
-[planner_server-4] [INFO] [1791452506.941194751] [planner_server]: Creating bond (planner_server) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.044257035] [lifecycle_manager_navigation]: Server planner_server connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.044302726] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
-[behavior_server-5] [INFO] [1791452507.044719060] [behavior_server]: Activating
-[behavior_server-5] [INFO] [1791452507.044779715] [behavior_server]: Activating spin
-[behavior_server-5] [INFO] [1791452507.044789742] [behavior_server]: Activating backup
-[behavior_server-5] [INFO] [1791452507.044796072] [behavior_server]: Activating drive_on_heading
-[behavior_server-5] [INFO] [1791452507.044802727] [behavior_server]: Activating assisted_teleop
-[behavior_server-5] [INFO] [1791452507.044809420] [behavior_server]: Activating wait
-[behavior_server-5] [INFO] [1791452507.044819342] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.149160928] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.149221309] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
-[bt_navigator-6] [INFO] [1791452507.149458269] [bt_navigator]: Activating
-[bt_navigator-6] [INFO] [1791452507.196020874] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.299047831] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.299080930] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
-[waypoint_follower-8] [INFO] [1791452507.299436653] [waypoint_follower]: Activating
-[waypoint_follower-8] [INFO] [1791452507.299473847] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.403211654] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.403388633] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
-[smoother_server-11] [INFO] [1791452507.404027759] [smoother_server]: Activating
-[smoother_server-11] [INFO] [1791452507.404080355] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.508146890] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.508187620] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
-[velocity_smoother-9] [INFO] [1791452507.508488480] [velocity_smoother]: Activating
-[velocity_smoother-9] [INFO] [1791452507.508587716] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.612165116] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.612199940] [lifecycle_manager_navigation]: [34m[1mActivating collision_monitor[0m[0m
-[collision_monitor-12] [INFO] [1791452507.612484971] [collision_monitor]: Activating
-[collision_monitor-12] [INFO] [1791452507.612544533] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
-[lifecycle_manager-13] [INFO] [1791452507.716128256] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
-[lifecycle_manager-13] [INFO] [1791452507.716171096] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
-[lifecycle_manager-13] [INFO] [1791452507.716183051] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
-[rviz2-7] [INFO] [1791452513.869102656] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1791452504.768 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
-[rviz2-7] [INFO] [1791452513.869444563] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1791452504.783 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
-[rviz2-7] [INFO] [1791452514.588225891] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1791452504.578 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
-[rviz2-7] [INFO] [1791452515.188217334] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1791452505.186 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
-[rviz2-7] [INFO] [1791452527.084186284] [rviz2]: Setting estimate pose: Frame:map, Position(-0.0217831, -0.0180776, 0), Orientation(0, 0, 0.697874, 0.716221) = Angle: 1.54485
-[amcl-2] [INFO] [1791452527.084490908] [amcl]: initialPoseReceived
-[amcl-2] [WARN] [1791452527.084582831] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 1791452527.084535 but the latest data is at time 1791452527.067972, when looking up transform from frame [base_link] to frame [odom])
-[amcl-2] [INFO] [1791452527.084600114] [amcl]: Setting pose (1791452527.084600): -0.022 -0.018 1.545
-[rviz2-7] [INFO] [1791452542.700060725] [rviz2]: Setting estimate pose: Frame:map, Position(-0.0446475, 0.00309575, 0), Orientation(0, 0, 0.696038, 0.718004) = Angle: 1.53973
-[amcl-2] [INFO] [1791452542.700481677] [amcl]: initialPoseReceived
-[amcl-2] [WARN] [1791452542.700728952] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 1791452542.700609 but the latest data is at time 1791452542.687913, when looking up transform from frame [base_link] to frame [odom])
-[amcl-2] [INFO] [1791452542.700771248] [amcl]: Setting pose (1791452542.700771): -0.045 0.003 1.540
-[planner_server-4] [WARN] [1791452613.177195240] [planner_server]: No planners specified in action call. Server will use only plugin GridBased  in server. This warning will appear once.
-[bt_navigator-6] [INFO] [1791452613.222664139] [bt_navigator]: Begin navigating from current location (-0.04, 0.13) to (0.72, 5.08)
-[controller_server-3] [INFO] [1791452613.283537925] [controller_server]: Received a goal, begin computing control effort.
-[controller_server-3] [WARN] [1791452613.283604252] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
-[controller_server-3] [INFO] [1791452613.285831511] [controller_server]: Optimizer reset
-[min_wz_filter-10] [INFO] [1791452613.312975955] [min_wz_filter]: wz compensated: -0.0019 -> -0.8000, vx=0.0144
-[min_wz_filter-10] [INFO] [1791452613.464894095] [min_wz_filter]: wz compensated: 0.0028 -> 0.8000, vx=0.0417
-[min_wz_filter-10] [INFO] [1791452613.517639430] [min_wz_filter]: wz compensated: 0.0028 -> 0.8000, vx=0.0617
-[controller_server-3] [WARN] [1791452613.536801661] [controller_server]: Control loop missed its desired rate of 20.0000Hz
-[min_wz_filter-10] [INFO] [1791452613.564117434] [min_wz_filter]: wz compensated: 0.0039 -> 0.8000, vx=0.0769
-[planner_server-4] [WARN] [1791452614.350460701] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 17.4323 Hz
-[controller_server-3] [INFO] [1791452614.383739175] [controller_server]: Passing new path to controller.
-[planner_server-4] [WARN] [1791452615.453551258] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 12.4284 Hz
-[controller_server-3] [INFO] [1791452615.483709496] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452616.533714268] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452617.583715043] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452618.633731148] [controller_server]: Passing new path to controller.
-[planner_server-4] [WARN] [1791452619.689019241] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 15.1412 Hz
-[controller_server-3] [INFO] [1791452619.733707972] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452620.783723856] [controller_server]: Passing new path to controller.
-[planner_server-4] [WARN] [1791452621.813498072] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 19.8091 Hz
-[controller_server-3] [INFO] [1791452621.833801959] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452622.883711891] [controller_server]: Passing new path to controller.
-[planner_server-4] [WARN] [1791452623.937449510] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 18.4135 Hz
-[controller_server-3] [INFO] [1791452623.983711458] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452625.033712125] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452626.033710020] [controller_server]: Passing new path to controller.
-[planner_server-4] [WARN] [1791452627.098398130] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 18.0748 Hz
-[controller_server-3] [INFO] [1791452627.133710087] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452628.183715950] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452629.233720159] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452630.283732356] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452631.283730980] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452632.333734858] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452633.383716703] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452634.383714235] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452635.433720595] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452636.483686565] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452637.483717409] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452638.533719180] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452639.533727894] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452640.583734822] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452641.633737467] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452642.633738375] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452643.683722807] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452644.683712085] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452645.733714990] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452646.783710651] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452647.783710960] [controller_server]: Passing new path to controller.
-[min_wz_filter-10] [INFO] [1791452648.063990383] [min_wz_filter]: wz compensated: -0.0997 -> -0.8000, vx=0.0737
-[min_wz_filter-10] [INFO] [1791452648.114028373] [min_wz_filter]: wz compensated: -0.1026 -> -0.8000, vx=0.0636
-[min_wz_filter-10] [INFO] [1791452648.163975597] [min_wz_filter]: wz compensated: -0.1019 -> -0.8000, vx=0.0576
-[min_wz_filter-10] [INFO] [1791452648.214066498] [min_wz_filter]: wz compensated: -0.1038 -> -0.8000, vx=0.0523
-[min_wz_filter-10] [INFO] [1791452648.264119174] [min_wz_filter]: wz compensated: -0.1043 -> -0.8000, vx=0.0479
-[min_wz_filter-10] [INFO] [1791452648.313980928] [min_wz_filter]: wz compensated: -0.1059 -> -0.8000, vx=0.0437
-[min_wz_filter-10] [INFO] [1791452648.364160464] [min_wz_filter]: wz compensated: -0.1095 -> -0.8000, vx=0.0375
-[min_wz_filter-10] [INFO] [1791452648.414059007] [min_wz_filter]: wz compensated: -0.1104 -> -0.8000, vx=0.0304
-[min_wz_filter-10] [INFO] [1791452648.463972803] [min_wz_filter]: wz compensated: -0.1100 -> -0.8000, vx=0.0251
-[min_wz_filter-10] [INFO] [1791452648.514065289] [min_wz_filter]: wz compensated: -0.1111 -> -0.8000, vx=0.0230
-[min_wz_filter-10] [INFO] [1791452648.564176313] [min_wz_filter]: wz compensated: -0.1111 -> -0.8000, vx=0.0224
-[min_wz_filter-10] [INFO] [1791452648.614028229] [min_wz_filter]: wz compensated: -0.1123 -> -0.8000, vx=0.0201
-[min_wz_filter-10] [INFO] [1791452648.664077598] [min_wz_filter]: wz compensated: -0.1133 -> -0.8000, vx=0.0188
-[min_wz_filter-10] [INFO] [1791452648.714581247] [min_wz_filter]: wz compensated: -0.1130 -> -0.8000, vx=0.0188
-[min_wz_filter-10] [INFO] [1791452648.764943608] [min_wz_filter]: wz compensated: -0.1181 -> -0.8000, vx=0.0186
-[min_wz_filter-10] [INFO] [1791452648.814273204] [min_wz_filter]: wz compensated: -0.1181 -> -0.8000, vx=0.0186
-[controller_server-3] [INFO] [1791452648.833718296] [controller_server]: Passing new path to controller.
-[min_wz_filter-10] [INFO] [1791452648.864080439] [min_wz_filter]: wz compensated: -0.1060 -> -0.8000, vx=0.0425
-[min_wz_filter-10] [INFO] [1791452648.914051512] [min_wz_filter]: wz compensated: -0.0973 -> -0.8000, vx=0.0589
-[min_wz_filter-10] [INFO] [1791452648.964295584] [min_wz_filter]: wz compensated: -0.0892 -> -0.8000, vx=0.0751
-[controller_server-3] [INFO] [1791452649.833717613] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452650.883711059] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452651.883716385] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452652.933713091] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452653.983711737] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452654.983711586] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452656.033715547] [controller_server]: Passing new path to controller.
-[controller_server-3] [INFO] [1791452657.033708109] [controller_server]: Passing new path to controller.
-[min_wz_filter-10] [INFO] [1791452657.414418257] [min_wz_filter]: wz compensated: 0.1262 -> 0.8000, vx=0.0776
-[min_wz_filter-10] [INFO] [1791452657.464231936] [min_wz_filter]: wz compensated: 0.1256 -> 0.8000, vx=0.0753
-[min_wz_filter-10] [INFO] [1791452657.514535646] [min_wz_filter]: wz compensated: 0.1247 -> 0.8000, vx=0.0699
-[min_wz_filter-10] [INFO] [1791452657.564333134] [min_wz_filter]: wz compensated: 0.1264 -> 0.8000, vx=0.0651
-[min_wz_filter-10] [INFO] [1791452657.615192967] [min_wz_filter]: wz compensated: 0.1278 -> 0.8000, vx=0.0633
-[min_wz_filter-10] [INFO] [1791452657.664261117] [min_wz_filter]: wz compensated: 0.1287 -> 0.8000, vx=0.0606
-[min_wz_filter-10] [INFO] [1791452657.714495337] [min_wz_filter]: wz compensated: 0.1325 -> 0.8000, vx=0.0583
-[min_wz_filter-10] [INFO] [1791452657.764340654] [min_wz_filter]: wz compensated: 0.1366 -> 0.8000, vx=0.0542
-[min_wz_filter-10] [INFO] [1791452657.814321621] [min_wz_filter]: wz compensated: 0.1358 -> 0.8000, vx=0.0517
-[min_wz_filter-10] [INFO] [1791452657.864386533] [min_wz_filter]: wz compensated: 0.1388 -> 0.8000, vx=0.0495
-[min_wz_filter-10] [INFO] [1791452657.914427421] [min_wz_filter]: wz compensated: 0.1404 -> 0.8000, vx=0.0453
-[min_wz_filter-10] [INFO] [1791452657.964484378] [min_wz_filter]: wz compensated: 0.1375 -> 0.8000, vx=0.0425
-[min_wz_filter-10] [INFO] [1791452658.014431304] [min_wz_filter]: wz compensated: 0.1348 -> 0.8000, vx=0.0414
-[planner_server-4] [WARN] [1791452658.043383046] [planner_server]: GridBased: failed to create plan, invalid use: Starting point in lethal space! Cannot create feasible plan..
-[planner_server-4] [WARN] [1791452658.043443416] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.72, 5.08)
-[planner_server-4] [WARN] [1791452658.043459220] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
-[planner_server-4] [INFO] [1791452658.063161517] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
-[min_wz_filter-10] [INFO] [1791452658.065796158] [min_wz_filter]: wz compensated: 0.1361 -> 0.8000, vx=0.0389
-[min_wz_filter-10] [INFO] [1791452658.114954529] [min_wz_filter]: wz compensated: 0.1376 -> 0.8000, vx=0.0358
-[min_wz_filter-10] [INFO] [1791452658.164496012] [min_wz_filter]: wz compensated: 0.1395 -> 0.8000, vx=0.0306
-[min_wz_filter-10] [INFO] [1791452658.215830115] [min_wz_filter]: wz compensated: 0.1410 -> 0.8000, vx=0.0279
-[min_wz_filter-10] [INFO] [1791452658.264503900] [min_wz_filter]: wz compensated: 0.1396 -> 0.8000, vx=0.0258
-[min_wz_filter-10] [INFO] [1791452658.314847904] [min_wz_filter]: wz compensated: 0.1391 -> 0.8000, vx=0.0223
-[min_wz_filter-10] [INFO] [1791452658.364570976] [min_wz_filter]: wz compensated: 0.1372 -> 0.8000, vx=0.0206
-[min_wz_filter-10] [INFO] [1791452658.414718502] [min_wz_filter]: wz compensated: 0.1365 -> 0.8000, vx=0.0165
-[min_wz_filter-10] [INFO] [1791452658.464351428] [min_wz_filter]: wz compensated: 0.1373 -> 0.8000, vx=0.0135
-[min_wz_filter-10] [INFO] [1791452658.514820452] [min_wz_filter]: wz compensated: 0.1401 -> 0.8000, vx=0.0089
-[min_wz_filter-10] [INFO] [1791452658.564459622] [min_wz_filter]: wz compensated: 0.1409 -> 0.8000, vx=0.0021
-[min_wz_filter-10] [INFO] [1791452658.614586473] [min_wz_filter]: wz compensated: 0.1390 -> 0.8000, vx=-0.0005
-[min_wz_filter-10] [INFO] [1791452658.664406670] [min_wz_filter]: wz compensated: 0.1396 -> 0.8000, vx=-0.0027
-[min_wz_filter-10] [INFO] [1791452658.714668086] [min_wz_filter]: wz compensated: 0.1428 -> 0.8000, vx=-0.0037
-[min_wz_filter-10] [INFO] [1791452658.764451036] [min_wz_filter]: wz compensated: 0.1427 -> 0.8000, vx=-0.0055
-[min_wz_filter-10] [INFO] [1791452658.815185225] [min_wz_filter]: wz compensated: 0.1464 -> 0.8000, vx=-0.0086
-[min_wz_filter-10] [INFO] [1791452658.864469469] [min_wz_filter]: wz compensated: 0.1442 -> 0.8000, vx=-0.0135
-[planner_server-4] [WARN] [1791452658.894686975] [planner_server]: GridBased: failed to create plan, invalid use: Starting point in lethal space! Cannot create feasible plan..
-[planner_server-4] [WARN] [1791452658.894741606] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.72, 5.08)
-[planner_server-4] [WARN] [1791452658.894758903] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
-[min_wz_filter-10] [INFO] [1791452658.914657238] [min_wz_filter]: wz compensated: 0.1464 -> 0.8000, vx=-0.0186
-[bt_navigator-6] [ERROR] [1791452658.933118650] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
-[controller_server-3] [INFO] [1791452658.933319126] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
-[planner_server-4] [INFO] [1791452658.933702655] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
-[controller_server-3] [INFO] [1791452658.933710570] [controller_server]: Goal was canceled. Stopping the robot.
-[controller_server-3] [INFO] [1791452658.933738074] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
-[bt_navigator-6] [WARN] [1791452658.934232144] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
-[min_wz_filter-10] [INFO] [1791452658.964276149] [min_wz_filter]: wz compensated: 0.0864 -> 0.8000, vx=0.0000
-[min_wz_filter-10] [INFO] [1791452659.014643178] [min_wz_filter]: wz compensated: 0.0264 -> 0.8000, vx=0.0000
-[planner_server-4] [WARN] [1791452659.894480659] [planner_server]: GridBased: failed to create plan, invalid use: Starting point in lethal space! Cannot create feasible plan..
-[planner_server-4] [WARN] [1791452659.894528444] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.72, 5.08)
-[planner_server-4] [WARN] [1791452659.894540664] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
-[planner_server-4] [INFO] [1791452659.914432483] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
-[planner_server-4] [WARN] [1791452660.895516132] [planner_server]: GridBased: failed to create plan, invalid use: Starting point in lethal space! Cannot create feasible plan..
-[planner_server-4] [WARN] [1791452660.895609922] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.72, 5.08)
-[planner_server-4] [WARN] [1791452660.895632395] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
-[behavior_server-5] [INFO] [1791452660.914869598] [behavior_server]: Running spin
-[behavior_server-5] [INFO] [1791452660.915024368] [behavior_server]: Turning 1.57 for spin behavior.
-[min_wz_filter-10] [INFO] [1791452660.964647907] [min_wz_filter]: wz compensated: 0.0600 -> 0.8000, vx=0.0000
-[min_wz_filter-10] [INFO] [1791452661.014392906] [min_wz_filter]: wz compensated: 0.1200 -> 0.8000, vx=0.0000
-[min_wz_filter-10] [INFO] [1791452661.064463327] [min_wz_filter]: wz compensated: 0.1800 -> 0.8000, vx=0.0000
-[min_wz_filter-10] [INFO] [1791452661.114407624] [min_wz_filter]: Turn in place ON: input vx=0.000, wz=0.240
-[behavior_server-5] [ERROR] [1791452661.515364991] [behavior_server]: Pose Goes Off Grid.
-[behavior_server-5] [WARN] [1791452661.515483558] [behavior_server]: Collision Ahead - Exiting Spin
-[behavior_server-5] [WARN] [1791452661.515503584] [behavior_server]: spin failed
-[behavior_server-5] [WARN] [1791452661.515521592] [behavior_server]: [spin] [ActionServer] Aborting handle.
-[behavior_server-5] [INFO] [1791452661.545013011] [behavior_server]: Running wait
-[min_wz_filter-10] [INFO] [1791452662.064550932] [min_wz_filter]: Turn in place OFF: input vx=0.000, wz=0.060
-[min_wz_filter-10] [INFO] [1791452662.064979065] [min_wz_filter]: wz compensated: 0.0600 -> 0.8000, vx=0.0000
-[behavior_server-5] [INFO] [1791452666.545181689] [behavior_server]: wait completed successfully
-[controller_server-3] [INFO] [1791452666.594593384] [controller_server]: Received a goal, begin computing control effort.
-[controller_server-3] [INFO] [1791452666.595567963] [controller_server]: Optimizer reset
-[min_wz_filter-10] [INFO] [1791452666.664521700] [min_wz_filter]: wz compensated: -0.0200 -> -0.8000, vx=-0.0154
-[min_wz_filter-10] [INFO] [1791452666.714578516] [min_wz_filter]: wz compensated: -0.0326 -> -0.8000, vx=-0.0266
-[min_wz_filter-10] [INFO] [1791452666.765079493] [min_wz_filter]: wz compensated: -0.0434 -> -0.8000, vx=-0.0360
-[min_wz_filter-10] [INFO] [1791452666.814543811] [min_wz_filter]: wz compensated: -0.0496 -> -0.8000, vx=-0.0434
-[min_wz_filter-10] [INFO] [1791452666.864824029] [min_wz_filter]: wz compensated: -0.0561 -> -0.8000, vx=-0.0481
-[min_wz_filter-10] [INFO] [1791452666.914639826] [min_wz_filter]: wz compensated: -0.0634 -> -0.8000, vx=-0.0536
-[min_wz_filter-10] [INFO] [1791452666.964518030] [min_wz_filter]: wz compensated: -0.0721 -> -0.8000, vx=-0.0580
-[min_wz_filter-10] [INFO] [1791452667.014585190] [min_wz_filter]: wz compensated: -0.0777 -> -0.8000, vx=-0.0604
-[min_wz_filter-10] [INFO] [1791452667.064621933] [min_wz_filter]: wz compensated: -0.0782 -> -0.8000, vx=-0.0631
-[min_wz_filter-10] [INFO] [1791452667.114680958] [min_wz_filter]: wz compensated: -0.0795 -> -0.8000, vx=-0.0659
-[min_wz_filter-10] [INFO] [1791452667.164607004] [min_wz_filter]: wz compensated: -0.0838 -> -0.8000, vx=-0.0668
-[min_wz_filter-10] [INFO] [1791452667.214850176] [min_wz_filter]: wz compensated: -0.0909 -> -0.8000, vx=-0.0671
-[min_wz_filter-10] [INFO] [1791452667.264450389] [min_wz_filter]: wz compensated: -0.0989 -> -0.8000, vx=-0.0693
-[min_wz_filter-10] [INFO] [1791452667.314931286] [min_wz_filter]: wz compensated: -0.0989 -> -0.8000, vx=-0.0693
-[min_wz_filter-10] [INFO] [1791452667.364843973] [min_wz_filter]: wz compensated: -0.1076 -> -0.8000, vx=-0.0679
-[min_wz_filter-10] [INFO] [1791452667.415095440] [min_wz_filter]: wz compensated: -0.1076 -> -0.8000, vx=-0.0679
-[min_wz_filter-10] [INFO] [1791452667.464806618] [min_wz_filter]: wz compensated: -0.1117 -> -0.8000, vx=-0.0664
-[min_wz_filter-10] [INFO] [1791452667.514837090] [min_wz_filter]: wz compensated: -0.1155 -> -0.8000, vx=-0.0627
-[min_wz_filter-10] [INFO] [1791452667.565107874] [min_wz_filter]: wz compensated: -0.1171 -> -0.8000, vx=-0.0575
-[min_wz_filter-10] [INFO] [1791452667.614852547] [min_wz_filter]: wz compensated: -0.1187 -> -0.8000, vx=-0.0547
-[controller_server-3] [INFO] [1791452667.644710679] [controller_server]: Passing new path to controller.
-[min_wz_filter-10] [INFO] [1791452667.665068380] [min_wz_filter]: wz compensated: -0.1191 -> -0.8000, vx=-0.0520
-[min_wz_filter-10] [INFO] [1791452667.714885038] [min_wz_filter]: wz compensated: -0.1190 -> -0.8000, vx=-0.0477
-[min_wz_filter-10] [INFO] [1791452667.764787121] [min_wz_filter]: wz compensated: -0.1209 -> -0.8000, vx=-0.0448
-[min_wz_filter-10] [INFO] [1791452667.814825158] [min_wz_filter]: wz compensated: -0.1180 -> -0.8000, vx=-0.0393
-[controller_server-3] [INFO] [1791452667.862484747] [controller_server]: Reached the goal!
-[min_wz_filter-10] [INFO] [1791452667.864869111] [min_wz_filter]: wz compensated: -0.0580 -> -0.8000, vx=0.0000
-[bt_navigator-6] [INFO] [1791452667.894426416] [bt_navigator]: Goal succeeded
+[planner_server-4] [INFO] [1792511681.220987417] [global_costmap.global_costmap]: Creating Costmap
+[lifecycle_manager-13] [INFO] [1792511681.328805673] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-13] [INFO] [1792511681.328881586] [lifecycle_manager_navigation]: [34m[1mConfiguring map_server[0m[0m
+[map_server-1] [INFO] [1792511681.330268951] [map_server]: Configuring
+[map_server-1] [INFO] [1792511681.330369011] [map_io]: Loading yaml file: /workspace/debug_obstacle_map.yaml
+[map_server-1] [INFO] [1792511681.330798268] [map_io]: resolution: 0.05
+[map_server-1] [INFO] [1792511681.330809418] [map_io]: origin[0]: -4.8
+[map_server-1] [INFO] [1792511681.330814631] [map_io]: origin[1]: -1.45
+[map_server-1] [INFO] [1792511681.330819389] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1792511681.330824233] [map_io]: free_thresh: 0.19
+[map_server-1] [INFO] [1792511681.330828715] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1792511681.330834292] [map_io]: mode: trinary
+[map_server-1] [INFO] [1792511681.330840087] [map_io]: negate: 0
+[map_server-1] [INFO] [1792511681.331107577] [map_io]: Loading image_file: /workspace/debug_obstacle_map.png
+[min_wz_filter-10] [INFO] [1792511681.342488222] [min_wz_filter]: MinWzFilter fixed compensation: min_wz=0.6, trigger_wz=0.001, low_vx_threshold=0.025
+[min_wz_filter-10] [INFO] [1792511681.342826906] [min_wz_filter]: Turn in place: enter=0.2, release=0.1
+[map_server-1] [INFO] [1792511681.350731708] [map_io]: Read map /workspace/debug_obstacle_map.png: 191 X 229 map @ 0.05 m/cell
+[lifecycle_manager-13] [INFO] [1792511681.365294168] [lifecycle_manager_navigation]: [34m[1mConfiguring amcl[0m[0m
+[amcl-2] [INFO] [1792511681.366085381] [amcl]: Configuring
+[amcl-2] [INFO] [1792511681.366213433] [amcl]: initTransforms
+[amcl-2] [INFO] [1792511681.378630506] [amcl]: initPubSub
+[amcl-2] [INFO] [1792511681.382878938] [amcl]: Subscribed to map topic.
+[lifecycle_manager-13] [INFO] [1792511681.386136000] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[rviz2-7] [INFO] [1792511681.625360066] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-7] [INFO] [1792511681.625477874] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-7] [INFO] [1792511681.648695095] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-7] [ERROR] [1792511681.715590574] [rviz2]: PluginlibFactory: The plugin for class 'nav2_rviz_plugins/Path' failed to load. Error: According to the loaded plugin descriptions the class nav2_rviz_plugins/Path with base class type rviz_common::Tool does not exist. Declared types are  nav2_rviz_plugins/GoalTool rviz_default_plugins/FocusCamera rviz_default_plugins/Interact rviz_default_plugins/Measure rviz_default_plugins/MoveCamera rviz_default_plugins/PublishPoint rviz_default_plugins/Select rviz_default_plugins/SetGoal rviz_default_plugins/SetInitialPose
+[rviz2-7] [INFO] [1792511681.819078085] [rviz2]: Stereo is NOT SUPPORTED
+[controller_server-3] [INFO] [1792511682.222982440] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1792511682.223164822] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1792511682.223180546] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1792511682.224490671] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1792511682.231757414] [local_costmap.local_costmap]: Using plugin "static_layer"
+[controller_server-3] [INFO] [1792511682.235911508] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[controller_server-3] [INFO] [1792511682.237417522] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[controller_server-3] [INFO] [1792511682.237614088] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[controller_server-3] [INFO] [1792511682.238083095] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1792511682.244914848] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[controller_server-3] [INFO] [1792511682.244977282] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1792511682.245332896] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1792511682.251356111] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1792511682.252611584] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1792511682.252793408] [controller_server]: Created goal checker : position_only_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1792511682.252866098] [controller_server]: Controller Server has general_goal_checker position_only_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1792511682.253563380] [controller_server]: Created controller : FollowPath of type nav2_mppi_controller::MPPIController
+[controller_server-3] [INFO] [1792511682.254512613] [controller_server]: Controller period is equal to model dt. Control sequence shifting is ON
+[controller_server-3] [INFO] [1792511682.255710234] [controller_server]: ConstraintCritic instantiated with 1 power and 5.500000 weight.
+[controller_server-3] [INFO] [1792511682.256011828] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
+[controller_server-3] [INFO] [1792511682.256557255] [controller_server]: InflationCostCritic instantiated with 1 power and 300.000000 / 0.062992 weights. Critic will collision check based on footprint cost.
+[controller_server-3] [INFO] [1792511682.256575645] [controller_server]: Critic loaded : mppi::critics::CostCritic
+[controller_server-3] [INFO] [1792511682.256722527] [controller_server]: GoalCritic instantiated with 1 power and 6.000000 weight.
+[controller_server-3] [INFO] [1792511682.256728181] [controller_server]: Critic loaded : mppi::critics::GoalCritic
+[controller_server-3] [INFO] [1792511682.256838823] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.300000 angular threshold.
+[controller_server-3] [INFO] [1792511682.256845816] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
+[controller_server-3] [INFO] [1792511682.257487237] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 5.000000 weight
+[controller_server-3] [INFO] [1792511682.257502295] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
+[controller_server-3] [INFO] [1792511682.257703243] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
+[controller_server-3] [INFO] [1792511682.257908262] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Reversing allowed.
+[controller_server-3] [INFO] [1792511682.257914103] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
+[controller_server-3] [INFO] [1792511682.258005879] [controller_server]: TwirlingCritic instantiated with 1 power and 10.000000 weight.
+[controller_server-3] [INFO] [1792511682.258039405] [controller_server]: Critic loaded : mppi::critics::TwirlingCritic
+[controller_server-3] [INFO] [1792511682.261954623] [controller_server]: Optimizer reset
+[controller_server-3] [INFO] [1792511682.264045490] [MPPIController]: Configured MPPI Controller: FollowPath
+[controller_server-3] [INFO] [1792511682.264128354] [controller_server]: Created controller : FollowPosition of type nav2_mppi_controller::MPPIController
+[controller_server-3] [INFO] [1792511682.264785476] [controller_server]: Controller period is equal to model dt. Control sequence shifting is ON
+[controller_server-3] [INFO] [1792511682.265371202] [controller_server]: ConstraintCritic instantiated with 1 power and 5.500000 weight.
+[controller_server-3] [INFO] [1792511682.265389073] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
+[controller_server-3] [INFO] [1792511682.265773286] [controller_server]: InflationCostCritic instantiated with 1 power and 300.000000 / 0.062992 weights. Critic will collision check based on footprint cost.
+[controller_server-3] [INFO] [1792511682.265787671] [controller_server]: Critic loaded : mppi::critics::CostCritic
+[controller_server-3] [INFO] [1792511682.266029777] [controller_server]: GoalCritic instantiated with 1 power and 6.000000 weight.
+[controller_server-3] [INFO] [1792511682.266037207] [controller_server]: Critic loaded : mppi::critics::GoalCritic
+[controller_server-3] [INFO] [1792511682.266267504] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.300000 angular threshold.
+[controller_server-3] [INFO] [1792511682.266276558] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
+[controller_server-3] [INFO] [1792511682.266822034] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 5.000000 weight
+[controller_server-3] [INFO] [1792511682.266833184] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
+[controller_server-3] [INFO] [1792511682.267272920] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
+[controller_server-3] [INFO] [1792511682.269244237] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Reversing allowed.
+[controller_server-3] [INFO] [1792511682.269271378] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
+[controller_server-3] [INFO] [1792511682.269648167] [controller_server]: TwirlingCritic instantiated with 1 power and 10.000000 weight.
+[controller_server-3] [INFO] [1792511682.269693417] [controller_server]: Critic loaded : mppi::critics::TwirlingCritic
+[controller_server-3] [INFO] [1792511682.273636186] [controller_server]: Optimizer reset
+[controller_server-3] [INFO] [1792511682.276069904] [MPPIController]: Configured MPPI Controller: FollowPosition
+[controller_server-3] [INFO] [1792511682.276093985] [controller_server]: Controller Server has FollowPath FollowPosition  controllers available.
+[lifecycle_manager-13] [INFO] [1792511682.283995806] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-4] [INFO] [1792511682.284760308] [planner_server]: Configuring
+[planner_server-4] [INFO] [1792511682.284811683] [global_costmap.global_costmap]: Configuring
+[planner_server-4] [INFO] [1792511682.290367818] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-4] [INFO] [1792511682.293311572] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-4] [INFO] [1792511682.296259662] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-4] [INFO] [1792511682.296289754] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-4] [INFO] [1792511682.297168918] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-4] [INFO] [1792511682.303742555] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-4] [INFO] [1792511682.303775847] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-4] [INFO] [1792511682.304679488] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-4] [ERROR] [1792511682.311443044] [global_costmap.global_costmap]: The configured inflation radius (0.250) is smaller than the computed inscribed radius (0.251) of your footprint, it is highly recommended to set inflation radius to be at least as big as the inscribed radius to avoid collisions
+[planner_server-4] [INFO] [1792511682.318912424] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner/SmacPlannerHybrid
+[planner_server-4] [INFO] [1792511682.318957957] [planner_server]: Configuring GridBased of type SmacPlannerHybrid
+[planner_server-4] [INFO] [1792511682.320182340] [planner_server]: Even sized heuristic lookup table size set 400.000000, increasing size by 1 to make odd
+[rviz2-7] [INFO] [1792511682.320442581] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511681.756 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511682.763343036] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511681.724 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511682.764510771] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511681.724 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511684.940912879] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511684.059 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511685.291750398] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511684.246 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511685.291862844] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511684.246 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511687.471547906] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511686.761 for reason 'discarding message because the queue is full'
+[planner_server-4] [INFO] [1792511687.791835210] [planner_server]: Configured plugin GridBased of type SmacPlannerHybrid with maximum iterations 1000000, max on approach iterations 1000, and allowing unknown traversal. Tolerance 0.50.Using motion model: Reeds-Shepp.
+[planner_server-4] [INFO] [1792511687.793251095] [planner_server]: Created global planner plugin PositionOnlyGrid of type nav2_footprint_planner/StrictHybridPlanner
+[planner_server-4] [INFO] [1792511687.794443703] [planner_server]: Planner Server has GridBased PositionOnlyGrid  planners available.
+[lifecycle_manager-13] [INFO] [1792511687.799074618] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-5] [INFO] [1792511687.800015997] [behavior_server]: Configuring
+[behavior_server-5] [INFO] [1792511687.805738145] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-5] [INFO] [1792511687.806345151] [behavior_server]: Configuring spin
+[behavior_server-5] [INFO] [1792511687.810953432] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-5] [INFO] [1792511687.811804399] [behavior_server]: Configuring backup
+[behavior_server-5] [INFO] [1792511687.814924940] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-5] [INFO] [1792511687.815595991] [behavior_server]: Configuring drive_on_heading
+[behavior_server-5] [INFO] [1792511687.818849626] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[rviz2-7] [INFO] [1792511687.818999371] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511686.768 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511687.820165517] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511686.768 for reason 'discarding message because the queue is full'
+[behavior_server-5] [INFO] [1792511687.820298317] [behavior_server]: Configuring assisted_teleop
+[behavior_server-5] [INFO] [1792511687.824180549] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-5] [INFO] [1792511687.824665087] [behavior_server]: Configuring wait
+[lifecycle_manager-13] [INFO] [1792511687.827929185] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-6] [INFO] [1792511687.828715098] [bt_navigator]: Configuring
+[lifecycle_manager-13] [INFO] [1792511687.883479564] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1792511687.884213980] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1792511687.888652962] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-13] [INFO] [1792511687.890415051] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-11] [INFO] [1792511687.891119831] [smoother_server]: Configuring smoother server
+[smoother_server-11] [INFO] [1792511687.898561985] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-11] [INFO] [1792511687.898759087] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-13] [INFO] [1792511687.902862447] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1792511687.903697376] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-13] [INFO] [1792511687.907330737] [lifecycle_manager_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[collision_monitor-12] [INFO] [1792511687.907632154] [collision_monitor]: Configuring
+[collision_monitor-12] [INFO] [1792511687.915401648] [collision_monitor]: [FootprintApproach]: Creating Polygon
+[collision_monitor-12] [INFO] [1792511687.917324584] [collision_monitor]: [scan]: Creating Scan
+[lifecycle_manager-13] [INFO] [1792511687.921655443] [lifecycle_manager_navigation]: [34m[1mActivating map_server[0m[0m
+[map_server-1] [INFO] [1792511687.921833840] [map_server]: Activating
+[map_server-1] [INFO] [1792511687.922064445] [map_server]: Creating bond (map_server) to lifecycle manager.
+[amcl-2] [INFO] [1792511687.922206010] [amcl]: Received a 191 X 229 map @ 0.050 m/pix
+[controller_server-3] [INFO] [1792511687.922680585] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 191 X 229 at 0.050000 m/pix
+[planner_server-4] [INFO] [1792511687.922696205] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 191 X 229 at 0.050000 m/pix
+[rviz2-7] [INFO] [1792511687.954960980] [rviz2]: Trying to create a map of size 191 x 229 using 1 swatches
+[lifecycle_manager-13] [INFO] [1792511688.026521751] [lifecycle_manager_navigation]: Server map_server connected with bond.
+[lifecycle_manager-13] [INFO] [1792511688.026591365] [lifecycle_manager_navigation]: [34m[1mActivating amcl[0m[0m
+[amcl-2] [INFO] [1792511688.027708747] [amcl]: Activating
+[amcl-2] [INFO] [1792511688.027763487] [amcl]: initialPoseReceived
+[amcl-2] [INFO] [1792511688.027883737] [amcl]: Setting pose (1792511688.027884): -3.750 -0.318 -0.541
+[amcl-2] [INFO] [1792511688.030158887] [amcl]: Creating bond (amcl) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511688.136361435] [lifecycle_manager_navigation]: Server amcl connected with bond.
+[lifecycle_manager-13] [INFO] [1792511688.136419122] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1792511688.137070954] [controller_server]: Activating
+[controller_server-3] [INFO] [1792511688.137123213] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1792511688.137137585] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1792511688.137269922] [local_costmap.local_costmap]: start
+[controller_server-3] [ERROR] [1792511688.643573788] [local_costmap.local_costmap]: StaticLayer: "map" passed to lookupTransform argument target_frame does not exist. 
+[controller_server-3] [WARN] [1792511688.688271156] [controller_server]: Parameter controller_server.verbose not found
+[controller_server-3] [INFO] [1792511688.691453765] [controller_server]: Optimizer reset
+[controller_server-3] [INFO] [1792511688.692349411] [MPPIController]: Activated MPPI Controller: FollowPosition
+[controller_server-3] [INFO] [1792511688.692379794] [MPPIController]: Activated MPPI Controller: FollowPath
+[controller_server-3] [INFO] [1792511688.692401810] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511688.796531122] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-13] [INFO] [1792511688.796603640] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-4] [INFO] [1792511688.797727163] [planner_server]: Activating
+[planner_server-4] [INFO] [1792511688.797786689] [global_costmap.global_costmap]: Activating
+[planner_server-4] [INFO] [1792511688.797802355] [global_costmap.global_costmap]: Checking transform
+[planner_server-4] [INFO] [1792511688.797828972] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[controller_server-3] [ERROR] [1792511688.948774036] [local_costmap.local_costmap]: StaticLayer: "map" passed to lookupTransform argument target_frame does not exist. 
+[controller_server-3] [ERROR] [1792511689.252266915] [local_costmap.local_costmap]: StaticLayer: "map" passed to lookupTransform argument target_frame does not exist. 
+[planner_server-4] [INFO] [1792511689.297894681] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[amcl-2] [INFO] [1792511689.610276648] [amcl]: createLaserObject
+[controller_server-3] [ERROR] [1792511689.654062593] [local_costmap.local_costmap]: StaticLayer: "map" passed to lookupTransform argument target_frame does not exist. 
+[planner_server-4] [INFO] [1792511689.797931345] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation at time 1792511689.789560, but only time 1792511690.592133 is in the buffer, when looking up transform from frame [base_link] to frame [map]
+[rviz2-7] [INFO] [1792511689.997013375] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511689.497 for reason 'discarding message because the queue is full'
+[planner_server-4] [INFO] [1792511690.298036857] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1792511690.289552 but the earliest data is at time 1792511690.592133, when looking up transform from frame [base_link] to frame [map]
+[rviz2-7] [INFO] [1792511690.444074044] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511689.391 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511690.445597372] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511689.391 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511690.764884089] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511688.330 for reason 'discarding message because the queue is full'
+[planner_server-4] [INFO] [1792511690.798021057] [global_costmap.global_costmap]: start
+[rviz2-7] [INFO] [1792511691.824154309] [rviz2]: Trying to create a map of size 191 x 229 using 1 swatches
+[planner_server-4] [INFO] [1792511691.849426710] [planner_server]: Activating plugin GridBased of type SmacPlannerHybrid
+[planner_server-4] [INFO] [1792511691.850475081] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511691.955219843] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-13] [INFO] [1792511691.955304590] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-5] [INFO] [1792511691.955824369] [behavior_server]: Activating
+[behavior_server-5] [INFO] [1792511691.955860064] [behavior_server]: Activating spin
+[behavior_server-5] [INFO] [1792511691.955873385] [behavior_server]: Activating backup
+[behavior_server-5] [INFO] [1792511691.955882348] [behavior_server]: Activating drive_on_heading
+[behavior_server-5] [INFO] [1792511691.955891383] [behavior_server]: Activating assisted_teleop
+[behavior_server-5] [INFO] [1792511691.955900530] [behavior_server]: Activating wait
+[behavior_server-5] [INFO] [1792511691.955914087] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511692.061349688] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.061420072] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-6] [INFO] [1792511692.062082329] [bt_navigator]: Activating
+[bt_navigator-6] [INFO] [1792511692.095632490] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511692.199772145] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.199874920] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1792511692.200732715] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1792511692.200806788] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511692.306515519] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.306597718] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-11] [INFO] [1792511692.307302571] [smoother_server]: Activating
+[smoother_server-11] [INFO] [1792511692.307343141] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511692.414445316] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.414500865] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1792511692.415166774] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1792511692.415263785] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1792511692.520763007] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.520827743] [lifecycle_manager_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[collision_monitor-12] [INFO] [1792511692.521483242] [collision_monitor]: Activating
+[collision_monitor-12] [INFO] [1792511692.521530190] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[rviz2-7] [INFO] [1792511692.525450281] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511692.032 for reason 'discarding message because the queue is full'
+[lifecycle_manager-13] [INFO] [1792511692.627205152] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
+[lifecycle_manager-13] [INFO] [1792511692.627290155] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-13] [INFO] [1792511692.627306512] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[rviz2-7] [INFO] [1792511692.646269573] [rviz2]: Trying to create a map of size 100 x 100 using 1 swatches
+[rviz2-7] [INFO] [1792511696.945835523] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511696.469 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511697.870931840] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511688.644 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-7] [INFO] [1792511699.504948265] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511699.071 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511699.691808782] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511690.530 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-7] [INFO] [1792511702.838910411] [rviz2]: Setting estimate pose: Frame:map, Position(0.000430033, -0.00662398, 0), Orientation(0, 0, 0.699482, 0.71465) = Angle: 1.54935
+[amcl-2] [INFO] [1792511702.839251470] [amcl]: initialPoseReceived
+[amcl-2] [WARN] [1792511702.839373692] [amcl]: Failed to transform initial pose in time (Lookup would require extrapolation into the future.  Requested time 1792511702.839314 but the latest data is at time 1792511702.829553, when looking up transform from frame [base_link] to frame [odom])
+[amcl-2] [INFO] [1792511702.839394049] [amcl]: Setting pose (1792511702.839394): 0.000 -0.007 1.549
+[rviz2-7] [INFO] [1792511703.280797509] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511702.708 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511705.836437407] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511705.344 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511705.867154795] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511704.824 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511705.868627136] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511704.824 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511711.473571551] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511710.982 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511714.641405220] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511714.118 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511715.146849566] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511714.105 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511715.148627090] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511714.105 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511716.172728857] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511714.130 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511723.386712819] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511722.892 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511723.923021658] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511722.881 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511723.924714823] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511722.881 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511724.981162372] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511722.930 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511725.908652071] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511725.394 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511726.451416675] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511725.403 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511726.452811063] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511725.403 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511728.472436483] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511728.030 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511730.771599740] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511729.740 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511730.771728771] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511729.740 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511730.996783507] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511730.465 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511734.234592047] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511733.768 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511734.803013772] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511733.775 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511734.804840076] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511733.775 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511735.954581692] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511733.930 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511736.756895699] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511736.337 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511741.625568084] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511741.175 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511744.147974562] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511743.710 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511744.307227747] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511743.257 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511744.309440118] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511743.257 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511745.363442140] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511743.330 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511748.536715390] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511748.114 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511749.138719006] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511748.099 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511749.140520269] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511748.099 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511750.164440619] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511748.130 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511751.060990155] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511750.616 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511754.360476804] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511753.852 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511754.899163785] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511753.849 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511754.900336857] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511753.849 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511755.956198013] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511753.930 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511756.885020312] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511756.454 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511757.523197680] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511756.472 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511757.525274128] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511756.472 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511759.448767715] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511758.790 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511762.004525856] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511761.259 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511765.176915077] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511764.761 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511765.779500623] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511764.743 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511765.781169477] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511764.743 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511770.326727613] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511769.699 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511770.739183479] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511769.686 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511770.740675954] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511769.686 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511771.764534910] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511769.730 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511774.057477938] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511773.535 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511774.563439078] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511773.519 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511774.563545855] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511773.519 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511775.557169585] [rviz2_node]: Message Filter dropping message: frame 'odom' at time 1792511773.530 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511776.580947219] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511776.004 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511777.091593930] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511776.041 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511777.093078061] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511776.041 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511779.208806555] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511778.673 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511779.715152197] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511778.663 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511779.720987641] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511778.663 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511783.304635182] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511782.843 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511783.842952684] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511782.799 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511783.844572080] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511782.799 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511786.281151840] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511785.846 for reason 'discarding message because the queue is full'
+[planner_server-4] [ERROR] [1792511793.064876957] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.064976924] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.10)
+[planner_server-4] [WARN] [1792511793.064997451] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.067644159] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.067715815] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.10)
+[planner_server-4] [WARN] [1792511793.067733442] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.069865877] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.069929606] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.15)
+[planner_server-4] [WARN] [1792511793.069947702] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.071534560] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.071662329] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.15)
+[planner_server-4] [WARN] [1792511793.071683364] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.073601360] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.073670050] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.05)
+[planner_server-4] [WARN] [1792511793.073687703] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.076159539] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.076241318] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.05)
+[planner_server-4] [WARN] [1792511793.076260560] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.078229386] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.078300631] [planner_server]: Planning algorithm  failed to generate a valid path to (0.70, 5.10)
+[planner_server-4] [WARN] [1792511793.078318772] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.080513405] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.080574693] [planner_server]: Planning algorithm  failed to generate a valid path to (0.85, 5.10)
+[planner_server-4] [WARN] [1792511793.080592920] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.082506950] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.082573097] [planner_server]: Planning algorithm  failed to generate a valid path to (0.70, 5.15)
+[planner_server-4] [WARN] [1792511793.082591392] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.085260041] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.085323934] [planner_server]: Planning algorithm  failed to generate a valid path to (0.85, 5.15)
+[planner_server-4] [WARN] [1792511793.085341839] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.087852273] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.087917805] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.10)
+[planner_server-4] [WARN] [1792511793.087936126] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.090488569] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.090572029] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.10)
+[planner_server-4] [WARN] [1792511793.090590810] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.093448645] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.093516496] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.20)
+[planner_server-4] [WARN] [1792511793.093536397] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.096047441] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.096115544] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.20)
+[planner_server-4] [WARN] [1792511793.096134033] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.098563368] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.098621355] [planner_server]: Planning algorithm  failed to generate a valid path to (0.70, 5.05)
+[planner_server-4] [WARN] [1792511793.098638923] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.101485484] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.101551627] [planner_server]: Planning algorithm  failed to generate a valid path to (0.85, 5.05)
+[planner_server-4] [WARN] [1792511793.101570070] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.104596192] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.104663094] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.15)
+[planner_server-4] [WARN] [1792511793.104681703] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.107522293] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.107586665] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.15)
+[planner_server-4] [WARN] [1792511793.107604680] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.110558989] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.110621390] [planner_server]: Planning algorithm  failed to generate a valid path to (0.70, 5.20)
+[planner_server-4] [WARN] [1792511793.110639058] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.112942557] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.113009086] [planner_server]: Planning algorithm  failed to generate a valid path to (0.85, 5.20)
+[planner_server-4] [WARN] [1792511793.113027223] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.116029413] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.116090952] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.00)
+[planner_server-4] [WARN] [1792511793.116108436] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.118302219] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.118364401] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.00)
+[planner_server-4] [WARN] [1792511793.118381965] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.120793530] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.120852285] [planner_server]: Planning algorithm  failed to generate a valid path to (0.75, 5.10)
+[planner_server-4] [WARN] [1792511793.120869654] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-4] [ERROR] [1792511793.123574635] [planner_server]: planner  is not a valid planner. Planner names are: GridBased PositionOnlyGrid 
+[planner_server-4] [WARN] [1792511793.123652535] [planner_server]: Planning algorithm  failed to generate a valid path to (0.80, 5.10)
+[planner_server-4] [WARN] [1792511793.123671124] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[rviz2-7] [INFO] [1792511795.433138740] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511794.920 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511795.939222727] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511794.904 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511795.940956736] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511794.904 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511798.408260151] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511797.722 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511798.755376203] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511797.728 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511798.757419040] [rviz2_node]: Message Filter dropping message: frame 'velodyne' at time 1792511797.728 for reason 'discarding message because the queue is full'
+[rviz2-7] [INFO] [1792511802.089079520] [rviz2_node]: Message Filter dropping message: frame 'camera_color_optical_frame' at time 1792511801.659 for reason 'discarding message because the queue is full'

@@ -84,7 +84,7 @@ class LocalizationNode(Node):
                 output_stamped.pose.orientation.z = transformed_pose.orientation.z
                 output_stamped.pose.orientation.w = transformed_pose.orientation.w
                 try:
-                    path = self.navigator.getPath(initial_pose, pose_stamped)
+                    path = self.navigator.getPath(initial_pose, pose_stamped, planner_id="GridBased")
                 except Exception as e:
                     self.get_logger().info(f"{str(e)}")
                 # Send goal using the BasicNavigator

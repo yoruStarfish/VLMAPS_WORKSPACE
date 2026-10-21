@@ -195,7 +195,8 @@ def get_best_safe_pose(
 
                 path = navigator.getPath(
                     start_pose,
-                    test_goal
+                    test_goal,
+                    planner_id="GridBased"
                 )
 
             except Exception as e:

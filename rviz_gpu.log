@@ -1,0 +1,69 @@
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 33
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 33
+libGL: pci id for fd 33: 8086:7d67, driver iris
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+libGL error: glx: failed to create dri3 screen
+libGL error: failed to load driver: iris
+libGL: using driver i915 for 33
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 33
+libGL: pci id for fd 33: 8086:7d67, driver iris
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+libGL error: glx: failed to create dri2 screen
+libGL error: failed to load driver: iris
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/swrast_dri.so)
+libGL: did not find extension DRI_Kopper version 1
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: did not find extension DRI2_Flush version 1
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 34
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 34
+libGL: pci id for fd 34: 8086:7d67, driver iris
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+MESA: warning: Driver does not support the 0x7d67 PCI ID.
+libGL error: glx: failed to create dri3 screen
+libGL error: failed to load driver: iris
+libGL: using driver i915 for 34
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: using driver i915 for 34
+libGL: pci id for fd 34: 8086:7d67, driver iris
+libGL: MESA-LOADER: dlopen(/usr/lib/x86_64-linux-gnu/dri/iris_dri.so)
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.
+libGL: Can't open configuration file /etc/drirc: No such file or directory.
+libGL: Can't open configuration file /root/.drirc: No such file or directory.

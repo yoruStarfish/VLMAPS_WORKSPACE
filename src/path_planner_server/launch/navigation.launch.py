@@ -2,14 +2,16 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from path_planner_server.position_navigation import (
+    controller_launch_overrides, planner_launch_overrides,
+    navigator_launch_overrides,
+)
 
 
 def generate_launch_description():
 
     controller_yaml = os.path.join(get_package_share_directory(
         'path_planner_server'), 'config', 'controller.yaml')
-    default_bt_xml_path = os.path.join(get_package_share_directory(
-        'path_planner_server'), 'config', 'behavior.xml')
     planner_yaml = os.path.join(get_package_share_directory(
         'path_planner_server'), 'config', 'planner_server.yaml')
     recovery_yaml = os.path.join(get_package_share_directory(
@@ -36,7 +38,7 @@ def generate_launch_description():
             executable='map_server',
             name='map_server',
             output='screen',
-            parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/debug_obstacle_map.yaml'}]
+            parameters=[{'yaml_filename': '/workspace/debug_obstacle_map.yaml'}]
             # parameters=[{'yaml_filename': '/home/robotic/vlmaps_ws/temp/rtabmap.yaml'}]
             #/home/robotics/rtab_ws/rtabmap_15_50_M10_single_edited/rtabmap_15_50_M10_single_edited.yaml
         ),
@@ -60,7 +62,7 @@ def generate_launch_description():
             executable='controller_server',
             name='controller_server',
             output='screen',
-            parameters=[controller_yaml],
+            parameters=[controller_yaml, controller_launch_overrides(controller_yaml)],
             remappings=remappings + [
                 ('cmd_vel', 'cmd_vel_nav')
             ]
@@ -70,7 +72,7 @@ def generate_launch_description():
             executable='planner_server',
             name='planner_server',
             output='screen',
-            parameters=[planner_yaml]),
+            parameters=[planner_yaml, planner_launch_overrides(planner_yaml)]),
 
         # Node(
         #     package='nav2_behaviors',
@@ -94,7 +96,8 @@ def generate_launch_description():
             executable='bt_navigator',
             name='bt_navigator',
             output='screen',
-            parameters=[bt_navigator_yaml, {'default_bt_xml_filename': default_bt_xml_path}]),
+            parameters=[bt_navigator_yaml, navigator_launch_overrides(
+                os.path.dirname(bt_navigator_yaml))]),
 
         Node(
             package='rviz2',
@@ -132,9 +135,9 @@ def generate_launch_description():
             name='min_wz_filter',
             output='screen',
             parameters=[{
-                'min_wz': 0.8, # 0.8
+                'min_wz': 0.6,
                 'trigger_wz': 0.001,
-                'low_vx_threshold': 0.08,
+                'low_vx_threshold': 0.025,
                 'turn_in_place_threshold': 0.2,
                 'turn_in_place_release': 0.1,
                 'command_timeout': 0.5

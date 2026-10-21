@@ -17,15 +17,17 @@ import rclpy
 from rclpy.node import Node
 from rclpy.duration import Duration
 from rclpy.time import Time
-from tf2_ros import Buffer, TransformListener
+from tf2_ros import Buffer, TransformListener, TransformException
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 from cv_bridge import CvBridge
 import tf_transformations
 from omegaconf import OmegaConf
 
-base_dir = os.path.expanduser("~/vlmaps_ws")
+
+base_dir = "/workspace"
 sys_core_dir = os.path.join(base_dir, "vlmapsSrc")
-sys.path.insert(0, sys_core_dir)
+if os.path.isdir(sys_core_dir):
+    sys.path.insert(0, sys_core_dir)
 
 from vlmaps.map.vlmap_tracer import VLMapTracer
 from vlmaps.robot.tracer_lang_robot import TracerLangRobot
@@ -60,22 +62,16 @@ class LocalizationNode(Node):
         self.pose_publisher = PosePublisher(self.tf_buffer, self.tf_listener)
 
     def timer_callback(self):
-        map_to_odom = self.tf_buffer.lookup_transform(
-            target_frame='map',
-            source_frame='odom',
-            time=Time(), 
-            timeout=Duration(seconds=2.0)
-        )
-        odom_to_base_link = self.tf_buffer.lookup_transform(
-            target_frame='odom',
-            source_frame='base_link',
-            time=Time(), 
-            timeout=Duration(seconds=2.0)
-        )
-        combined_transform = self.combine_transforms(map_to_odom, odom_to_base_link)
-        self.print_transform(combined_transform)
-        if combined_transform:
-            self.pose_publisher.update_pose(combined_transform)
+        try:
+            # Query one time-consistent chain without blocking the executor
+            # that must receive the missing TF messages.
+            trans = self.tf_buffer.lookup_transform('map', 'base_link', Time())
+        except TransformException as exc:
+            self.pose_publisher.pose = None
+            self.get_logger().warning(f"等待 map -> base_link TF：{exc}", throttle_duration_sec=5.0)
+            return
+        self.print_transform(trans)
+        self.pose_publisher.update_pose(trans)
 
     def combine_transforms(self, transform1, transform2):
         t1_translation = transform1.transform.translation
@@ -133,7 +129,7 @@ class PosePublisher(Node):
     def update_pose(self, trans):
         pose_msg = PoseStamped()
         pose_msg.header.frame_id = 'map'
-        pose_msg.header.stamp = self.get_clock().now().to_msg()
+        pose_msg.header.stamp = trans.header.stamp
         pose_msg.pose.position.x = trans.transform.translation.x
         pose_msg.pose.position.y = trans.transform.translation.y
         pose_msg.pose.position.z = trans.transform.translation.z
@@ -252,6 +248,9 @@ def main():
         [-0.25, 0.25],
     ],
     ) 
+    # base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+    # map_config = OmegaConf.load(os.path.join(base_dir, "vlmapsSrc", "config", "map_config", "vlmaps_tracer.yaml"))
+    # data_dir = os.path.join(base_dir, "vlmapsSrc", "dataset")
     map_config = OmegaConf.load("vlmapsSrc/config/map_config/vlmaps_tracer.yaml")
     data_dir = os.path.join(base_dir, "dataset")
     _lang_robot.load_scene_map(data_dir=data_dir, map_config=map_config)
@@ -279,7 +278,11 @@ def main():
                 
             if cmd:
                 print(f"\n收到指令，開始分析: {cmd}", flush=True)
-                code_string = get_code_from_llm(cmd)
+                try:
+                    code_string = get_code_from_llm(cmd)
+                except Exception as exc:
+                    print(f"指令分析失敗，未執行導航: {exc}", flush=True)
+                    continue
                 print(f"LLM 決定執行的程式碼:\n{code_string}", flush=True)
 
                 print("開始導航...", flush=True)

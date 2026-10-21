@@ -1,0 +1,5 @@
+<library path="strict_hybrid_planner">
+  <class name="nav2_footprint_planner/StrictHybridPlanner" type="nav2_footprint_planner::StrictHybridPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>Free goal heading; full polygon and swept-edge collision constraints in hybrid A*.</description>
+  </class>
+</library>

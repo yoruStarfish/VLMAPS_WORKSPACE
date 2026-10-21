@@ -1,0 +1,179 @@
+[New LWP 20589]
+[New LWP 20593]
+[New LWP 20595]
+[New LWP 20596]
+[New LWP 20597]
+[New LWP 20598]
+[New LWP 20599]
+[New LWP 20600]
+[New LWP 20601]
+[New LWP 20603]
+[New LWP 20607]
+[New LWP 20612]
+[New LWP 20660]
+[New LWP 20975]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007a96d91b6280 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 15 (Thread 0x7a9694800640 (LWP 20975) "nav2_rviz_plugi"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b8a01 in pthread_cond_wait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7bcf132 in eprosima::fastdds::dds::detail::WaitSetImpl::wait(std::vector<eprosima::fastdds::dds::Condition*, std::allocator<eprosima::fastdds::dds::Condition*> >&, eprosima::fastrtps::Time_t const&) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7bcf1aa in eprosima::fastdds::dds::WaitSet::wait(std::vector<eprosima::fastdds::dds::Condition*, std::allocator<eprosima::fastdds::dds::Condition*> >&, eprosima::fastrtps::Time_t) const () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96cc3bfa44 in rmw_fastrtps_shared_cpp::__rmw_wait(char const*, rmw_subscriptions_s*, rmw_guard_conditions_s*, rmw_services_s*, rmw_clients_s*, rmw_events_s*, rmw_wait_set_s*, rmw_time_s const*) () from /opt/ros/humble/lib/librmw_fastrtps_shared_cpp.so
+#5  0x00007a96cc417887 in rmw_wait () from /opt/ros/humble/lib/librmw_fastrtps_cpp.so
+#6  0x00007a96d85a08d8 in rcl_wait () from /opt/ros/humble/lib/librcl.so
+#7  0x00007a96d96ab563 in rclcpp::graph_listener::GraphListener::run_loop() () from /opt/ros/humble/lib/librclcpp.so
+#8  0x00007a96d96a6e0a in rclcpp::graph_listener::GraphListener::run() () from /opt/ros/humble/lib/librclcpp.so
+#9  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#11 0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 14 (Thread 0x7a96a2c06640 (LWP 20660) "rviz2"):
+#0  0x00007a96d91b6280 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91bcfc2 in pthread_mutex_lock () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c05da3f9 in ?? () from /opt/ros/humble/lib/libtf2_ros.so
+#3  0x00007a96c0577dcb in tf2::BufferCore::testTransformableRequests() () from /opt/ros/humble/lib/libtf2.so
+#4  0x00007a96c057c810 in tf2::BufferCore::setTransformImpl(tf2::Transform const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) () from /opt/ros/humble/lib/libtf2.so
+#5  0x00007a96c057ce6a in tf2::BufferCore::setTransform(geometry_msgs::msg::TransformStamped_<std::allocator<void> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) () from /opt/ros/humble/lib/libtf2.so
+#6  0x00007a96c05e0fe1 in tf2_ros::TransformListener::subscription_callback(std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>, bool) () from /opt/ros/humble/lib/libtf2_ros.so
+#7  0x00007a96a3e2996a in std::_Function_handler<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>), std::_Bind<void (tf2_ros::TransformListener::*(tf2_ros::TransformListener*, std::_Placeholder<1>, bool))(std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>, bool)> >::_M_invoke(std::_Any_data const&, std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>&&) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#8  0x00007a96a3e34a92 in std::__detail::__variant::__gen_vtable_impl<std::__detail::__variant::_Multi_array<std::__detail::__variant::__deduce_visit_result<void> (*)(rclcpp::AnySubscriptionCallback<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::allocator<void> >::dispatch(std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >, rclcpp::MessageInfo const&)::{lambda(auto:1&&)#1}&&, std::variant<std::function<void (tf2_msgs::msg::TFMessage_<std::allocator<void> > const&)>, std::function<void (tf2_msgs::msg::TFMessage_<std::allocator<void> > const&, rclcpp::MessageInfo const&)>, std::function<void (rclcpp::SerializedMessage const&)>, std::function<void (rclcpp::SerializedMessage const&, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::default_delete<tf2_msgs::msg::TFMessage_<std::allocator<void> > > >)>, std::function<void (std::unique_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::default_delete<tf2_msgs::msg::TFMessage_<std::allocator<void> > > >, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const> const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>, rclcpp::MessageInfo const&)> >&)>, std::integer_sequence<unsigned long, 8ul> >::__visit_invoke(rclcpp::AnySubscriptionCallback<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::allocator<void> >::dispatch(std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >, rclcpp::MessageInfo const&)::{lambda(auto:1&&)#1}&&, std::variant<std::function<void (tf2_msgs::msg::TFMessage_<std::allocator<void> > const&)>, std::function<void (tf2_msgs::msg::TFMessage_<std::allocator<void> > const&, rclcpp::MessageInfo const&)>, std::function<void (rclcpp::SerializedMessage const&)>, std::function<void (rclcpp::SerializedMessage const&, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::default_delete<tf2_msgs::msg::TFMessage_<std::allocator<void> > > >)>, std::function<void (std::unique_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> >, std::default_delete<tf2_msgs::msg::TFMessage_<std::allocator<void> > > >, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const> const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >)>, std::function<void (std::shared_ptr<tf2_msgs::msg::TFMessage_<std::allocator<void> > >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>, rclcpp::MessageInfo const&)> >&) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#9  0x00007a96a3e36113 in ?? () from /opt/ros/humble/lib/librviz_default_plugins.so
+#10 0x00007a96d969a9fc in rclcpp::Executor::execute_subscription(std::shared_ptr<rclcpp::SubscriptionBase>) () from /opt/ros/humble/lib/librclcpp.so
+#11 0x00007a96d969b1ff in rclcpp::Executor::execute_any_executable(rclcpp::AnyExecutable&) () from /opt/ros/humble/lib/librclcpp.so
+#12 0x00007a96d96a2b70 in rclcpp::executors::SingleThreadedExecutor::spin() () from /opt/ros/humble/lib/librclcpp.so
+#13 0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#14 0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#15 0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 13 (Thread 0x7a96c27c8640 (LWP 20612) "QDBusConnection"):
+#0  0x00007a96d923dd1f in poll () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d7cfe596 in ?? () from /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#2  0x00007a96d7ca6433 in g_main_context_iteration () from /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#3  0x00007a96d9abd0b8 in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+#4  0x00007a96d9a6275b in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+#5  0x00007a96d9875af2 in QThread::exec() () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+#6  0x00007a96cd009f0b in ?? () from /lib/x86_64-linux-gnu/libQt5DBus.so.5
+#7  0x00007a96d9876ca1 in ?? () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+#8  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#9  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 12 (Thread 0x7a96c2fc9640 (LWP 20607) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b8a01 in pthread_cond_wait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7bcf132 in eprosima::fastdds::dds::detail::WaitSetImpl::wait(std::vector<eprosima::fastdds::dds::Condition*, std::allocator<eprosima::fastdds::dds::Condition*> >&, eprosima::fastrtps::Time_t const&) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7bcf1aa in eprosima::fastdds::dds::WaitSet::wait(std::vector<eprosima::fastdds::dds::Condition*, std::allocator<eprosima::fastdds::dds::Condition*> >&, eprosima::fastrtps::Time_t) const () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96cc3bfa44 in rmw_fastrtps_shared_cpp::__rmw_wait(char const*, rmw_subscriptions_s*, rmw_guard_conditions_s*, rmw_services_s*, rmw_clients_s*, rmw_events_s*, rmw_wait_set_s*, rmw_time_s const*) () from /opt/ros/humble/lib/librmw_fastrtps_shared_cpp.so
+#5  0x00007a96cc3ab502 in ?? () from /opt/ros/humble/lib/librmw_fastrtps_shared_cpp.so
+#6  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#8  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 11 (Thread 0x7a96c37ca640 (LWP 20603) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b8a01 in pthread_cond_wait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7c26e45 in eprosima::fastdds::rtps::FlowControllerImpl<eprosima::fastdds::rtps::FlowControllerSyncPublishMode, eprosima::fastdds::rtps::FlowControllerFifoSchedule>::run() () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 10 (Thread 0x7a96c3fcb640 (LWP 20601) "rviz2"):
+#0  0x00007a96d924c814 in recvfrom () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96c7b07040 in eprosima::fastdds::rtps::UDPChannelResource::Receive(unsigned char*, unsigned int, unsigned int&, eprosima::fastrtps::rtps::Locator_t&) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#2  0x00007a96c7b07406 in eprosima::fastdds::rtps::UDPChannelResource::perform_listen_operation(eprosima::fastrtps::rtps::Locator_t) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7b0213b in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 9 (Thread 0x7a96c47cc640 (LWP 20600) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91c1a13 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7cc12fa in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7cc1b6c in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96c7cbf347 in eprosima::fastdds::rtps::SharedMemChannelResource::perform_listen_operation(eprosima::fastrtps::rtps::Locator_t) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#5  0x00007a96c7cc298b in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#6  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#8  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 8 (Thread 0x7a96c4fcd640 (LWP 20599) "rviz2"):
+#0  0x00007a96d924c814 in recvfrom () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96c7b07040 in eprosima::fastdds::rtps::UDPChannelResource::Receive(unsigned char*, unsigned int, unsigned int&, eprosima::fastrtps::rtps::Locator_t&) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#2  0x00007a96c7b07406 in eprosima::fastdds::rtps::UDPChannelResource::perform_listen_operation(eprosima::fastrtps::rtps::Locator_t) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7b0213b in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 7 (Thread 0x7a96c57ce640 (LWP 20598) "rviz2"):
+#0  0x00007a96d924c814 in recvfrom () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96c7b07040 in eprosima::fastdds::rtps::UDPChannelResource::Receive(unsigned char*, unsigned int, unsigned int&, eprosima::fastrtps::rtps::Locator_t&) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#2  0x00007a96c7b07406 in eprosima::fastdds::rtps::UDPChannelResource::perform_listen_operation(eprosima::fastrtps::rtps::Locator_t) () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96c7b0213b in ?? () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#4  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 6 (Thread 0x7a96c5fcf640 (LWP 20597) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b929d in pthread_cond_clockwait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7a19f61 in eprosima::fastrtps::rtps::ResourceEvent::event_service() () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 5 (Thread 0x7a96c67d0640 (LWP 20596) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b929d in pthread_cond_clockwait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c7cb4701 in eprosima::fastdds::rtps::SharedMemWatchdog::run() () from /opt/ros/humble/lib/libfastrtps.so.2.6
+#3  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 4 (Thread 0x7a96c6fd1640 (LWP 20595) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91c1c38 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96d9712742 in rclcpp::SignalHandler::wait_for_signal() () from /opt/ros/humble/lib/librclcpp.so
+#3  0x00007a96d97134de in rclcpp::SignalHandler::deferred_signal_handler() () from /opt/ros/humble/lib/librclcpp.so
+#4  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 3 (Thread 0x7a96c77d2640 (LWP 20593) "rviz2"):
+#0  0x00007a96d91b60d7 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91b929d in pthread_cond_clockwait () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96d4694839 in ?? () from /lib/x86_64-linux-gnu/libspdlog.so.1
+#3  0x00007a96d944a253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 2 (Thread 0x7a96ccc49640 (LWP 20589) "QXcbEventQueue"):
+#0  0x00007a96d923dd1f in poll () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d50527e2 in ?? () from /lib/x86_64-linux-gnu/libxcb.so.1
+#2  0x00007a96d505422c in xcb_wait_for_event () from /lib/x86_64-linux-gnu/libxcb.so.1
+#3  0x00007a96cd0f7d08 in ?? () from /lib/x86_64-linux-gnu/libQt5XcbQpa.so.5
+#4  0x00007a96d9876ca1 in ?? () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+#5  0x00007a96d91b9a83 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007a96d924b8e0 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 1 (Thread 0x7a96d3e54240 (LWP 20478) "rviz2"):
+#0  0x00007a96d91b6280 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007a96d91bcfc2 in pthread_mutex_lock () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007a96c05762c3 in tf2::BufferCore::addTransformableRequest(std::function<void (unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > >, tf2::TransformableResult)> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > >) () from /opt/ros/humble/lib/libtf2.so
+#3  0x00007a96c05db2bc in tf2_ros::Buffer::waitForTransform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&, std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&, std::function<void (tf2_ros::TransformStampedFuture const&)>) () from /opt/ros/humble/lib/libtf2_ros.so
+#4  0x00007a96a3e2bac3 in rviz_default_plugins::transformation::TFWrapper::waitForTransform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&, std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&, std::function<void (tf2_ros::TransformStampedFuture const&)>) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#5  0x00007a96a3e2bbd8 in rviz_default_plugins::transformation::TFFrameTransformer::waitForTransform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&, std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&, std::function<void (tf2_ros::TransformStampedFuture const&)>) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#6  0x00007a96a3de8755 in ?? () from /opt/ros/humble/lib/librviz_default_plugins.so
+#7  0x00007a96a3df1898 in ?? () from /opt/ros/humble/lib/librviz_default_plugins.so
+#8  0x00007a96a3df14df in std::_Function_handler<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>), message_filters::Subscriber<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, rclcpp::Node>::subscribe(rclcpp::Node*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, rmw_qos_profile_s, rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >)::{lambda(std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>)#1}>::_M_invoke(std::_Any_data const&, std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>&&) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#9  0x00007a96a3df4ad2 in std::__detail::__variant::__gen_vtable_impl<std::__detail::__variant::_Multi_array<std::__detail::__variant::__deduce_visit_result<void> (*)(rclcpp::AnySubscriptionCallback<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::allocator<void> >::dispatch(std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >, rclcpp::MessageInfo const&)::{lambda(auto:1&&)#1}&&, std::variant<std::function<void (sensor_msgs::msg::PointCloud2_<std::allocator<void> > const&)>, std::function<void (sensor_msgs::msg::PointCloud2_<std::allocator<void> > const&, rclcpp::MessageInfo const&)>, std::function<void (rclcpp::SerializedMessage const&)>, std::function<void (rclcpp::SerializedMessage const&, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::default_delete<sensor_msgs::msg::PointCloud2_<std::allocator<void> > > >)>, std::function<void (std::unique_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::default_delete<sensor_msgs::msg::PointCloud2_<std::allocator<void> > > >, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const> const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>, rclcpp::MessageInfo const&)> >&)>, std::integer_sequence<unsigned long, 8ul> >::__visit_invoke(rclcpp::AnySubscriptionCallback<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::allocator<void> >::dispatch(std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >, rclcpp::MessageInfo const&)::{lambda(auto:1&&)#1}&&, std::variant<std::function<void (sensor_msgs::msg::PointCloud2_<std::allocator<void> > const&)>, std::function<void (sensor_msgs::msg::PointCloud2_<std::allocator<void> > const&, rclcpp::MessageInfo const&)>, std::function<void (rclcpp::SerializedMessage const&)>, std::function<void (rclcpp::SerializedMessage const&, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::default_delete<sensor_msgs::msg::PointCloud2_<std::allocator<void> > > >)>, std::function<void (std::unique_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> >, std::default_delete<sensor_msgs::msg::PointCloud2_<std::allocator<void> > > >, rclcpp::MessageInfo const&)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void (std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const>, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const> const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage const> const&, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >)>, std::function<void (std::shared_ptr<sensor_msgs::msg::PointCloud2_<std::allocator<void> > >, rclcpp::MessageInfo const&)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void (std::shared_ptr<rclcpp::SerializedMessage>, rclcpp::MessageInfo const&)> >&) () from /opt/ros/humble/lib/librviz_default_plugins.so
+#10 0x00007a96a3df1ba3 in ?? () from /opt/ros/humble/lib/librviz_default_plugins.so
+#11 0x00007a96d969a9fc in rclcpp::Executor::execute_subscription(std::shared_ptr<rclcpp::SubscriptionBase>) () from /opt/ros/humble/lib/librclcpp.so
+#12 0x00007a96d969b1ff in rclcpp::Executor::execute_any_executable(rclcpp::AnyExecutable&) () from /opt/ros/humble/lib/librclcpp.so
+#13 0x00007a96d969c993 in rclcpp::Executor::spin_some_impl(std::chrono::duration<long, std::ratio<1l, 1000000000l> >, bool) () from /opt/ros/humble/lib/librclcpp.so
+#14 0x00007a96da51a613 in rviz_common::VisualizationManager::onUpdate() () from /opt/ros/humble/lib/librviz_common.so
+#15 0x00007a96d9a9b7c8 in ?? () from /lib/x86_64-linux-gnu/libQt5Core.so.5
+[Inferior 1 (process 20478) detached]

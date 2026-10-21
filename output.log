@@ -1,842 +1,452 @@
-[INFO] [launch]: All log files can be found below /home/robotic/.ros/log/2026-10-08-17-42-29-572172-robotic-68154
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-10-20-15-55-57-215538-vlmap_dev_gpu-204736
 [INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [python-1]: process started with pid [68156]
+[INFO] [python-1]: process started with pid [204738]
 [python-1] 啟動 Nav2 導航器...
-[python-1] [INFO] [1791452561.272039584] [navi_vlmaps_node]: Nav2 is ready for use!
+[python-1] [INFO] [1792511767.723266301] [navi_vlmaps_node]: Nav2 is ready for use!
 [python-1] 啟動 LocalizationNode 獲取真實座標...
-[python-1] [WARN] [1791452561.272454211] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
-[python-1] [WARN] [1791452561.284349323] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
-[python-1] [INFO] [1791452562.288340939] [navi_vlmaps_node]: At time 1791452563.168681984
-[python-1] [INFO] [1791452562.289310772] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452562.290174915] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452562.292230606] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452562.292893443] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452562.293470272] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452562.294223050] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452562.295018614] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452562.295744876] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452562.296254321] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [WARN] [1792511767.724723257] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[python-1] [WARN] [1792511767.737787301] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[python-1] [INFO] [1792511768.740345171] [navi_vlmaps_node]: At time 1792511769.677100800
+[python-1] [INFO] [1792511768.740892429] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511768.741349308] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511768.741941191] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511768.742244787] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511768.742473653] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511768.742712012] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511768.742927192] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511768.743137528] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511768.743349037] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
 [python-1] 成功取得初始座標。
 [python-1] 初始化 VLMaps 系統...
-[python-1] /home/robotic/vlmaps_ws/dataset
-[python-1] /home/robotic/vlmaps_ws/dataset/vlmap/vlmaps.h5df
+[python-1] /workspace/dataset
+[python-1] /workspace/dataset/vlmap/vlmaps.h5df
 [python-1] Loading CLIP model...
 [python-1] 
 [python-1] ==================================================
 [python-1] 語音/文字導航助理已啟動
 [python-1] ==================================================
-[python-1] [WARN] [1791452567.396600316] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
-[python-1] [INFO] [1791452567.447883616] [navi_vlmaps_node]: Listening to /user_command...
-[python-1] [INFO] [1791452567.453552722] [navi_vlmaps_node]: At time 1791452563.168681984
-[python-1] [INFO] [1791452567.455229438] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452567.457061027] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452567.458196052] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452567.458812813] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452567.461290668] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452567.462699794] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452567.463216693] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452567.463832720] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452567.464371542] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452568.384523520] [navi_vlmaps_node]: At time 1791452567.102194944
-[python-1] [INFO] [1791452568.385295695] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452568.386817928] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452568.387836451] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452568.388322916] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452568.388832623] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452568.389332347] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452568.389904066] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452568.390489282] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452568.391045272] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452569.300253506] [navi_vlmaps_node]: At time 1791452567.102194944
-[python-1] [INFO] [1791452569.300571071] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452569.300848892] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452569.301179746] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452569.301534135] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452569.301802714] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452569.302074468] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452569.302387855] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452569.302892930] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452569.303329095] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452570.311608004] [navi_vlmaps_node]: At time 1791452567.102194944
-[python-1] [INFO] [1791452570.312089919] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452570.312574017] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452570.313255448] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452570.313564898] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452570.313835779] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452570.314121440] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452570.314411368] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452570.314927587] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452570.315264327] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452571.323205209] [navi_vlmaps_node]: At time 1791452567.102194944
-[python-1] [INFO] [1791452571.323581241] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452571.324079575] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452571.324483949] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452571.324827054] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452571.325224226] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452571.325583224] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452571.325928502] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452571.326266709] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452571.326593009] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452572.334247231] [navi_vlmaps_node]: At time 1791452571.540047872
-[python-1] [INFO] [1791452572.334649153] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452572.335014588] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452572.335360510] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452572.335738412] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452572.336072660] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452572.336380711] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452572.336729376] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452572.337061864] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452572.337406462] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452573.348849368] [navi_vlmaps_node]: At time 1791452571.640869632
-[python-1] [INFO] [1791452573.349419763] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452573.349944409] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452573.350404772] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452573.350815542] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452573.351234175] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452573.351665904] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452573.352110559] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452573.352519542] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452573.352926852] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452574.360370120] [navi_vlmaps_node]: At time 1791452572.952050432
-[python-1] [INFO] [1791452574.360909133] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452574.361347940] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452574.361765174] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452574.362185956] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452574.362687296] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452574.363104922] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452574.363521543] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452574.363985614] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452574.364425588] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452575.374466299] [navi_vlmaps_node]: At time 1791452572.952050432
-[python-1] [INFO] [1791452575.375000178] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452575.375500242] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452575.376096898] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452575.376566371] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452575.377022528] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452575.377483035] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452575.377926945] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452575.378382860] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452575.378927534] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452576.291871147] [navi_vlmaps_node]: At time 1791452572.952050432
-[python-1] [INFO] [1791452576.292225986] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452576.292632073] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452576.293034379] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452576.293330094] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452576.293620900] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452576.293928484] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452576.294253266] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452576.294585171] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452576.294872946] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452577.303383087] [navi_vlmaps_node]: At time 1791452572.952050432
-[python-1] [INFO] [1791452577.304036667] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452577.304472731] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452577.304981974] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452577.305411530] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452577.305871811] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452577.306278230] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452577.306689265] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452577.307127303] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452577.307535472] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452578.320876938] [navi_vlmaps_node]: At time 1791452577.87335168
-[python-1] [INFO] [1791452578.321330278] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452578.321632166] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452578.321979662] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452578.322275988] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452578.322572990] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452578.322865887] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452578.323209876] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452578.323508915] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452578.323797109] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452579.332005994] [navi_vlmaps_node]: At time 1791452578.297634048
-[python-1] [INFO] [1791452579.332328866] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452579.332741011] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452579.333107911] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452579.333391556] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452579.333663632] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452579.333937690] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452579.334210368] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452579.334493558] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452579.334767712] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452580.345943165] [navi_vlmaps_node]: At time 1791452578.902857216
-[python-1] [INFO] [1791452580.346403230] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452580.346810621] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452580.347280864] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452580.347686292] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452580.348077523] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452580.348483205] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452580.348883131] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452580.349327825] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452580.349837442] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452581.358942645] [navi_vlmaps_node]: At time 1791452580.113134848
-[python-1] [INFO] [1791452581.359372639] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452581.359824689] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452581.360363116] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452581.360803399] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452581.361226776] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452581.361548254] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452581.361827856] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452581.362099893] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452581.362379765] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452582.370659106] [navi_vlmaps_node]: At time 1791452581.121712128
-[python-1] [INFO] [1791452582.370986460] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452582.371310627] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452582.371686504] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452582.371985294] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452582.372274451] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452582.372602972] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452582.372927558] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452582.373225955] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452582.373533671] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452583.286283498] [navi_vlmaps_node]: At time 1791452581.121712128
-[python-1] [INFO] [1791452583.286804079] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452583.287221543] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452583.287680944] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452583.288134795] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452583.288546125] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452583.288980506] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452583.289486425] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452583.289954021] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452583.290397299] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452584.299071133] [navi_vlmaps_node]: At time 1791452581.121712128
-[python-1] [INFO] [1791452584.299493470] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452584.299802064] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452584.300173401] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452584.300551853] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452584.300857173] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452584.301155331] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452584.301461038] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452584.301830978] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452584.302139096] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452585.317674124] [navi_vlmaps_node]: At time 1791452581.121712128
-[python-1] [INFO] [1791452585.318488608] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452585.319016213] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452585.319848799] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452585.320436026] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452585.321259743] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452585.321894388] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452585.322430507] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452585.322951893] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452585.323515858] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452586.343104406] [navi_vlmaps_node]: At time 1791452585.458736640
-[python-1] [INFO] [1791452586.343678810] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452586.344210111] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452586.344810355] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452586.345264594] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452586.345696005] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452586.346145399] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452586.346588726] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452586.347026146] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452586.347466447] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452587.357932966] [navi_vlmaps_node]: At time 1791452585.559621120
-[python-1] [INFO] [1791452587.358439705] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452587.358894915] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452587.359428667] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452587.359869691] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452587.360305177] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452587.360748330] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452587.361219528] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452587.361704819] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452587.362186766] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452588.380000572] [navi_vlmaps_node]: At time 1791452585.559621120
-[python-1] [INFO] [1791452588.380829518] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452588.381426514] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452588.382257374] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452588.382842033] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452588.383695780] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452588.384533548] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452588.385357204] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452588.385850285] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452588.386296439] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452589.303101770] [navi_vlmaps_node]: At time 1791452585.559621120
-[python-1] [INFO] [1791452589.303421285] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452589.303694915] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452589.304016110] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452589.304398536] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452589.304668110] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452589.304936612] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452589.305203634] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452589.305479903] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452589.305766636] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452590.314133682] [navi_vlmaps_node]: At time 1791452585.559621120
-[python-1] [INFO] [1791452590.314531473] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452590.314951066] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452590.315486519] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452590.315835910] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452590.316157780] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452590.316520135] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452590.316833858] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452590.317137803] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452590.317611996] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452591.325584038] [navi_vlmaps_node]: At time 1791452590.98278912
-[python-1] [INFO] [1791452591.325889669] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452591.326159072] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452591.326495134] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452591.326768085] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452591.327032523] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452591.327309297] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452591.327581687] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452591.327846642] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452591.328181717] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452592.336010372] [navi_vlmaps_node]: At time 1791452590.98278912
-[python-1] [INFO] [1791452592.336336639] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452592.336663557] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452592.336997890] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452592.337264099] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452592.337638734] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452592.337940803] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452592.338226178] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452592.338566119] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452592.338934261] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452593.367566608] [navi_vlmaps_node]: At time 1791452592.14761216
-[python-1] [INFO] [1791452593.370193148] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452593.372158197] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452593.374621153] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452593.378461777] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452593.381215572] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452593.383361646] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452593.385964627] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452593.388681244] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452593.393163750] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452594.322847749] [navi_vlmaps_node]: At time 1791452593.325769984
-[python-1] [INFO] [1791452594.324682237] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452594.326363909] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452594.328488045] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452594.330588878] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452594.332796110] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452594.335023003] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452594.337242383] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452594.339463787] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452594.341653827] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452595.373391181] [navi_vlmaps_node]: At time 1791452593.325769984
-[python-1] [INFO] [1791452595.373799895] [navi_vlmaps_node]: - Translation: [-0.043, 0.135, 0.000]
-[python-1] [INFO] [1791452595.374094788] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.714]
-[python-1] [INFO] [1791452595.374458856] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.552]
-[python-1] [INFO] [1791452595.374884201] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.944]
-[python-1] [INFO] [1791452595.376087757] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452595.376832966] [navi_vlmaps_node]:  0.018 -1.000 0.000 0.000
-[python-1] [INFO] [1791452595.377247974] [navi_vlmaps_node]:  1.000 0.018 0.000 0.000
-[python-1] [INFO] [1791452595.377678692] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452595.378212547] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452596.294433794] [navi_vlmaps_node]: At time 1791452593.325769984
-[python-1] [INFO] [1791452596.295486661] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452596.296363900] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452596.297461803] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452596.298194048] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452596.298909895] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452596.299879483] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452596.301736139] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452596.302918438] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452596.303996154] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452597.321009814] [navi_vlmaps_node]: At time 1791452595.847375104
-[python-1] [INFO] [1791452597.321412765] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452597.321766445] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452597.322426992] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452597.322952499] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452597.323372576] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452597.323798454] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452597.324225963] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452597.324664416] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452597.325177728] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452598.335710885] [navi_vlmaps_node]: At time 1791452595.847375104
-[python-1] [INFO] [1791452598.336134340] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452598.336520738] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452598.336989308] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452598.337393576] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452598.337783515] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452598.338188035] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452598.338576173] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452598.339005728] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452598.339472407] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452599.349380359] [navi_vlmaps_node]: At time 1791452595.847375104
-[python-1] [INFO] [1791452599.349766210] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452599.350237123] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452599.351089351] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452599.351892396] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452599.352285830] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452599.352770305] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452599.353223446] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452599.353720012] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452599.354243029] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452600.363529516] [navi_vlmaps_node]: At time 1791452595.847375104
-[python-1] [INFO] [1791452600.364076238] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452600.364900999] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452600.365588781] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452600.366241334] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452600.366918090] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452600.367655989] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452600.368712605] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452600.369224397] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452600.369710890] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452601.379574289] [navi_vlmaps_node]: At time 1791452600.587733760
-[python-1] [INFO] [1791452601.380128765] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452601.380645763] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452601.381203143] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452601.381659631] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452601.382074986] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452601.382660613] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452601.383378041] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452601.383898721] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452601.384462536] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452602.293725168] [navi_vlmaps_node]: At time 1791452600.688560896
-[python-1] [INFO] [1791452602.294897883] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452602.295581188] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452602.296449493] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452602.297166188] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452602.297779624] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452602.298403471] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452602.299001397] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452602.299601936] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452602.300276340] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452603.316939442] [navi_vlmaps_node]: At time 1791452602.504036096
-[python-1] [INFO] [1791452603.318435827] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452603.320168459] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452603.321807868] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452603.322952632] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452603.324566416] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452603.325884974] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452603.327094852] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452603.328499303] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452603.329961606] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452604.346179259] [navi_vlmaps_node]: At time 1791452602.504036096
-[python-1] [INFO] [1791452604.346798074] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452604.347690417] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452604.348530360] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452604.349182738] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452604.349829318] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452604.350418806] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452604.351028356] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452604.351655045] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452604.352259107] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452605.364219557] [navi_vlmaps_node]: At time 1791452602.504036096
-[python-1] [INFO] [1791452605.364777136] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452605.365363701] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452605.366033288] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452605.366553424] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452605.367083050] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452605.367659714] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452605.368279707] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452605.368959364] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452605.369722858] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452606.382229216] [navi_vlmaps_node]: At time 1791452604.722966784
-[python-1] [INFO] [1791452606.382959576] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452606.383657867] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452606.384460737] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452606.385108490] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452606.385697639] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452606.386378398] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452606.387065095] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452606.387615620] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452606.388201585] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452607.299198408] [navi_vlmaps_node]: At time 1791452605.731556608
-[python-1] [INFO] [1791452607.299812723] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452607.300448020] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452607.301184793] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452607.301859889] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452607.302735848] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452607.303624172] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452607.304441611] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452607.305262334] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452607.306068840] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452608.323268810] [navi_vlmaps_node]: At time 1791452607.547046656
-[python-1] [INFO] [1791452608.324766107] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452608.326394887] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452608.328272974] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452608.331059222] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452608.332211967] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452608.333369517] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452608.334706689] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452608.336084316] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452608.337413790] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452609.356419256] [navi_vlmaps_node]: At time 1791452608.555639296
-[python-1] [INFO] [1791452609.357205799] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452609.358362343] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452609.359503669] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452609.360396432] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452609.361241144] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452609.362021773] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452609.362704941] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452609.363423047] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452609.364141762] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452610.376274895] [navi_vlmaps_node]: At time 1791452609.569090560
-[python-1] [INFO] [1791452610.377126682] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452610.377735046] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452610.378566087] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452610.379362793] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452610.380174437] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452610.381019536] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452610.381814839] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452610.382606982] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452610.383452527] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452611.293960675] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452611.294403017] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452611.294777501] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452611.295698438] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452611.296591087] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452611.297209468] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452611.297707701] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452611.298159658] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452611.298675229] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452611.299114943] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452611.820322580] [navi_vlmaps_node]: Received command: Move between the laptop and the cardboard box
+[python-1] [WARN] [1792511772.652497438] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[python-1] [INFO] [1792511772.657886927] [navi_vlmaps_node]: Listening to /user_command...
+[python-1] [INFO] [1792511772.659004771] [navi_vlmaps_node]: At time 1792511769.677100800
+[python-1] [INFO] [1792511772.659214776] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511772.659399795] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511772.659624008] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511772.659796477] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511772.659970440] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511772.660143546] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511772.660327948] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511772.660497261] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511772.660658825] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511772.763123220] [navi_vlmaps_node]: At time 1792511769.677100800
+[python-1] [INFO] [1792511772.763297609] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511772.763412379] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511772.763583127] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511772.763709297] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511772.763816575] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511772.763927037] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511772.764034005] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511772.764145951] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511772.764272574] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511773.777159820] [navi_vlmaps_node]: At time 1792511769.677100800
+[python-1] [INFO] [1792511773.777472805] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511773.777692540] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511773.778105461] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511773.778320091] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511773.778520313] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511773.778719654] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511773.778917512] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511773.779264132] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511773.779473187] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511774.789889524] [navi_vlmaps_node]: At time 1792511772.904769280
+[python-1] [INFO] [1792511774.790175407] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511774.790382848] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511774.790634453] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511774.790835438] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511774.791029465] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511774.791230410] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511774.791426873] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511774.791621282] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511774.791818111] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511775.804418500] [navi_vlmaps_node]: At time 1792511772.904769280
+[python-1] [INFO] [1792511775.804795279] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511775.805054926] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511775.805444446] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511775.805705001] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511775.805901048] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511775.806410079] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511775.806614667] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511775.806810405] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511775.807004631] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511776.818658498] [navi_vlmaps_node]: At time 1792511772.904769280
+[python-1] [INFO] [1792511776.818967004] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511776.819217873] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511776.819521487] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511776.819773015] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511776.819993311] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511776.820242925] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511776.820473439] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511776.820706961] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511776.820927159] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511777.831693577] [navi_vlmaps_node]: At time 1792511772.904769280
+[python-1] [INFO] [1792511777.831992668] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511777.832209355] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511777.832477482] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511777.832675052] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511777.832867871] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511777.833067868] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511777.833270562] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511777.833463047] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511777.833656035] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511778.745308288] [navi_vlmaps_node]: At time 1792511772.904769280
+[python-1] [INFO] [1792511778.745577779] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511778.745788202] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511778.746044139] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511778.746253266] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511778.746451881] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511778.746734672] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511778.747122072] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511778.747336468] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511778.747541626] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511779.761135855] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511779.761487899] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511779.761699571] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511779.761953621] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511779.762152106] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511779.762342513] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511779.762536550] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511779.762732312] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511779.762926849] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511779.763117234] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511780.777291264] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511780.778009087] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511780.778256277] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511780.779583899] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511780.779839089] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511780.780043919] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511780.780255833] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511780.780454055] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511780.780647996] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511780.780840166] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511781.797721672] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511781.798071765] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511781.798316338] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511781.799732371] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511781.799997298] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511781.800347692] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511781.800622564] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511781.800867310] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511781.801119612] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511781.801456063] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511782.816108732] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511782.816411185] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511782.816614152] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511782.816872294] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511782.817067083] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511782.817261748] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511782.817456300] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511782.817646252] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511782.817833818] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511782.818025217] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511783.832544320] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511783.832858734] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511783.833099040] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511783.833420244] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511783.833612090] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511783.833828064] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511783.834058682] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511783.834279703] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511783.834499518] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511783.834714491] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511784.749318900] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511784.749619749] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511784.749878569] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511784.750672553] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511784.750892536] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511784.751089454] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511784.751324043] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511784.751519141] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511784.751711634] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511784.751902795] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511785.764547864] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511785.764875937] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511785.765090451] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511785.765366183] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511785.765573891] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511785.765772880] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511785.765981657] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511785.766967743] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511785.767540003] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511785.767992629] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511786.783036473] [navi_vlmaps_node]: At time 1792511778.654607360
+[python-1] [INFO] [1792511786.783354318] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511786.783564326] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511786.783827164] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511786.784029259] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511786.784315412] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511786.784534890] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511786.784756818] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511786.784962335] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511786.785209184] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511787.797018024] [navi_vlmaps_node]: At time 1792511785.816524288
+[python-1] [INFO] [1792511787.797333957] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511787.797646836] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511787.798004686] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511787.798260175] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511787.798474015] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511787.798748966] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511787.798958569] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511787.799172363] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511787.799379198] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511788.812309233] [navi_vlmaps_node]: At time 1792511785.816524288
+[python-1] [INFO] [1792511788.812601693] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511788.812811017] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511788.813077762] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511788.813574716] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511788.813771324] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511788.813969814] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511788.814219422] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511788.814507948] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511788.814800526] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511789.826499690] [navi_vlmaps_node]: At time 1792511788.136345088
+[python-1] [INFO] [1792511789.826797097] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511789.827007265] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511789.827271305] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511789.827475600] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511789.827669999] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511789.827873385] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511789.828068456] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511789.828268097] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511789.828469434] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511790.106402275] [navi_vlmaps_node]: Received command: move between the laptop and the cardboard box
 [python-1] 
-[python-1] 收到指令，開始分析: Move between the laptop and the cardboard box
-[python-1] LLM is thinking...
+[python-1] 收到指令，開始分析: move between the laptop and the cardboard box
+[python-1] LLM is thinking... (1/2)
 [python-1] LLM 決定執行的程式碼:
 [python-1] robot.move_in_between('laptop', 'cardboard box')
 [python-1] 開始導航...
-[python-1] [INFO] [1791452612.772720825] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452612.773200508] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452612.773616892] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452612.774124913] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452612.774559117] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452612.774976110] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452612.775463489] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452612.775883746] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452612.776408677] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452612.776914804] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511792.914018501] [navi_vlmaps_node]: At time 1792511788.136345088
+[python-1] [INFO] [1792511792.914242980] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511792.914401711] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511792.914599177] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511792.914751284] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511792.914889541] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511792.915038852] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511792.915193237] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511792.915341153] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511792.915497188] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
 [python-1] 找到 label_id 1 的原始像素數量: 410
 [python-1] 找到 label_id 1 的原始像素數量: 105
 [python-1] between: 使用 Nav2 避障檢查，候選位姿=2853
-[python-1] [INFO] [1791452613.176529224] [navi_vlmaps_node]: Getting path...
-[python-1] between 採用 Nav2 路徑終點=(0.725, 5.075)m，偏差=0.035m，朝向=90.0°
-[python-1] [INFO] [1791452613.221836923] [navi_vlmaps_node]: Navigating to goal: 0.7249998915940523 5.075000049546361...
-[python-1] [INFO] [1791452667.907896516] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452667.908821750] [navi_vlmaps_node]: - Translation: [-0.043, 0.134, 0.000]
-[python-1] [INFO] [1791452667.909691201] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.701, 0.713]
-[python-1] [INFO] [1791452667.910856768] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.554]
-[python-1] [INFO] [1791452667.911707954] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 89.050]
-[python-1] [INFO] [1791452667.912498949] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452667.913347192] [navi_vlmaps_node]:  0.017 -1.000 0.000 0.000
-[python-1] [INFO] [1791452667.914139570] [navi_vlmaps_node]:  1.000 0.017 0.000 0.000
-[python-1] [INFO] [1791452667.914934661] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452667.915785280] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452668.320666354] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452668.321100266] [navi_vlmaps_node]: - Translation: [1.027, 4.880, 0.000]
-[python-1] [INFO] [1791452668.321517626] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.915, 0.404]
-[python-1] [INFO] [1791452668.322259309] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 2.310]
-[python-1] [INFO] [1791452668.322925516] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 132.373]
-[python-1] [INFO] [1791452668.323399980] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452668.323861003] [navi_vlmaps_node]:  -0.674 -0.739 0.000 0.000
-[python-1] [INFO] [1791452668.324264526] [navi_vlmaps_node]:  0.739 -0.674 0.000 0.000
-[python-1] [INFO] [1791452668.324673693] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452668.325123032] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452669.334451955] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452669.334877860] [navi_vlmaps_node]: - Translation: [1.047, 4.846, 0.000]
-[python-1] [INFO] [1791452669.335410617] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.800, 0.599]
-[python-1] [INFO] [1791452669.335999452] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.856]
-[python-1] [INFO] [1791452669.336507204] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 106.350]
-[python-1] [INFO] [1791452669.336943822] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452669.337314990] [navi_vlmaps_node]:  -0.281 -0.960 0.000 0.000
-[python-1] [INFO] [1791452669.337681149] [navi_vlmaps_node]:  0.960 -0.281 0.000 0.000
-[python-1] [INFO] [1791452669.338068609] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452669.338453130] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452670.350249115] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452670.351040391] [navi_vlmaps_node]: - Translation: [1.045, 4.796, 0.000]
-[python-1] [INFO] [1791452670.351752985] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.569, 0.822]
-[python-1] [INFO] [1791452670.352375259] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.212]
-[python-1] [INFO] [1791452670.352921035] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 69.416]
-[python-1] [INFO] [1791452670.353358942] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452670.353835336] [navi_vlmaps_node]:  0.352 -0.936 0.000 0.000
-[python-1] [INFO] [1791452670.354352947] [navi_vlmaps_node]:  0.936 0.352 0.000 0.000
-[python-1] [INFO] [1791452670.354896367] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452670.355394501] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452671.365203543] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452671.365866796] [navi_vlmaps_node]: - Translation: [1.047, 4.799, 0.000]
-[python-1] [INFO] [1791452671.366528408] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.573, 0.820]
-[python-1] [INFO] [1791452671.367274592] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.220]
-[python-1] [INFO] [1791452671.367931429] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 69.925]
-[python-1] [INFO] [1791452671.368588028] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452671.369317478] [navi_vlmaps_node]:  0.343 -0.939 0.000 0.000
-[python-1] [INFO] [1791452671.370041249] [navi_vlmaps_node]:  0.939 0.343 0.000 0.000
-[python-1] [INFO] [1791452671.370714813] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452671.371360105] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452672.381530959] [navi_vlmaps_node]: At time 1791452609.770745856
-[python-1] [INFO] [1791452672.382170315] [navi_vlmaps_node]: - Translation: [1.047, 4.799, 0.000]
-[python-1] [INFO] [1791452672.382811060] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.573, 0.820]
-[python-1] [INFO] [1791452672.383660715] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.220]
-[python-1] [INFO] [1791452672.384311406] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 69.925]
-[python-1] [INFO] [1791452672.384903525] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452672.385517821] [navi_vlmaps_node]:  0.343 -0.939 0.000 0.000
-[python-1] [INFO] [1791452672.386204924] [navi_vlmaps_node]:  0.939 0.343 0.000 0.000
-[python-1] [INFO] [1791452672.386913472] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452672.387626926] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452673.298225122] [navi_vlmaps_node]: At time 1791452672.505706240
-[python-1] [INFO] [1791452673.298845750] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452673.299416682] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452673.300180120] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452673.300978676] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452673.301873805] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452673.302527625] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452673.303158853] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452673.303744307] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452673.304497786] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452674.315238136] [navi_vlmaps_node]: At time 1791452673.514275328
-[python-1] [INFO] [1791452674.316058195] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452674.317129752] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452674.318176729] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452674.318896956] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452674.319384890] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452674.319889519] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452674.320477267] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452674.320957287] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452674.321456636] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452675.331664772] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452675.332373874] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452675.333024429] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452675.333771766] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452675.334424741] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452675.335067990] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452675.335698207] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452675.336326735] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452675.336976524] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452675.337700547] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452676.350553273] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452676.351272359] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452676.351957175] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452676.352737044] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452676.353350540] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452676.353981729] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452676.354791824] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452676.355474019] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452676.356149894] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452676.356846214] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452677.366500747] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452677.366946997] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452677.367423128] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452677.367930835] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452677.368538789] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452677.368978630] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452677.369443318] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452677.369912156] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452677.370324618] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452677.370726315] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452678.381977816] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452678.382910028] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452678.383781771] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452678.384821427] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452678.385454277] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452678.385834489] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452678.386339968] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452678.386787388] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452678.387351132] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452678.387914392] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452679.298467011] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452679.299335294] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452679.299995891] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452679.300685558] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452679.301263680] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452679.301817828] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452679.302386433] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452679.302965252] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452679.303548018] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452679.304126659] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452680.314181439] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452680.314696979] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452680.315212310] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452680.315828388] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452680.316291946] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452680.316752867] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452680.317290111] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452680.317789877] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452680.318265137] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452680.318700221] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452681.330732771] [navi_vlmaps_node]: At time 1791452674.220293632
-[python-1] [INFO] [1791452681.331213926] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452681.331623033] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452681.332118611] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452681.332556867] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452681.332981602] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452681.333417393] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452681.333846604] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452681.334317396] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452681.334764712] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452682.342975961] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452682.343449856] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452682.343878665] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452682.344504460] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452682.345035373] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452682.345508153] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452682.345994249] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452682.346456355] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452682.346967552] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452682.347537478] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452683.357982405] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452683.358512549] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452683.359009209] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452683.359529518] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452683.359979999] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452683.360385967] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452683.360794950] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452683.361272461] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452683.361863124] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452683.362417533] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452684.371580836] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452684.371984399] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452684.372451486] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452684.372947352] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452684.373389399] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452684.373816512] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452684.374241758] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452684.374663726] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452684.375085780] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452684.375525665] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452685.384524149] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452685.385009346] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452685.385596046] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452685.386262940] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452685.386863055] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452685.387548036] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452685.388658721] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452685.389235443] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452685.389767541] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452685.390602588] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452686.300928841] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452686.301371523] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452686.301834791] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452686.302363055] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452686.302783422] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452686.303189987] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452686.303637341] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452686.304132140] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452686.304610196] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452686.305461068] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452687.316633084] [navi_vlmaps_node]: At time 1791452680.675377408
-[python-1] [INFO] [1791452687.317136395] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452687.317703521] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452687.318547315] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452687.319053403] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452687.319450519] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452687.319855951] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452687.320374990] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452687.321174936] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452687.321866878] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452688.331544869] [navi_vlmaps_node]: At time 1791452687.533821184
-[python-1] [INFO] [1791452688.332123264] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452688.332674729] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452688.333359044] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452688.333868199] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452688.334393406] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452688.334871733] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452688.335536363] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452688.336367081] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452688.337018162] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452689.345910985] [navi_vlmaps_node]: At time 1791452688.542411776
-[python-1] [INFO] [1791452689.346748069] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452689.347500973] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452689.348345984] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452689.348784289] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452689.349428917] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452689.350196876] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452689.351021009] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452689.351791841] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452689.352554280] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452690.362036805] [navi_vlmaps_node]: At time 1791452689.551017472
-[python-1] [INFO] [1791452690.362509385] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452690.362962649] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452690.363509711] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452690.363944990] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452690.364383332] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452690.364796271] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452690.365236818] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452690.365688719] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452690.366167526] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452691.375456662] [navi_vlmaps_node]: At time 1791452689.551017472
-[python-1] [INFO] [1791452691.375830714] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452691.376577493] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452691.377394550] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452691.378024939] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452691.378553760] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452691.379041731] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452691.379495945] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452691.379918262] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452691.380343598] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452692.288939337] [navi_vlmaps_node]: At time 1791452691.467357440
-[python-1] [INFO] [1791452692.289498953] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452692.290051748] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452692.290615378] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452692.291073356] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452692.291465512] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452692.291847952] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452692.292276505] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452692.292723139] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452692.293163725] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452693.302900307] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452693.303348928] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452693.303803183] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452693.304594140] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452693.305032720] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452693.305657812] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452693.306282838] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452693.306838948] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452693.307288664] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452693.307885831] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452694.318579153] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452694.319167023] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452694.319764930] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452694.320396057] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452694.321049792] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452694.321608863] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452694.322199433] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452694.322983142] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452694.323483251] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452694.324010572] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452695.333628294] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452695.334040577] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452695.334580590] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452695.335178321] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452695.335647645] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452695.336102872] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452695.336543836] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452695.336969473] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452695.337433784] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452695.337907680] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452696.348721160] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452696.349169348] [navi_vlmaps_node]: - Translation: [0.731, 5.085, 0.000]
-[python-1] [INFO] [1791452696.349807237] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.663, 0.748]
-[python-1] [INFO] [1791452696.350413057] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.450]
-[python-1] [INFO] [1791452696.350990101] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 83.098]
-[python-1] [INFO] [1791452696.351530323] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452696.351939485] [navi_vlmaps_node]:  0.120 -0.993 0.000 0.000
-[python-1] [INFO] [1791452696.352453603] [navi_vlmaps_node]:  0.993 0.120 0.000 0.000
-[python-1] [INFO] [1791452696.352894125] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452696.353412413] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452697.374244946] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452697.374623987] [navi_vlmaps_node]: - Translation: [0.731, 5.087, 0.000]
-[python-1] [INFO] [1791452697.375043652] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.657, 0.754]
-[python-1] [INFO] [1791452697.375616614] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.434]
-[python-1] [INFO] [1791452697.376086872] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 82.163]
-[python-1] [INFO] [1791452697.376531758] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452697.376926874] [navi_vlmaps_node]:  0.136 -0.991 0.000 0.000
-[python-1] [INFO] [1791452697.377390048] [navi_vlmaps_node]:  0.991 0.136 0.000 0.000
-[python-1] [INFO] [1791452697.377846546] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452697.378429558] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452698.289968370] [navi_vlmaps_node]: At time 1791452692.475956224
-[python-1] [INFO] [1791452698.290724288] [navi_vlmaps_node]: - Translation: [0.731, 5.087, 0.000]
-[python-1] [INFO] [1791452698.291409260] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.657, 0.754]
-[python-1] [INFO] [1791452698.292225951] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.434]
-[python-1] [INFO] [1791452698.292936550] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 82.163]
-[python-1] [INFO] [1791452698.293788464] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452698.294620038] [navi_vlmaps_node]:  0.136 -0.991 0.000 0.000
-[python-1] [INFO] [1791452698.295314065] [navi_vlmaps_node]:  0.991 0.136 0.000 0.000
-[python-1] [INFO] [1791452698.295945736] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452698.296920308] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452699.319428702] [navi_vlmaps_node]: At time 1791452698.426742528
-[python-1] [INFO] [1791452699.320231226] [navi_vlmaps_node]: - Translation: [0.731, 5.087, 0.000]
-[python-1] [INFO] [1791452699.321347993] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.657, 0.754]
-[python-1] [INFO] [1791452699.323319075] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.434]
-[python-1] [INFO] [1791452699.324382087] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 82.163]
-[python-1] [INFO] [1791452699.325229981] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452699.326011090] [navi_vlmaps_node]:  0.136 -0.991 0.000 0.000
-[python-1] [INFO] [1791452699.327173728] [navi_vlmaps_node]:  0.991 0.136 0.000 0.000
-[python-1] [INFO] [1791452699.328147536] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452699.329078944] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
-[python-1] [INFO] [1791452700.346592424] [navi_vlmaps_node]: At time 1791452699.233577728
-[python-1] [INFO] [1791452700.347027618] [navi_vlmaps_node]: - Translation: [0.731, 5.087, 0.000]
-[python-1] [INFO] [1791452700.347545794] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.657, 0.754]
-[python-1] [INFO] [1791452700.348258491] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.434]
-[python-1] [INFO] [1791452700.348871251] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 82.163]
-[python-1] [INFO] [1791452700.349344798] [navi_vlmaps_node]: - Matrix:
-[python-1] [INFO] [1791452700.349890453] [navi_vlmaps_node]:  0.136 -0.991 0.000 0.000
-[python-1] [INFO] [1791452700.350385977] [navi_vlmaps_node]:  0.991 0.136 0.000 0.000
-[python-1] [INFO] [1791452700.350851604] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
-[python-1] [INFO] [1791452700.351320320] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511793.063197931] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.066259803] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 1: 停靠點=(398, 515)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.066831110] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.068663971] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 2: 停靠點=(398, 516)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.069196096] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.070610791] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 3: 停靠點=(397, 515)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.071093182] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.072574534] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 4: 停靠點=(397, 516)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.073048198] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.074611143] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 5: 停靠點=(399, 515)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.075090883] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.077160649] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 6: 停靠點=(399, 516)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.077704180] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.079415643] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 7: 停靠點=(398, 514)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.079881680] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.081488825] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 8: 停靠點=(398, 517)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.081961102] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.084152959] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 9: 停靠點=(397, 514)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.084673263] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.086583447] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 10: 停靠點=(397, 517)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.087094419] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.089384570] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 11: 停靠點=(398, 515)，朝向=17.8°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.089928301] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.092393910] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 12: 停靠點=(398, 516)，朝向=17.8°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.092935994] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.094868591] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 13: 停靠點=(396, 515)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.095351047] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.097297818] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 14: 停靠點=(396, 516)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.097761194] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.100274173] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 15: 停靠點=(399, 514)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.100803645] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.103207494] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 16: 停靠點=(399, 517)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.103785527] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.106253816] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 17: 停靠點=(397, 515)，朝向=17.8°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.106804438] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.109253082] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 18: 停靠點=(397, 516)，朝向=17.8°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.109767043] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.111771812] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 19: 停靠點=(396, 514)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.112246682] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.114779680] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 20: 停靠點=(396, 517)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.115297311] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.117244972] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 21: 停靠點=(400, 515)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.117734734] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.119744964] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 22: 停靠點=(400, 516)，朝向=88.3°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.120206105] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.122477972] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 23: 停靠點=(398, 515)，朝向=197.8°，planner 未回傳有效路徑。
+[python-1] [INFO] [1792511793.122998442] [navi_vlmaps_node]: Getting path...
+[python-1] [WARN] [1792511793.125132565] [navi_vlmaps_node]: Getting path failed with status code: 6
+[python-1] between 候選 24: 停靠點=(398, 516)，朝向=197.8°，planner 未回傳有效路徑。
+[python-1] 程式碼執行失敗: 24 個候選位姿皆無可接受路徑；請查看上述規劃失敗訊息與 Nav2 planner 日誌。
+[python-1] [INFO] [1792511793.837627664] [navi_vlmaps_node]: At time 1792511788.136345088
+[python-1] [INFO] [1792511793.837920570] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511793.838133051] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511793.838411435] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511793.838923417] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511793.839130466] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511793.839348641] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511793.839550349] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511793.839750172] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511793.839946724] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511794.751124388] [navi_vlmaps_node]: At time 1792511793.80518656
+[python-1] [INFO] [1792511794.751429096] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511794.751648913] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511794.751913927] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511794.752115926] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511794.752318397] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511794.752522178] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511794.752720463] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511794.752915977] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511794.753111756] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511795.765791242] [navi_vlmaps_node]: At time 1792511793.80518656
+[python-1] [INFO] [1792511795.766123788] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511795.766387170] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511795.766689984] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511795.767541183] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511795.767847405] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511795.768104376] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511795.768339765] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511795.768554847] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511795.768783165] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511796.782210336] [navi_vlmaps_node]: At time 1792511793.80518656
+[python-1] [INFO] [1792511796.782532413] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511796.782768514] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511796.783053376] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511796.783294251] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511796.783525477] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511796.783752959] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511796.783970979] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511796.784186689] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511796.784385280] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511797.799771122] [navi_vlmaps_node]: At time 1792511793.80518656
+[python-1] [INFO] [1792511797.800032604] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511797.800237153] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511797.800478905] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511797.800669134] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511797.800853589] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511797.801050154] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511797.801233878] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511797.801419071] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511797.801602966] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511798.813215185] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511798.813494365] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511798.813713240] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511798.813981953] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511798.814203724] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511798.814403075] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511798.814608549] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511798.814804719] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511798.815003680] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511798.816059014] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511799.828177778] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511799.828466780] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511799.828684672] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511799.828953310] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511799.829161752] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511799.829358312] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511799.829564226] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511799.829767102] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511799.829963249] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511799.830168959] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511800.741439195] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511800.741735790] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511800.741955239] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511800.742222899] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511800.742425646] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511800.742701161] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511800.742980440] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511800.743182890] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511800.743379826] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511800.743578378] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511801.756140248] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511801.756424384] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511801.756644736] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511801.756911767] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511801.757118247] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511801.757323656] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511801.757531565] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511801.757735721] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511801.757937388] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511801.758181744] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511802.771638834] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511802.771923294] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511802.772195197] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511802.772577692] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511802.772804066] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511802.773012953] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511802.773238646] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511802.773456943] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511802.773680637] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511802.773911932] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511803.786489815] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511803.786807850] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511803.787035465] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511803.789405779] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511803.790433502] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511803.790651719] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511803.790878377] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511803.791085033] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511803.791288778] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511803.791485170] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511804.804625807] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511804.804947503] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511804.805257403] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511804.805544713] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511804.805750920] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511804.805950403] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511804.806163522] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511804.806363779] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511804.806564440] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511804.806761263] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511805.817588456] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511805.817906509] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511805.818121387] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511805.818390477] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511805.818605094] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511805.818803336] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511805.819012938] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511805.819221391] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511805.819420387] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511805.819620535] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000
+[python-1] [INFO] [1792511806.832638685] [navi_vlmaps_node]: At time 1792511797.719026944
+[python-1] [INFO] [1792511806.832970383] [navi_vlmaps_node]: - Translation: [-0.022, 0.109, 0.000]
+[python-1] [INFO] [1792511806.833225980] [navi_vlmaps_node]: - Rotation: in Quaternion [0.000, 0.000, 0.697, 0.717]
+[python-1] [INFO] [1792511806.833533799] [navi_vlmaps_node]: - Rotation: in RPY (radian) [0.000, -0.000, 1.541]
+[python-1] [INFO] [1792511806.833838802] [navi_vlmaps_node]: - Rotation: in RPY (degree) [0.000, -0.000, 88.303]
+[python-1] [INFO] [1792511806.834353227] [navi_vlmaps_node]: - Matrix:
+[python-1] [INFO] [1792511806.834624916] [navi_vlmaps_node]:  0.030 -1.000 0.000 0.000
+[python-1] [INFO] [1792511806.834859847] [navi_vlmaps_node]:  1.000 0.030 0.000 0.000
+[python-1] [INFO] [1792511806.835090677] [navi_vlmaps_node]:  0.000 0.000 1.000 0.000
+[python-1] [INFO] [1792511806.835364716] [navi_vlmaps_node]:  0.000 0.000 0.000 1.000

@@ -11,7 +11,7 @@ def generate_launch_description():
 
     pkg_dir = get_package_share_directory('navigatethroughposes')
 
-    conda_python_path = "/home/robotic/anaconda3/envs/vlmaps310/bin/python"
+    conda_python_path = "/opt/miniforge3/envs/vlmaps310/bin/python"
 
     vlmap_script = os.path.join(pkg_dir, '..', '..', 'lib', 'navigatethroughposes', 'navi_using_api_vlmap')
 
