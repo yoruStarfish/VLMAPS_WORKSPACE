@@ -523,244 +523,170 @@ def wait_for_task_until_close(
 
         rclpy.spin_once(navigator, timeout_sec=0.05)
 
-def main():
-    # 重點： 需要先讓自己在A點，並且在 map frame 下的 PoseStamped 也要對應到 A 點
-    rclpy.init()
+# map frame 的固定點位，格式為 (x, y)，單位為公尺。
+# D、E、F 目前僅為示範假座標，不代表實際路線幾何；實機執行前請替換。
+WAYPOINTS = {
+    "A": (-3.750, -0.318),
+    "B": (-2.1942, -1.3715),
+    "C": (-3.4380, -3.4168),
+    "D": (-4.500, -5.000),  # TODO: 替換為 D 的實際座標
+    "E": (-5.500, -4.500),  # TODO: 替換為 E 的實際座標
+    "F": (-6.000, -3.500),  # TODO: 替換為 F 的實際座標
+}
 
+# 保留原本 A 的起始朝向。啟動前，機器人必須位於 A 並朝此方向。
+INITIAL_YAW = math.atan2(
+    2.0 * 0.9636 * -0.2672,
+    1.0 - 2.0 * (-0.2672) ** 2,
+)
+
+# (動作, 點位, 相對旋轉角度)：正值向左、負值向右，單位為度。
+# A 是起點，不重複導航至 A；rotate 必須在指定點位到達後執行。
+MISSIONS = {
+    "1": {
+        "name": "任務一 A-B-C-D-C-B-A",
+        "steps": (
+            ("move", "B", 0),
+            ("move", "C", 0),
+            ("rotate", "C", -90),
+            ("move", "D", 0),
+            ("rotate", "D", 180),
+            ("move", "C", 0),
+            ("rotate", "C", 90),
+            ("move", "B", 0),
+            ("move", "A", 0),
+        ),
+    },
+    "2": {
+        "name": "任務二 A-F-E-D-E-F-A",
+        "steps": (
+            ("rotate", "A", -90),
+            ("move", "F", 0),
+            ("rotate", "F", 90),
+            ("move", "E", 0),
+            ("move", "D", 0),
+            ("rotate", "D", 180),
+            ("move", "E", 0),
+            ("move", "F", 0),
+            ("rotate", "F", -90),
+            ("move", "A", 0),
+        ),
+    },
+}
+
+
+def validate_waypoints(mission, waypoints):
+    """在啟動導航前檢查任務所需座標。"""
+    required = {"A"} | {point for _, point, _ in mission["steps"]}
+    for point in sorted(required):
+        coordinates = waypoints.get(point)
+        if (coordinates is None or len(coordinates) != 2
+                or not all(math.isfinite(value) for value in coordinates)):
+            raise ValueError(f"請先設定 WAYPOINTS[{point!r}] 的實際 (x, y) 座標")
+
+
+def pause_for_measurement(point):
+    """在點位量測誤差，按 Enter 後才允許下一個移動或旋轉步驟。"""
+    input(
+        f"\n目前位於 {point}，請量測 x/y/yaw 誤差。\n"
+        "若下一步需要旋轉，將於量測結束後執行。\n"
+        "按 ENTER 繼續..."
+    )
+
+
+def execute_mission(navigator, tf_buffer, mission, waypoints):
+    """依序導航及原地旋轉；任一步驟失敗就停止，不跳到下一點。"""
+    validate_waypoints(mission, waypoints)
+    current_point = "A"
+    travel_yaw = INITIAL_YAW
+    # 起點也先量測，尤其任務二必須在 A 的第一次旋轉前暫停。
+    pause_for_measurement(current_point)
+
+    for action, point, angle_deg in mission["steps"]:
+        if not rclpy.ok():
+            return False
+
+        if action == "rotate":
+            if point != current_point:
+                raise ValueError(f"旋轉點 {point} 與目前點位 {current_point} 不符")
+            # rotate_to_yaw 接收絕對 yaw；先由 TF 取得目前朝向，
+            # 再加上相對角度，確保右轉 -90°、左轉 +90°、迴轉 180°。
+            try:
+                trans = tf_buffer.lookup_transform(
+                    'map', 'base_link', Time(),
+                    timeout=Duration(seconds=1.0),
+                )
+            except Exception as exc:
+                print(f"[{point}] 無法取得旋轉前朝向，停止任務: {exc}")
+                return False
+            current_yaw = get_yaw_from_quaternion(trans.transform.rotation)
+            target_yaw = current_yaw + math.radians(angle_deg)
+            travel_yaw = math.atan2(math.sin(target_yaw), math.cos(target_yaw))
+            print(f"\n========== {point} 原地旋轉 {angle_deg:+}° ==========")
+            rotate_to_yaw(navigator, tf_buffer, travel_yaw)
+            if not rclpy.ok():
+                return False
+
+        elif action == "move":
+            x, y = waypoints[point]
+            # 到達時保留此路段朝向。轉彎另由 rotate_to_yaw 執行，
+            # 不把下一路段朝向放進轉彎點的導航目標。
+            goal = create_pose(
+                navigator, x, y,
+                math.sin(travel_yaw / 2.0), math.cos(travel_yaw / 2.0),
+            )
+            print(f"\n========== {current_point} → {point} ==========")
+            navigator.goToPose(goal)
+            result = wait_for_task_until_close(
+                navigator, tf_buffer, goal,
+                pos_tol=0.08, yaw_tol=math.radians(10.0), timeout_s=60.0,
+            )
+            if result != TaskResult.SUCCEEDED:
+                print(f"前往 {point} 失敗或逾時，停止任務")
+                return False
+            current_point = point
+            # 到點後先量測；下一輪才執行旋轉或前往下一點。
+            # 回程重訪點位及最後回到 A 時也會暫停。
+            pause_for_measurement(current_point)
+        else:
+            raise ValueError(f"未知的任務動作: {action}")
+
+    return True
+
+
+def main():
+    selection = input("選擇任務 (1: A-B-C-D / 2: A-F-E-D): ").strip()
+    mission = MISSIONS.get(selection)
+    if mission is None:
+        print(f"未知任務: {selection}，請輸入 1 或 2")
+        return
+
+    try:
+        validate_waypoints(mission, WAYPOINTS)
+    except ValueError as exc:
+        print(exc)
+        return
+
+    # 啟動前請先將機器人定位於 A，朝向 INITIAL_YAW。
+    rclpy.init()
     navigator = BasicNavigator()
     tf_buffer = Buffer()
     tf_listener = TransformListener(tf_buffer, navigator)
+    try:
+        for _ in range(10):
+            rclpy.spin_once(navigator, timeout_sec=0.1)
+        navigator.waitUntilNav2Active()
+        print(f"開始 {mission['name']}")
+        succeeded = execute_mission(navigator, tf_buffer, mission, WAYPOINTS)
+        print("任務完成" if succeeded else "任務已停止，未完成完整路線")
+    finally:
+        if rclpy.ok():
+            navigator.cancelTask()
+            navigator.lifecycleShutdown()
+        navigator.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
 
-    for _ in range(10):
-        rclpy.spin_once(navigator, timeout_sec=0.1)
-
-    # 建立 LocalizationNode
-    localization_node = LocalizationNode()
-
-    # 等待 Nav2 啟動
-    navigator.waitUntilNav2Active()
-
-    # ========================================
-    # 實驗設定
-    # ========================================
-    EXPERIMENT = input("Choose experiment (A_B_A / A_C_A / A_B_C_B_A): ").strip()
-
-    # A、B、C 座標
-    # A = create_pose(navigator, 0.0, 0.0, 0.0, 1.0)
-    # B = create_pose(navigator, 1.81016, -0.304, 0.0, 1.0)
-    # # C = create_pose(navigator, 1.572, -3.11, -0.73, 0.67)
-    # C = create_pose(navigator, 1.607, -2.862, -0.73, 0.67)
-
-    # # B_turn_to_C: 停在 B 的位置，但將車頭轉向 C 的角度
-    # B_turn_to_C = create_pose(navigator, 1.81016, -0.304, -0.73, 0.67)
-    # B_facing_C = create_pose(navigator, 1.81016, -0.304, -0.73, 0.67) # 你的 C 點朝向
-
-    # C = create_pose(navigator, 0.0, 0.0, 0.0, 1.0)
-    # B = create_pose(navigator, 1.81016, -0.304, 0.68368, 0.7297)
-    # A = create_pose(navigator, 1.5534, -3.134, 0.68368, 0.7297)
-
-    A = create_pose(
-        navigator,
-        -3.750,
-        -0.318,
-        -0.2672,
-        0.9636
-    )
-
-    # B = create_pose(
-    #     navigator,
-    #     -2.046,
-    #     -1.17,
-    #     -0.2742,
-    #     0.961
-    # )
-    B = create_pose(
-        navigator,
-        -2.1942,
-        -1.3715,
-        -0.2672,
-        0.9636
-    )
-
-    C = create_pose(
-        navigator,
-        -3.4380,
-        -3.4168,
-        -0.87,
-        0.49
-    )
-    B_turn_to_C = create_pose(navigator, -2.050, -0.9452, -0.87, 0.49)
-    C_turn_to_B = create_pose(
-        navigator,
-        -3.338,
-        -3.439,
-        0.55,
-        0.833
-    )
-    B_oppo_C = create_pose(
-        navigator,
-        -2.0708,
-        -1.1788,
-        0.38,
-        0.924
-    )
-    B_oppo_A = create_pose(
-        navigator,
-        -2.046, 
-        -1.17, 
-        0.9636,
-        0.2672
-    )
-    turn_back_to_A = create_pose(
-        navigator,
-        -3.750,
-        -0.318,
-        0.9636,
-        0.2672
-    )
-
-
-    # ========================================
-    # 根據實驗選擇路徑
-    # ========================================
-    if EXPERIMENT == "A_B_A": # 走直線
-
-        goals = [
-            ("A → B", B),
-            ("B → A", A),
-        ]
-
-    elif EXPERIMENT == "A_C_A": # 走斜的
-
-        goals = [
-            ("rotate to C", None),
-            ("A → C", C),
-            ("自我調整", None),
-            ("C → A", A),
-        ]
-
-    elif EXPERIMENT == "A_B_C_B_A":
-
-        goals = [
-            ("A → B", B),
-            ("B 原地轉向 (對準 C)", B_turn_to_C),
-            ("B → C", C),
-            ("自我調整", None),
-            # ("C 原地轉向 (對準 B)", C_turn_to_B),
-            # ("C → B_oppo_C", B_oppo_C),
-            ("C → B", B),
-            # ("B 原地轉向 (對準 A)", B),
-            # ("B 原地轉向 (對準 A 的反方向)", B_oppo_A)
-            # ("B → A", turn_back_to_A),
-            # ("A 原地轉向", A),
-            ("B → A", A),
-        ]
-
-    else:
-        print(f"Unknown experiment: {EXPERIMENT}")
-        return
-
-    # ========================================
-    # 執行實驗
-    # ========================================
-    YAW_C = -1.713  # 請換成你 C 點實際的 Yaw 值
-    YAW_A = 0.0      # A 點與 B 點的初始朝向是 0 度
-    for name, goal in goals:
-
-        print(f"\n========== {name} ==========")
-
-        if name == "B 原地轉向 (對準 C)":
-            target_yaw = get_yaw_from_quaternion(C.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            continue
-
-        elif name == "B 原地轉向 (對準 A)":
-            target_yaw = get_yaw_from_quaternion(A.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            input(
-                f"\nRobot reached {name}.\n"
-                "Measure x/y/yaw error now.\n"
-                "Press ENTER to continue..."
-            )
-            continue
-        # elif name == "B → C":
-        #     target_yaw = get_yaw_from_quaternion(C.pose.orientation)
-        #     rotate_to_yaw(navigator, tf_buffer, target_yaw)
-        #     # time.sleep(2)
-        #     dx = C.pose.position.x - B.pose.position.x
-        #     dy = C.pose.position.y - B.pose.position.y
-        #     distance = math.sqrt(dx**2 + dy**2)
-        #     drive_straight_cmd_vel(
-        #         navigator,
-        #         distance=distance,
-        #         speed=0.08
-        #     )
-        #     continue
-        elif name == "C 原地轉向 (對準 B)":
-            target_yaw = get_yaw_from_quaternion(C_turn_to_B.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            continue
-        elif name == "B 原地轉向 (對準 A)":
-            target_yaw = get_yaw_from_quaternion(B.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            input(
-                f"\nRobot reached {name}.\n"
-                "Measure x/y/yaw error now.\n"
-                "Press ENTER to continue..."
-            )
-            continue
-        elif name == "B 原地轉向 (對準 A 的反方向)":
-            target_yaw = get_yaw_from_quaternion(B_oppo_A.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            continue
-        elif name == "A 原地轉向":
-            target_yaw = get_yaw_from_quaternion(A.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            # time.sleep(2)
-            continue
-        elif name == "rotate to C":
-            rotate_to_yaw(navigator, tf_buffer, -1.437)
-            time.sleep(2)
-            continue
-        elif name == "自我調整":
-            target_yaw = get_yaw_from_quaternion(C.pose.orientation)
-            rotate_to_yaw(navigator, tf_buffer, target_yaw)
-            time.sleep(2)
-            continue
-        else:
-            navigator.goToPose(goal)
-
-        if name == "B → C" or name == "C → B" or name == "A → C":
-            result = wait_for_task_until_close(navigator, tf_buffer, goal, pos_tol=0.08, yaw_tol=math.radians(10.0), timeout_s=60.0)
-        else:
-            result = wait_for_task(navigator)
-
-        if result == TaskResult.SUCCEEDED:
-            print(f"{name} succeeded")
-            input(
-            f"\nRobot reached {name}.\n"
-            "Measure x/y/yaw error now.\n"
-            "Press ENTER to continue..."
-        )
-        else:
-            print(f"{name} failed")
-            input(
-                f"\nRobot reached {name}.\n"
-                "Measure x/y/yaw error now.\n"
-                "Press ENTER to continue..."
-            )
-            
-
-        time.sleep(2)
-    print("\n========== Experiment Finished ==========")
-
-    navigator.lifecycleShutdown()
-    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
