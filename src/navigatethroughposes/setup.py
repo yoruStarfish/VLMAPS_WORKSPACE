@@ -35,6 +35,7 @@ setup(
             'snapshot_server = navigatethroughposes.snapshot_server:main',
             'path_cmdvel = navigatethroughposes.path_cmdvel:main',
             'path = navigatethroughposes.path:main',
+            'pure_navigation = navigatethroughposes.pure_navigation:main',
         ],
     },
 )

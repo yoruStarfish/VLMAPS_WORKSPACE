@@ -23,13 +23,22 @@ API_PARAMETERS = {
     )},
 }
 
-SYSTEM_PROMPT = """Translate the user's navigation instruction into robot API calls.
-Your entire response must be executable Python calls, one call per line.
-Start directly with robot. and end immediately after the last required call.
-No markdown, prose, comments, headings, examples, or additional conversation.
-Use only literal strings and numbers. No imports, variables, loops, or definitions.
 
-Allowed calls (name arguments must use the object names below):
+
+SYSTEM_PROMPT = """You are a robot navigation command translator.
+Your ONLY task is to convert user instructions into robot API calls.
+
+OUTPUT FORMAT:
+- Output ONLY executable Python robot API calls, one per line.
+- Every line MUST start with "robot.".
+- No explanations, reasoning, comments, markdown, or extra text.
+- Do NOT discuss ambiguity or suggest alternative interpretations.
+- Do NOT generate User: or Assistant: messages.
+- Stop immediately after the final required API call.
+- Use only literal strings and numbers.
+- No imports, variables, loops, or function definitions.
+
+AVAILABLE APIs:
 robot.move_to_object(name, safe_distance_m=0.5)
 robot.move_in_between(name_a, name_b)
 robot.move_to_left(name)
@@ -44,32 +53,87 @@ robot.with_object_on_right(name)
 robot.move_forward(meters)
 robot.turn(angle_deg)
 
-Object names: chair, table, wall, cardboard box, sandwich, laptop, paper cup, kettle, bottle, floor.
-Map computer/筆電 to laptop, box/箱子 to cardboard box, desk/桌子 to table, cup to paper cup.
-Use exact object names in calls: "box" must become "cardboard box".
-"Go to the right/left of X" means move_to_right/ move_to_left(X).
-"Keep X on your right/left" means with_object_on_right/with_object_on_left(X).
-Preserve ALL requested actions in order; add no actions.
-Distances are in meters (50 cm = 0.5), angles in degrees.
-Stopping X meters in front of an object means move_to_object(name, safe_distance_m=X).
-Turn right = robot.turn(-90). Turn left = robot.turn(90).
-For a specified angle A: right = robot.turn(-A), left = robot.turn(A).
-Nav2 handles routes; do not add forward movements after turns unless requested.
-If ANY part cannot be represented by these calls and objects, return only UNSUPPORTED.
-After the final call, end your response. Do not create another instruction or task.
+VALID OBJECT NAMES:
+chair, table, wall, cardboard box, sandwich,
+laptop, paper cup, kettle, bottle, floor
+
+OBJECT ALIASES:
+box/箱子 -> cardboard box
+computer/筆電 -> laptop
+desk/桌子 -> table
+cup -> paper cup
+
+NAVIGATION RULES:
+1. "Go to the right of X" -> robot.move_to_right("X")
+2. "Go to the left of X" -> robot.move_to_left("X")
+3. "Keep X on your right" -> robot.with_object_on_right("X")
+4. "Keep X on your left" -> robot.with_object_on_left("X")
+5. "Face X" -> robot.face("X")
+6. "Move between X and Y" -> robot.move_in_between("X", "Y")
+7. "Stop D meters in front of X" ->
+   robot.move_to_object("X", safe_distance_m=D)
+8. "Move forward D meters" -> robot.move_forward(D)
+9. "Turn right" -> robot.turn(-90)
+10. "Turn left" -> robot.turn(90)
+11. For specified turns, right is negative and left is positive.
+12. Convert centimeters to meters.
+
+CRITICAL RULES:
+- "Go to the right of X" is a COMPLETE navigation action.
+- It means moving to a position on the right side of X.
+- It does NOT mean turning right.
+- NEVER add robot.turn() or robot.move_forward() unless explicitly requested.
+- If an instruction matches an available API, output that API immediately.
+- Preserve ALL requested actions in their original order.
+- NEVER invent additional movements, distances, or rotations.
+- Nav2 handles navigation routes automatically.
+- Do not add forward movement after turning unless requested.
+- If ANY requested action or object is unsupported, output ONLY:
+UNSUPPORTED
+
+FINAL REQUIREMENT:
+Generate the minimum number of API calls necessary to represent
+the user's complete instruction.
+Do not explain your answer.
+Do not continue the conversation.
+Stop generating immediately after the last API call.
 """
 
+
 EXAMPLE_MESSAGES = [
-    {"role": "user", "content": "Go to the right of the box and move forward 1 meter."},
-    {
-        "role": "assistant",
-        "content": 'robot.move_to_right("cardboard box")\nrobot.move_forward(1.0)',
-    },
-    {"role": "user", "content": "Move between the chair and the table."},
-    {"role": "assistant", "content": 'robot.move_in_between("chair", "table")'},
     {
         "role": "user",
-        "content": "Stop 50 cm in front of the laptop, then turn right and move forward 1 meter.",
+        "content": "Go to the right of the bottle."
+    },
+    {
+        "role": "assistant",
+        "content": 'robot.move_to_right("bottle")'
+    },
+    {
+        "role": "user",
+        "content": "Go to the right of the box and move forward 1 meter."
+    },
+    {
+        "role": "assistant",
+        "content": (
+            'robot.move_to_right("cardboard box")\n'
+            'robot.move_forward(1.0)'
+        )
+    },
+    {
+        "role": "user",
+        "content": "Move between the chair and the table."
+    },
+    {
+        "role": "assistant",
+        "content": 'robot.move_in_between("chair", "table")'
+    },
+    {
+        "role": "user",
+        "content": (
+            "Stop 50 cm in front of the laptop, "
+            "then turn right and move forward 1 meter."
+        )
     },
     {
         "role": "assistant",
@@ -77,9 +141,10 @@ EXAMPLE_MESSAGES = [
             'robot.move_to_object("laptop", safe_distance_m=0.5)\n'
             'robot.turn(-90)\n'
             'robot.move_forward(1.0)'
-        ),
+        )
     },
 ]
+
 
 
 def validate_robot_code(raw_code: str) -> str:
@@ -165,12 +230,45 @@ def get_code_from_llm(user_instruction):
 
     for attempt in range(2):
         print(f"LLM is thinking... ({attempt + 1}/2)", flush=True)
-        response = client.chat.completions.create(
+        import time
+
+        start = time.perf_counter()
+
+        stream = client.chat.completions.create(
             model="phi3",
             messages=messages,
             temperature=0.0,
+            max_tokens=128,
+            stream=True,
+            stop=[
+                "\n\n",
+                "\nPlease",
+                "\nExplanation:",
+                "\nUser:",
+                "\nAssistant:",
+            ],
         )
-        raw_code = response.choices[0].message.content if response.choices else None
+
+        chunks = []
+
+        for chunk in stream:
+            if not chunk.choices:
+                continue
+
+            content = chunk.choices[0].delta.content
+
+            if content:
+                print(content, end="", flush=True)
+                chunks.append(content)
+
+        raw_code = "".join(chunks)
+
+        print(f"\nLLM inference time: {time.perf_counter() - start:.2f}s")
+        print(f"Raw code: {raw_code!r}")
+        raw_code = "".join(chunks)
+
+        print(f"\nLLM inference time: {time.perf_counter() - start:.2f}s")
+        print(f"Raw code: {raw_code!r}")
 
         try:
             return validate_robot_code(raw_code)

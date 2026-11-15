@@ -71,7 +71,8 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='baselink_to_velodyne',
         # arguments 對應: x, y, z, yaw, pitch, roll, parent_frame, child_frame
-        arguments=['0.0', '0.0', '0.71', '6.28', '0.0', '0.0', 'base_link', 'velodyne']
+        # arguments=['0.0', '0.0', '0.71', '6.28', '0.0', '0.0', 'base_link', 'velodyne']
+        arguments=['0.0', '0.0', '0.71', '0.0', '0.0', '0.0', 'base_link', 'velodyne']
     )
 
     # 將所有準備好的動作打包並回傳，ROS 2 就會一口氣把它們全部啟動

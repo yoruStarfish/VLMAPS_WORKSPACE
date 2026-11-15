@@ -375,78 +375,131 @@ def absolute_spin(navigator, tf_buffer, target_yaw_rad):
     while not navigator.isTaskComplete():
         rclpy.spin_once(navigator, timeout_sec=0.1)
 
-def rotate_to_yaw(navigator, tf_buffer, target_yaw):
+def get_fresh_yaw(navigator, tf_buffer, max_tf_age_s=0.5):
+    """讀取最新 TF；使用 navigator 的 ROS clock 比較時間戳。"""
+    trans = tf_buffer.lookup_transform('map', 'base_link', Time())
+    stamp = trans.header.stamp
+    stamp_ns = stamp.sec * 1_000_000_000 + stamp.nanosec
+    age_s = (navigator.get_clock().now().nanoseconds - stamp_ns) / 1e9
+    if stamp_ns <= 0 or age_s > max_tf_age_s or age_s < -0.05:
+        raise ValueError(f"TF 時間戳無效或過舊: age={age_s:.3f}s")
+    yaw = get_yaw_from_quaternion(trans.transform.rotation)
+    if not math.isfinite(yaw):
+        raise ValueError("TF yaw 不是有限數值")
+    return yaw
+
+
+def rotate_to_yaw(
+    navigator, tf_buffer, target_yaw=None, *, relative_angle_deg=None,
+    timeout_s=30.0, tf_failure_timeout_s=2.0, max_tf_age_s=0.5,
+):
+    """旋轉完成或一般旋轉超時回傳絕對目標 yaw；TF／其他失敗回傳 None。
+
+    絕對 target_yaw 與相對 relative_angle_deg 二擇一。相對目標在
+    本函式處理 callbacks 並取得新鮮 TF 後才計算，避免 input 後使用舊姿態。
+    總超時及 TF 連續失敗超時使用 monotonic clock，不受 ROS 時間暫停影響。
+    """
     from geometry_msgs.msg import Twist
+
     cmd_pub = navigator.create_publisher(Twist, '/cmd_vel_filtered', 10)
-
-    # 給 ROS2 publisher 一點 discovery 時間
-    for _ in range(5):
-        rclpy.spin_once(navigator, timeout_sec=0.1)
-
-    rate = navigator.create_rate(20)
-
+    start = time.monotonic()
+    tf_failure_start = None
     kp = 1.0
     max_wz = 0.5
     yaw_tolerance = math.radians(2.0)
 
-    while rclpy.ok():
+    try:
+        if (target_yaw is None) == (relative_angle_deg is None):
+            raise ValueError("請指定絕對 yaw 或相對角度其中一個")
+        angle = target_yaw if target_yaw is not None else relative_angle_deg
+        if not math.isfinite(angle):
+            raise ValueError("旋轉角度必須為有限數值")
+        if not all(math.isfinite(v) and v > 0 for v in (
+                timeout_s, tf_failure_timeout_s, max_tf_age_s)):
+            raise ValueError("超時及 TF 新鮮度門檻必須為正數")
 
-        try:
-            now = rclpy.time.Time()
+        # 暫停量測後先處理排隊的 TF callbacks；此階段只發送停止命令。
+        for _ in range(5):
+            if not rclpy.ok():
+                return None
+            cmd_pub.publish(Twist())
+            rclpy.spin_once(navigator, timeout_sec=0.1)
 
-            trans = tf_buffer.lookup_transform(
-                'map',
-                'base_link',
-                now,
-                timeout=rclpy.duration.Duration(seconds=0.1)
-            )
+        while rclpy.ok():
+            if time.monotonic() - start >= timeout_s:
+                # 原本的處理：旋轉超時即終止整個任務。
+                # print(f"Rotation timeout ({timeout_s}s), stop mission")
+                # return None
 
-            current_yaw = get_yaw_from_quaternion(
-                trans.transform.rotation
-            )
+                # 改為停止本次旋轉並繼續任務；TF 無效仍視為失敗。
+                cmd_pub.publish(Twist())
+                current_yaw = get_fresh_yaw(navigator, tf_buffer, max_tf_age_s)
+                if target_yaw is None:
+                    print("Rotation target unavailable, stop mission")
+                    return None
+                error = math.atan2(
+                    math.sin(target_yaw - current_yaw),
+                    math.cos(target_yaw - current_yaw),
+                )
+                print(
+                    f"Rotation timeout ({timeout_s}s), "
+                    f"remaining error={math.degrees(error):.1f}°, "
+                    "stop rotation and continue mission"
+                )
+                # 保留原定路段朝向，不將未轉完的實際朝向設為下一點目標。
+                return target_yaw
 
-        except Exception as e:
-            print(f"TF lookup failed: {e}")
+            # 先更新 TF buffer，再做非阻塞查詢，避免等待 TF 時堵住 callback。
             rclpy.spin_once(navigator, timeout_sec=0.05)
-            continue
+            try:
+                current_yaw = get_fresh_yaw(navigator, tf_buffer, max_tf_age_s)
+            except Exception as exc:
+                cmd_pub.publish(Twist())
+                if tf_failure_start is None:
+                    tf_failure_start = time.monotonic()
+                    print(f"Rotation TF unavailable, stopping: {exc}")
+                if time.monotonic() - tf_failure_start >= tf_failure_timeout_s:
+                    print("Rotation TF recovery timeout, stop mission")
+                    return None
+                continue
 
-        # 計算最短角度差 [-pi, pi]
-        error = target_yaw - current_yaw
-        error = math.atan2(
-            math.sin(error),
-            math.cos(error)
-        )
+            tf_failure_start = None
+            if target_yaw is None:
+                target_yaw = current_yaw + math.radians(relative_angle_deg)
+            target_yaw = math.atan2(math.sin(target_yaw), math.cos(target_yaw))
+            error = math.atan2(
+                math.sin(target_yaw - current_yaw),
+                math.cos(target_yaw - current_yaw),
+            )
+            print(
+                f"current={math.degrees(current_yaw):.1f}°, "
+                f"target={math.degrees(target_yaw):.1f}°, "
+                f"error={math.degrees(error):.1f}°"
+            )
+            if abs(error) < yaw_tolerance:
+                print("Rotation finished")
+                return target_yaw
 
-        print(
-            f"current={math.degrees(current_yaw):.1f}°, "
-            f"target={math.degrees(target_yaw):.1f}°, "
-            f"error={math.degrees(error):.1f}°"
-        )
+            twist = Twist()
+            twist.angular.z = max(-max_wz, min(max_wz, kp * error))
+            cmd_pub.publish(twist)
 
-        # 到達目標
-        if abs(error) < yaw_tolerance:
-            break
-
-        twist = Twist()
-        twist.linear.x = 0.0
-
-        # P controller
-        wz = kp * error
-        wz = max(-max_wz, min(max_wz, wz))
-
-        twist.angular.z = wz
-
-        cmd_pub.publish(twist)
-
-        rclpy.spin_once(navigator, timeout_sec=0.05)
-
-    # 停止
-    twist = Twist()
-    twist.linear.x = 0.0
-    twist.angular.z = 0.0
-    cmd_pub.publish(twist)
-
-    print("Rotation finished")
+        return None
+    except Exception as exc:
+        print(f"Rotation failed, stop mission: {exc}")
+        return None
+    finally:
+        # 包含正常完成、超時、例外及 KeyboardInterrupt，皆嘗試送出零速度。
+        # ROS context 若已關閉，發布可能失敗；不可讓清理錯誤蓋過原始例外。
+        try:
+            cmd_pub.publish(Twist())
+        except Exception as exc:
+            print(f"Unable to publish rotation stop: {exc}")
+        finally:
+            try:
+                navigator.destroy_publisher(cmd_pub)
+            except Exception as exc:
+                print(f"Unable to destroy rotation publisher: {exc}")
 
 
 def wait_for_task_until_close(
@@ -526,12 +579,12 @@ def wait_for_task_until_close(
 # map frame 的固定點位，格式為 (x, y)，單位為公尺。
 # D、E、F 目前僅為示範假座標，不代表實際路線幾何；實機執行前請替換。
 WAYPOINTS = {
-    "A": (-3.750, -0.318),
-    "B": (-2.1942, -1.3715),
-    "C": (-3.4380, -3.4168),
-    "D": (-4.500, -5.000),  # TODO: 替換為 D 的實際座標
-    "E": (-5.500, -4.500),  # TODO: 替換為 E 的實際座標
-    "F": (-6.000, -3.500),  # TODO: 替換為 F 的實際座標
+    "A": (-3.5211, -0.0608),
+    "B": (-2.1679, -0.7594),
+    "C": (2.7608, -3.0738),
+    "D": (1.3589, -6.0476),  # TODO: 替換為 D 的實際座標
+    "E": (-2.9595, -3.7342),  # TODO: 替換為 E 的實際座標
+    "F": (-4.7877, -2.8884),  # TODO: 替換為 F 的實際座標
 }
 
 # 保留原本 A 的起始朝向。啟動前，機器人必須位於 A 並朝此方向。
@@ -609,23 +662,14 @@ def execute_mission(navigator, tf_buffer, mission, waypoints):
         if action == "rotate":
             if point != current_point:
                 raise ValueError(f"旋轉點 {point} 與目前點位 {current_point} 不符")
-            # rotate_to_yaw 接收絕對 yaw；先由 TF 取得目前朝向，
-            # 再加上相對角度，確保右轉 -90°、左轉 +90°、迴轉 180°。
-            try:
-                trans = tf_buffer.lookup_transform(
-                    'map', 'base_link', Time(),
-                    timeout=Duration(seconds=1.0),
-                )
-            except Exception as exc:
-                print(f"[{point}] 無法取得旋轉前朝向，停止任務: {exc}")
-                return False
-            current_yaw = get_yaw_from_quaternion(trans.transform.rotation)
-            target_yaw = current_yaw + math.radians(angle_deg)
-            travel_yaw = math.atan2(math.sin(target_yaw), math.cos(target_yaw))
             print(f"\n========== {point} 原地旋轉 {angle_deg:+}° ==========")
-            rotate_to_yaw(navigator, tf_buffer, travel_yaw)
-            if not rclpy.ok():
+            # 在量測結束後，由旋轉函式取得新鮮朝向並計算相對目標。
+            reached_yaw = rotate_to_yaw(
+                navigator, tf_buffer, relative_angle_deg=angle_deg,
+            )
+            if reached_yaw is None or not rclpy.ok():
                 return False
+            travel_yaw = reached_yaw
 
         elif action == "move":
             x, y = waypoints[point]

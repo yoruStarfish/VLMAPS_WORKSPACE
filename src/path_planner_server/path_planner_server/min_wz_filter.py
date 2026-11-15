@@ -79,7 +79,10 @@ class MinWzFilter(Node):
             self.turning = False
             self.pub.publish(Twist())
             return
-        if abs(wz) <= self.turn_release:
+        # 導航器仍要求移動時保留原命令，避免低速前進被轉成原地旋轉。
+        # 原地旋轉補償只處理明確要求零線速度的命令。
+        turning_in_place = abs(vx) <= 0.001
+        if not turning_in_place or abs(wz) <= self.turn_release:
             self.turning = False
         elif abs(wz) >= self.turn_threshold:
             self.turning = True
@@ -93,8 +96,8 @@ class MinWzFilter(Node):
                 f'Turn in place {"ON" if self.turning else "OFF"}: '
                 f'input vx={vx:.3f}, wz={wz:.3f}')
 
-        if not self.turning and abs(vx) < self.low_vx_threshold:
-            if self.trigger_wz < abs(wz) < self.min_wz:
+        if not self.turning and turning_in_place:
+            if self.turn_release < abs(wz) < self.min_wz:
                 out.angular.z = self.min_wz if wz > 0 else -self.min_wz
                 self.get_logger().info(
                     f'wz compensated: {wz:.4f} -> {out.angular.z:.4f}, vx={vx:.4f}')

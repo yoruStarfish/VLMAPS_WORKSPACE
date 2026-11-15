@@ -2,34 +2,31 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from path_planner_server.position_navigation import (
-    controller_launch_overrides, planner_launch_overrides,
-    navigator_launch_overrides,
-)
 
 def generate_launch_description():
 
     controller_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'controller.yaml')
+    default_bt_xml_path = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'behavior.xml')
     bt_navigator_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'bt_navigator.yaml')
     planner_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'planner_server.yaml')
     recovery_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'recovery.yaml')
 
-    
-    return LaunchDescription([     
+
+    return LaunchDescription([
         Node(
             package='nav2_controller',
             executable='controller_server',
             name='controller_server',
             output='screen',
-            parameters=[controller_yaml, controller_launch_overrides(controller_yaml)]),
+            parameters=[controller_yaml]),
 
         Node(
             package='nav2_planner',
             executable='planner_server',
             name='planner_server',
             output='screen',
-            parameters=[planner_yaml, planner_launch_overrides(planner_yaml)]),
-            
+            parameters=[planner_yaml]),
+
         Node(
             package='nav2_recoveries',
             executable='recoveries_server',
@@ -42,8 +39,8 @@ def generate_launch_description():
             executable='bt_navigator',
             name='bt_navigator',
             output='screen',
-            parameters=[bt_navigator_yaml, navigator_launch_overrides(
-                os.path.dirname(bt_navigator_yaml))]),
+            parameters=[bt_navigator_yaml, {
+                'default_bt_xml_filename': default_bt_xml_path}]),
 
         Node(
             package='nav2_lifecycle_manager',

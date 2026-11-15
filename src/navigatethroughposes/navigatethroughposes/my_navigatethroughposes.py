@@ -25,11 +25,9 @@ from rclpy.time import Time
 import time
 from cv_bridge import CvBridge
 import tf_transformations
-from goto_aruco.GoToArucoActionClient import GoToArucoActionClient
 import os
 import cv2
 from sensor_msgs.msg import Image
-from ros2_aruco.aruco_node import ArucoNode
 
 class NavigateToARUco(rclpy.node.Node):
     def __init__(self):
@@ -305,46 +303,7 @@ def save_current_image(node, topic='/camera/camera/color/image_raw', count=1):
 def pause_navigation(t):
     time.sleep(t)
 
-# def go_to_aruco(navigator):
-#     aruco_node = ArucoNode()
-#     aruco_navigator = NavigateToARUco()
-#     print("getting pose from aruco node")
-#     executor = rclpy.executors.MultiThreadedExecutor()
-#     executor.add_node(aruco_node)
-#     executor.add_node(aruco_navigator)
-#     print("Getting pose from aruco node...")
-#     while rclpy.ok() and not aruco_navigator.pose_publisher.get_pose():
-#         print("spin once again")
-#         executor.spin_once(timeout_sec=0.1)
-    
-#     nav_start = navigator.get_clock().now()
-#     print("navigate to aruco pose")
-#     navigator.goToPose(aruco_navigator.pose_publisher.get_pose())
-#     i = 0
-#     while not navigator.isTaskComplete():
-#         i += 1
-#         feedback = navigator.getFeedback()
-#         if feedback and i % 5 == 0:
-#             print('Executing aruco pose: ')
-#             now = navigator.get_clock().now()
 
-#             # Cancel task if it takes too long
-#             if now - nav_start > Duration(seconds=600.0):
-#                 navigator.cancelTask()
-
-#             # Preempt task with new goal if it takes too long
-#             if now - nav_start > Duration(seconds=100.0):
-#                 goal_pose4 = PoseStamped()
-#                 goal_pose4.header.frame_id = 'map'
-#                 goal_pose4.header.stamp = now.to_msg()
-#                 goal_pose4.pose.position.x = 0.0
-#                 goal_pose4.pose.position.y = 0.0
-#                 goal_pose4.pose.orientation.w = 0.0
-#                 goal_pose4.pose.orientation.z = 1.0
-#                 nav_start = now
-#                 navigator.goToPose(goal_pose4)
-#     aruco_node.destroy_node()
-    
     # TODO: Correct the pose in amcl
     '''
     corrected_aruco_pose = PoseStamped()

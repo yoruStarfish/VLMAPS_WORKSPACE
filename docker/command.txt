@@ -1,0 +1,18 @@
+docker run -dit \
+  --name vlmap_dev_v5 \
+  --hostname vlmap_dev_gpu \
+  --network host \
+  --privileged \
+  --gpus all \
+  -e NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics,display \
+  -e LIBGL_ALWAYS_SOFTWARE=0 \
+  -e DISPLAY="$DISPLAY" \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -v /dev/bus/usb:/dev/bus/usb \
+  -v /home/yiyu/VLMAPS_WORKSPACE:/workspace \
+  -w /workspace \
+  vlmap_project_image:latest \
+  bash
+
+  if need restart:
+  docker restart vlmap_dev_v5

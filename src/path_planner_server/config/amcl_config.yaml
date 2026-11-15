@@ -37,10 +37,10 @@ amcl:
     z_max: 0.05
     z_rand: 0.5
     z_short: 0.05
-    scan_topic: scan
+    scan_topic: /velodyne_scan
     set_initial_pose: true
     initial_pose:
-      x: -3.750 #-3.6745
-      y: -0.318 #-0.2076
+      x: -3.532 #-3.6745
+      y: -0.057 #-0.2076
       z: 0.0
-      yaw: -0.541 #-0.527
+      yaw: -0.494

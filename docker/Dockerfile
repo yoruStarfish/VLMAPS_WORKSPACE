@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ============================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-realsense2-camera \
+    ros-humble-rtabmap-ros \
     ros-humble-realsense2-description \
     ros-humble-velodyne-driver \
     ros-humble-velodyne-pointcloud \
@@ -43,6 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-pointcloud-to-laserscan \
     ros-humble-navigation2 \
     ros-humble-nav2-bringup \
+    ros-humble-tf-transformations \
     ros-humble-tf2-ros \
     ros-humble-tf2-tools \
     && rm -rf /var/lib/apt/lists/*

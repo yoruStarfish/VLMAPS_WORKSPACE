@@ -147,7 +147,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 5.0
-        inflation_radius: 0.40
+        inflation_radius: 0.4
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_topic: /map
