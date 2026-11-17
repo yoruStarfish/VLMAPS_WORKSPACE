@@ -3,12 +3,17 @@
 <package format="3">
   <name>voice_server</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Microphone prompts for ROS 2 language navigation</description>
   <maintainer email="cooa6643@gmail.com">root</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-pyaudio</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

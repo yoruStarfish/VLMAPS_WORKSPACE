@@ -41,6 +41,7 @@ ros2 service call /build_vlmap std_srvs/srv/Trigger
 ```
 
 # LLM 串進來
+負責打字下prompt而已
 ```bash
 ros2 run navigatethroughposes llm_cmd
 ```

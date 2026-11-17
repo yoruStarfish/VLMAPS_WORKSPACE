@@ -8,3 +8,10 @@ dataset02/
 src/ugv_sdk/
 
 right_turn_debug_folder/
+
+*.log
+# Downloaded local speech recognition models
+/models/
+
+__pycache__/
+*.py[cod]

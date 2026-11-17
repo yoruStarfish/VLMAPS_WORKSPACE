@@ -1,0 +1,17 @@
+name: voice_server
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  # Match the Python ABI used by the installed ROS 2 Humble binaries.
+  - python=3.10
+  - pip
+  - setuptools
+  - numpy<2
+  - pyaudio
+  - portaudio
+  - pyyaml
+  - pip:
+      - faster-whisper==1.2.1
+      - google-cloud-speech==2.41.0
+      - av>=11,<18

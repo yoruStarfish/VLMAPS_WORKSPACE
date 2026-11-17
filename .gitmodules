@@ -1,3 +1,6 @@
+[submodule "src/Lslidar_ROS2_driver"]
+	path = src/Lslidar_ROS2_driver
+	url = https://github.com/Lslidar/Lslidar_ROS2_driver.git
 [submodule "vlmapsSrc"]
 	path = vlmapsSrc
 	url = https://github.com/yoruStarfish/vlmaps.git

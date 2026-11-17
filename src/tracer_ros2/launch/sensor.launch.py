@@ -58,7 +58,7 @@ def generate_launch_description():
         name='baselink_to_camera',
         # arguments 對應: x, y, z, yaw, pitch, roll, parent_frame, child_frame
         # arguments=['0.25', '0.0', '0.69', '0.0', '0.0', '0.0', 'base_link', 'camera_link']
-        arguments=['0.25', '0.0', '0.82', '0.0', '0.0', '0.0', 'base_link', 'camera_link']
+        arguments=['0.205', '0.0', '0.82', '0.0', '0.0', '0.0', 'base_link', 'camera_link']
     )
 
     # 5. 發布靜態座標轉換 (TF) - base_link 到 velodyne

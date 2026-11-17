@@ -23,12 +23,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-rosdep \
     python3-colcon-common-extensions \
+    python3-catkin-pkg \
     libasio-dev \
+    libpcap-dev \
+    libboost-dev \
     libgl1-mesa-glx \
     libglib2.0-0 \
     usbutils \
     iputils-ping \
     net-tools \
+    tcpdump \
+    psmisc \
+    gimp \
+    libasound2 \
+    libasound2-plugins \
+    pulseaudio-utils \
+    alsa-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # ============================================================
@@ -42,6 +52,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-velodyne-pointcloud \
     ros-humble-velodyne-laserscan \
     ros-humble-pointcloud-to-laserscan \
+    ros-humble-pcl-ros \
+    ros-humble-pcl-conversions \
+    ros-humble-pluginlib \
     ros-humble-navigation2 \
     ros-humble-nav2-bringup \
     ros-humble-tf-transformations \
@@ -60,13 +73,20 @@ RUN curl -fsSL -o /tmp/miniforge.sh \
 ENV PATH="/opt/miniforge3/bin:${PATH}"
 
 # ============================================================
-# 5. Create Conda Environment
+# 5. Create Conda Environments (build context: docker/)
 # ============================================================
 COPY environment.yaml /tmp/environment.yaml
 
 RUN conda env create -f /tmp/environment.yaml \
     && conda clean -afy \
     && rm /tmp/environment.yaml
+
+# Keep this specification in sync with voice_server/environment.yml.
+COPY voice_server_environment.yml /tmp/voice_server_environment.yml
+
+RUN conda env create -f /tmp/voice_server_environment.yml \
+    && conda clean -afy \
+    && rm /tmp/voice_server_environment.yml
 
 # ============================================================
 # 6. Configure ROS2 and Conda
