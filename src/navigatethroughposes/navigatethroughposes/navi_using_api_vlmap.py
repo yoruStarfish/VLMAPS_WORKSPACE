@@ -70,7 +70,7 @@ class LocalizationNode(Node):
             self.pose_publisher.pose = None
             self.get_logger().warning(f"等待 map -> base_link TF：{exc}", throttle_duration_sec=5.0)
             return
-        self.print_transform(trans)
+        # self.print_transform(trans)
         self.pose_publisher.update_pose(trans)
 
     def combine_transforms(self, transform1, transform2):
@@ -143,6 +143,10 @@ class PosePublisher(Node):
 def wait_for_task(navigator, timeout_s=180.0):
     start = navigator.get_clock().now()
     while not navigator.isTaskComplete():
+        # Keep /tf subscriptions and the localization timer running while
+        # BasicNavigator waits on the action result.
+        if _localization_node is not None and _localization_node is not navigator:
+            rclpy.spin_once(_localization_node, timeout_sec=0.0)
         elapsed = (navigator.get_clock().now() - start).nanoseconds / 1e9
         if elapsed > timeout_s:
             print("Navigation timeout — cancelling", flush=True)

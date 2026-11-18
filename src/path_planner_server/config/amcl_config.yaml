@@ -39,8 +39,13 @@ amcl:
     z_short: 0.05
     scan_topic: /velodyne_scan
     set_initial_pose: true
+    # initial_pose:
+    #   x: -3.532 #-3.6745
+    #   y: -0.057 #-0.2076
+    #   z: 0.0
+    #   yaw: -0.494
     initial_pose:
-      x: -3.532 #-3.6745
-      y: -0.057 #-0.2076
+      x: 0.0
+      y: 0.0
       z: 0.0
-      yaw: -0.494
+      yaw: 1.572

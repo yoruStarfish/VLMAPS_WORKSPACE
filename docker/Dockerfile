@@ -98,6 +98,12 @@ RUN sed -i \
     && echo 'source /opt/miniforge3/etc/profile.d/conda.sh' >> /root/.bashrc \
     && echo 'export TERM=xterm-256color' >> /root/.bashrc
 
+# Configure ALSA plugins for the voice_server Conda environment
+RUN mkdir -p /opt/miniforge3/envs/voice_server/etc/conda/activate.d \
+    && printf '%s\n' \
+       'export ALSA_PLUGIN_DIR=/usr/lib/x86_64-linux-gnu/alsa-lib' \
+       > /opt/miniforge3/envs/voice_server/etc/conda/activate.d/alsa.sh
+
 # ============================================================
 # 7. ROS2 Workspace
 # ============================================================

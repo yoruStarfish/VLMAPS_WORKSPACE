@@ -39,7 +39,7 @@ def generate_launch_description():
         'conda_env': 'voice_server',
         'command_topic': '/user_command',
         'input_device_index': '-1',
-        'input_device_name': '',
+        'input_device_name': 'pulse',
         'language_code': 'en',
         'model_path': '/workspace/models/faster-whisper-small.en',
         'device': 'cpu',

@@ -8,6 +8,7 @@
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
+  <exec_depend>custom_rviz_panel</exec_depend>
   <depend>geometry_msgs</depend>
   <depend>nav_msgs</depend>
   <exec_depend>nav2_msgs</exec_depend>

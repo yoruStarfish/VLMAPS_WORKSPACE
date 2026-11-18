@@ -1,4 +1,4 @@
-"""Exercise continuous sessions and Stop while inference is in flight."""
+"""Exercise single-utterance sessions and Stop during inference."""
 import threading
 import unittest
 from types import SimpleNamespace
@@ -32,23 +32,50 @@ class SessionTests(unittest.TestCase):
     def stop(self):
         return self.node._stop_listening(None, SimpleNamespace())
 
-    def test_start_once_publishes_multiple_utterances(self):
-        done = threading.Event()
-        def published(msg):
-            if self.node.command_pub.publish.call_count == 2:
-                self.node._stop.set()
-                done.set()
-        self.node.command_pub.publish.side_effect = published
+    def test_each_utterance_requires_another_start(self):
+        idle = threading.Event()
+        def status(value):
+            if value == 'idle' and self.node._record.called:
+                idle.set()
+        self.node._status.side_effect = status
         self.assertTrue(self.start().success)
         worker = threading.Thread(target=self.node._run)
         worker.start()
         try:
-            self.assertTrue(done.wait(2))
+            self.assertTrue(idle.wait(2))
+            self.assertFalse(self.node._listen.is_set())
+            self.assertFalse(self.node._busy)
+            self.node._record.assert_called_once()
+            self.node.command_pub.publish.assert_called_once()
+            idle.clear()
+            self.assertTrue(self.start().success)
+            self.assertTrue(idle.wait(2))
+            self.assertEqual(self.node.command_pub.publish.call_count, 2)
         finally:
             self.node._stop.set()
             worker.join(2)
         self.assertFalse(worker.is_alive())
         self.assertEqual(self.node.command_pub.publish.call_count, 2)
+
+    def test_no_speech_returns_to_idle_without_retry(self):
+        idle = threading.Event()
+        self.node._record.return_value = []
+        def status(value):
+            if value == 'idle' and self.node._record.called:
+                idle.set()
+        self.node._status.side_effect = status
+        self.start()
+        worker = threading.Thread(target=self.node._run)
+        worker.start()
+        try:
+            self.assertTrue(idle.wait(2))
+            self.assertFalse(self.node._listen.is_set())
+            self.node._record.assert_called_once()
+            self.node._transcribe.assert_not_called()
+            self.node.command_pub.publish.assert_not_called()
+        finally:
+            self.node._stop.set()
+            worker.join(2)
 
     def test_stop_discards_inflight_result_and_can_restart(self):
         entered, release = threading.Event(), threading.Event()
@@ -99,8 +126,9 @@ class SessionTests(unittest.TestCase):
 
     def test_repeated_start_does_not_spawn_another_session(self):
         self.assertTrue(self.start().success)
+        self.assertFalse(self.start().success)
         self.node._busy = True
-        self.assertTrue(self.start().success)
+        self.assertFalse(self.start().success)
         self.assertTrue(self.node._listen.is_set())
 
     def test_stop_disables_wakeword_reactivation(self):

@@ -10,6 +10,7 @@ import pyaudio
 from faster_whisper import WhisperModel
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, DurabilityPolicy
 from std_msgs.msg import String
 from std_srvs.srv import Trigger
 
@@ -29,7 +30,7 @@ class VoiceServer(Node):
             'compute_type': 'int8',
             'cpu_threads': 4,
             'input_device_index': -1,
-            'input_device_name': '',
+            'input_device_name': 'pulse',
             'max_record_seconds': 15.0,
             'silence_seconds': 2.5,
             'speech_start_timeout': 8.0,
@@ -68,7 +69,9 @@ class VoiceServer(Node):
         self.command_pub = self.create_publisher(
             String, self.settings['command_topic'], 10)
         self.transcript_pub = self.create_publisher(String, '~/transcript', 10)
-        self.status_pub = self.create_publisher(String, '~/status', 10)
+        self.status_pub = self.create_publisher(
+            String, '~/status',
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self._lock = threading.Lock()
         self._busy = False
         self._stop = threading.Event()
@@ -89,7 +92,7 @@ class VoiceServer(Node):
         self._worker = threading.Thread(target=self._run, name='voice_input', daemon=True)
         self._worker.start()
         self.get_logger().info(
-            'Ready: /voice_server/start enables continuous listening; /voice_server/stop pauses it. Prompts go to '
+            'Ready: /voice_server/start records one utterance; /voice_server/stop cancels it. Prompts go to '
             + self.settings['command_topic'])
 
     def _status(self, value):
@@ -102,17 +105,14 @@ class VoiceServer(Node):
             if self._stop.is_set():
                 response.success = False
                 response.message = 'Node is shutting down.'
-            elif self._listen.is_set():
-                response.success = True
-                response.message = 'Continuous listening is already enabled.'
-            elif self._busy:
+            elif self._listen.is_set() or self._busy:
                 response.success = False
-                response.message = 'Previous session is stopping; retry after idle.'
+                response.message = 'Voice input is busy; retry after idle.'
             else:
                 self._cancel.clear()
                 self._listen.set()
                 response.success = True
-                response.message = 'Continuous listening enabled; wait for listening before speaking.'
+                response.message = 'One utterance requested; wait for listening before speaking.'
         return response
 
     def _stop_listening(self, request, response):
@@ -266,8 +266,10 @@ class VoiceServer(Node):
                 with self._lock:
                     was_busy = self._busy
                     self._busy = False
-                    if was_busy and not self._listen.is_set() and not self._stop.is_set():
-                        self._status('idle')
+                    if was_busy:
+                        self._listen.clear()
+                        if not self._stop.is_set():
+                            self._status('idle')
 
     def close(self):
         """Stop recording and wait for the current local inference to finish."""

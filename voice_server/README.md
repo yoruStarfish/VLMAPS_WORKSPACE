@@ -50,10 +50,10 @@ launch 自動透過 `conda run` 使用語音環境，不需要先 activate。
 若找不到 Conda，可加 `conda_executable:=/opt/miniforge3/bin/conda`；環境名稱
 也可透過 `conda_env:=voice_server` 指定。
 
-等待模型載入並顯示 Ready，再從另一個已 source ROS 的終端開啟持續聆聽：
+等待模型載入並顯示 Ready，再從另一個已 source ROS 的終端觸發一次錄音：
 
 ```bash
-# start
+# start：每說一句話前呼叫一次
 ros2 service call /voice_server/start std_srvs/srv/Trigger '{}'
 
 # stop
@@ -62,7 +62,8 @@ ros2 service call /voice_server/stop std_srvs/srv/Trigger '{}'
 
 看到 `listening` 再說英文指令，例如 `Go to the chair.`。連續安靜 2.5 秒，
 或達 15 秒錄音上限後停止，使用 VAD 過濾非語音片段並辨識，最後發布文字。
-Start 的 success 代表開啟聆聽，不代表辨識或導航成功。重複 Start 不會建立第二個錄音流程。
+Start 的 success 代表接受一次錄音請求，不代表辨識或導航成功。
+完成後會回到 `idle`，下一句需再次呼叫 Start；錄音或辨識中重複 Start 會回覆忙碌。
 模型只在啟動時載入一次；不是即時字幕，沒有 TTS 播報。
 
 ```bash
@@ -76,7 +77,7 @@ VAD 不保證避免所有誤辨識；辨識到的文字會直接發布，不另�
 
 導航程式需先啟動並開始訂閱 `/user_command`，否則文字可能無人接收。
 導航端尚無忙碌拒收或語音取消介面，請等任務結束再送下一個指令。
-麥克風必須能由容器存取；預設使用 PyAudio 預設輸入裝置。
+麥克風必須能由容器存取；預設選擇名稱符合 `pulse` 的輸入裝置，使用 PulseAudio 提供的來源。
 
 ## 只測試辨識，不執行導航
 
@@ -96,7 +97,7 @@ ros2 launch voice_server voice_server.launch.py command_topic:=/voice_test_comma
 | device | cpu | cpu、cuda 或 auto |
 | compute_type | int8 | CTranslate2 運算精度 |
 | cpu_threads | 4 | CPU 推論執行緒數 |
-| input_device_name | 空字串 | 輸入名稱的唯一子字串；設定時優先於 index |
+| input_device_name | pulse | 輸入名稱的唯一子字串；設定時優先於 index |
 | input_device_index | -1 | PyAudio 索引；-1 使用預設裝置 |
 | max_record_seconds | 15.0 | 最長錄音時間 |
 | silence_seconds | 2.5 | 開始說話後的無聲結束時間 |
@@ -109,7 +110,7 @@ ros2 launch voice_server voice_server.launch.py command_topic:=/voice_test_comma
 參數修改後需重啟。例如：
 
 ```bash
-ros2 launch voice_server voice_server.launch.py input_device_index:=2 silence_seconds:=1.5
+ros2 launch voice_server voice_server.launch.py input_device_name:=pulse silence_seconds:=1.5
 ```
 
 未來中文支援需另下載多語言模型（例如 `Systran/faster-whisper-small`），
@@ -128,11 +129,11 @@ ros2 launch voice_server voice_server.launch.py input_device_index:=2 silence_se
 錄音結束時會顯示 peak、max_mean 與音量門檻。若 peak=0，先檢查輸入裝置、
 硬體靜音與系統輸入音量；降低門檻無法修復完全為零的收音。
 
-## 持續聆聽：Start 一次，Stop 才結束
+## 單句錄音：每句都需呼叫 Start
 
-`/voice_server/start` 現在開啟持續模式。每句辨識完成（或無人說話逾時）後，
-節點會自動重新進入 `listening`，不需要每句都呼叫 service。
-辨識時會暫停收音，請等下一次 `listening` 再說話，這不是同步串流錄音。
+每次呼叫 `/voice_server/start` 只錄製並辨識一句話。辨識完成、無人說話逾時
+或達錄音上限後，節點會回到 `idle`，不會自動開始下一次錄音。
+下一句請再次呼叫 Start，並等到 `listening` 再說話。
 
 停止語音輸入：
 
@@ -145,11 +146,30 @@ Stop 會停止錄音、丟棄尚未發布的辨識結果，並停用喚醒詞監
 會回覆請稍候。回到 idle 後，可再次 Start。已發布的指令不會被撤回，導航不會
 因 Stop service 自動取消。Stop 回覆後不會再發布舊的辨識結果。
 
-若啟動時選擇喚醒詞模式，偵測到喚醒詞也會開啟持續聆聽；Stop 之後需用
-Start service 重新開啟，或重啟節點恢復喚醒詞待機。
+若啟動時選擇喚醒詞模式，每次偵測到喚醒詞也只會觸發一句錄音，
+完成後恢復喚醒詞待機。預設未啟用喚醒詞，每句需呼叫 Start service。
+Stop 之後需重啟節點才能恢復喚醒詞待機，仍可用 Start service 觸發單句錄音。
 
 裝置 index 是 PortAudio 每次枚舉得到的編號，可能隨裝置可用性改變。
 可用 `input_device_name:='hw:1,6'` 選擇目前機器的數位麥克風輸入；硬體位置
 在不同機器也可能不同。僅在唯一的可用輸入符合名稱時才會開啟，不會靜默
 改選另一個麥克風。若裝置被主機錄音軟體或其他節點占用，先釋放再 Start。
-錄音／辨識遇到例外會暫停持續模式，修正後再次 Start，不會每秒重試刷錯誤。
+錄音／辨識遇到例外會結束當次請求，修正後再次 Start，不會每秒重試刷錯誤。
+
+# Test voice in docker
+
+## test the input device
+
+```bash
+parecord \
+  --device="$(pactl get-default-source)" \
+  --format=s16le \
+  --rate=16000 \
+  --channels=1 \
+  --file-format=wav \
+  /tmp/mic_test.wav
+
+ls -lh /tmp/mic_test.wav
+
+paplay /tmp/mic_test.wav
+```

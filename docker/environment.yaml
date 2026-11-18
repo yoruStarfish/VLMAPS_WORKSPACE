@@ -135,7 +135,6 @@ dependencies:
       - botocore==1.43.59
       - catkin-pkg==1.1.0
       - click==8.4.2
-      - git+https://github.com/openai/CLIP.git
       - cmake==4.4.0
       - configargparse==1.7.5
       - contourpy==1.3.2

@@ -13,6 +13,7 @@ OBJECT_NAMES = {
 
 API_PARAMETERS = {
     "move_to_object": ("name", "safe_distance_m"),
+    "move_to_object_near": ("name", "reference_name", "near_distance_m", "safe_distance_m"),
     "move_in_between": ("name_a", "name_b"),
     "turn": ("angle_deg",),
     "move_forward": ("meters",),
@@ -40,6 +41,7 @@ OUTPUT FORMAT:
 
 AVAILABLE APIs:
 robot.move_to_object(name, safe_distance_m=0.5)
+robot.move_to_object_near(name, reference_name, near_distance_m=0.8, safe_distance_m=0.45)
 robot.move_in_between(name_a, name_b)
 robot.move_to_left(name)
 robot.move_to_right(name)
@@ -77,6 +79,15 @@ NAVIGATION RULES:
 10. "Turn left" -> robot.turn(90)
 11. For specified turns, right is negative and left is positive.
 12. Convert centimeters to meters.
+13. "Move to X next to Y" / "Go to X near Y" ->
+    robot.move_to_object_near("X", "Y")
+    X is the target; Y is the reference used to select X. They must be different categories.
+    This is ONE navigation action. Do not move to Y first or use move_in_between.
+    Preserve "next to", "near", and "beside" when they describe which target to select.
+    Never simplify this instruction to robot.move_to_object("X").
+    Omit optional distances unless the user specifies them; the API uses its defaults.
+    near_distance_m limits the distance BETWEEN X and Y.
+    safe_distance_m is the robot's stopping distance from X.
 
 CRITICAL RULES:
 - "Go to the right of X" is a COMPLETE navigation action.
@@ -101,6 +112,33 @@ Stop generating immediately after the last API call.
 
 
 EXAMPLE_MESSAGES = [
+    {
+        "role": "user",
+        "content": "Move to the paper cup next to the laptop."
+    },
+    {
+        "role": "assistant",
+        "content": 'robot.move_to_object_near("paper cup", "laptop")'
+    },
+    {
+        "role": "user",
+        "content": "Go to the cup beside the computer and stop 50 cm from the cup."
+    },
+    {
+        "role": "assistant",
+        "content": 'robot.move_to_object_near("paper cup", "laptop", safe_distance_m=0.5)'
+    },
+    {
+        "role": "user",
+        "content": "Move to the bottle within 60 cm of the kettle, then turn left."
+    },
+    {
+        "role": "assistant",
+        "content": (
+            'robot.move_to_object_near("bottle", "kettle", near_distance_m=0.6)\n'
+            'robot.turn(90)'
+        )
+    },
     {
         "role": "user",
         "content": "Go to the right of the bottle."
@@ -191,12 +229,17 @@ def validate_robot_code(raw_code: str) -> str:
                 raise ValueError("Unknown or duplicate API parameter.")
             bound[keyword.arg] = keyword.value
             
-        required = parameters[:1] if func.attr == "move_to_object" else parameters
+        if func.attr == "move_to_object":
+            required = parameters[:1]
+        elif func.attr == "move_to_object_near":
+            required = parameters[:2]
+        else:
+            required = parameters
         if any(name not in bound for name in required):
             raise ValueError("Missing required API parameters.")
             
         for name, node in bound.items():
-            if name in ("name", "name_a", "name_b"):
+            if name in ("name", "name_a", "name_b", "reference_name"):
                 if not (isinstance(node, ast.Constant) and isinstance(node.value, str)
                         and node.value in OBJECT_NAMES):
                     raise ValueError(f"Object name '{node.value if hasattr(node, 'value') else node}' is not in the supported list.")
@@ -213,6 +256,10 @@ def validate_robot_code(raw_code: str) -> str:
                 value = sign * number_node.value
                 if not math.isfinite(value) or (name != "angle_deg" and value <= 0):
                     raise ValueError("Distances must be greater than zero; angles and distances must be finite numbers.")
+
+        if (func.attr == "move_to_object_near"
+                and bound["name"].value == bound["reference_name"].value):
+            raise ValueError("Target and reference must be different object categories.")
                     
     return ast.unparse(tree)
 
