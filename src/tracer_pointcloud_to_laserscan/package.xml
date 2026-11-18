@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>tracer_pointcloud_to_laserscan</name>
+  <version>0.1.0</version>
+  <description>Tracer's reliable cloud-to-scan converter, based on pointcloud_to_laserscan 2.0.1.</description>
+  <maintainer email="robotic@todo.todo">robotic</maintainer>
+  <license>BSD-3-Clause</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>message_filters</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_sensor_msgs</depend>
+  <test_depend>rclpy</test_depend>
+  <test_depend>python3-pytest</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

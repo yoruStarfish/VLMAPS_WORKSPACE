@@ -68,13 +68,14 @@ def generate_launch_description():
                                                           ('/scan', '/velodyne_scan'),
                                                             ]
                                                         )
-    pointcloud_to_laserscan_node = launch_ros.actions.Node(package='pointcloud_to_laserscan',
+    pointcloud_to_laserscan_node = launch_ros.actions.Node(package='tracer_pointcloud_to_laserscan',
                                                            executable='pointcloud_to_laserscan_node',
                                                         #    parameters=[
                                                         #        {"min_height": -0.759},
                                                         #        {"angle_increment": 0.00349066}
                                                         #      ],
                                                            parameters=[{
+                                                                'queue_size': 1,
                                                                 'target_frame': 'base_link',    # 關鍵：轉到車體座標，TF 會自動處理 0.76m 的高度差
                                                                 'transform_tolerance': 0.01,
                                                                 
